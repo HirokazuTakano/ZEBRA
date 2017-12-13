@@ -46,24 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdmitDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdmitDetail.Designer.cs">
-      <DependentUpon>AdmitDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdmitWait_List.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdmitWait_List.Designer.cs">
-      <DependentUpon>AdmitWait_List.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChangeDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChangeDetail.Designer.cs">
-      <DependentUpon>ChangeDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,31 +58,13 @@
     <Compile Include="Input.Designer.cs">
       <DependentUpon>Input.cs</DependentUpon>
     </Compile>
-    <Compile Include="NG_List.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NG_List.Designer.cs">
-      <DependentUpon>NG_List.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdmitDetail.resx">
-      <DependentUpon>AdmitDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdmitWait_List.resx">
-      <DependentUpon>AdmitWait_List.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChangeDetail.resx">
-      <DependentUpon>ChangeDetail.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Input.resx">
       <DependentUpon>Input.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NG_List.resx">
-      <DependentUpon>NG_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
