@@ -70,6 +70,12 @@
     <Compile Include="Customer_search.Designer.cs">
       <DependentUpon>Customer_search.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datail.Designer.cs">
+      <DependentUpon>Datail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
