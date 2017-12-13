@@ -145,10 +145,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 240);
+            this.textBox1.Location = new System.Drawing.Point(157, 240);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(456, 86);
+            this.textBox1.Size = new System.Drawing.Size(438, 100);
             this.textBox1.TabIndex = 11;
             // 
             // customer
