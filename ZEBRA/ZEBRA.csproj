@@ -52,11 +52,11 @@
     <Compile Include="AdmitDetail.Designer.cs">
       <DependentUpon>AdmitDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdmitWait_List.cs">
+    <Compile Include="Admit_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdmitWait_List.Designer.cs">
-      <DependentUpon>AdmitWait_List.cs</DependentUpon>
+    <Compile Include="Admit_List.Designer.cs">
+      <DependentUpon>Admit_List.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangeDetail.cs">
       <SubType>Form</SubType>
@@ -93,8 +93,8 @@
     <EmbeddedResource Include="AdmitDetail.resx">
       <DependentUpon>AdmitDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdmitWait_List.resx">
-      <DependentUpon>AdmitWait_List.cs</DependentUpon>
+    <EmbeddedResource Include="Admit_List.resx">
+      <DependentUpon>Admit_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeDetail.resx">
       <DependentUpon>ChangeDetail.cs</DependentUpon>
