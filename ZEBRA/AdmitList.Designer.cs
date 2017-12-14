@@ -1,6 +1,6 @@
 ﻿namespace ZEBRA
 {
-    partial class AdmitWait
+    partial class AdmitList
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ZEBRA
 {
-    public partial class AdmitWait : Form
+    public partial class AdmitList : Form
     {
-        public AdmitWait()
+        public AdmitList()
         {
             InitializeComponent();
         }

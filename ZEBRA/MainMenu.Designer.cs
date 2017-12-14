@@ -92,6 +92,7 @@
             this.admitLinkLabel.TabIndex = 4;
             this.admitLinkLabel.TabStop = true;
             this.admitLinkLabel.Text = "承認待ち";
+            this.admitLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.admitLinkLabel_LinkClicked);
             // 
             // label2
             // 
