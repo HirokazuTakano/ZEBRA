@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,10 @@ using System.Windows.Forms;
 
 namespace ZEBRA
 {
+    /// <summary>
+    /// 承認一覧クラス　　沢谷
+    /// 
+    /// </summary>
     public partial class AdmitList : Form
     {
         public AdmitList()
@@ -99,6 +104,14 @@ namespace ZEBRA
             //        "行のボタンがクリックされました。");
             //}
 
+        }
+
+        private void topPageButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show(this);
+            Debug.WriteLine("トップページに飛びました");
         }
     }
 }

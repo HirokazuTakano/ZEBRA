@@ -38,6 +38,7 @@
             // 
             // admitViewList
             // 
+            this.admitViewList.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.admitViewList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.admitViewList.Location = new System.Drawing.Point(39, 128);
             this.admitViewList.Name = "admitViewList";
@@ -56,6 +57,7 @@
             this.topPageButton.TabIndex = 31;
             this.topPageButton.Text = "トップページ";
             this.topPageButton.UseVisualStyleBackColor = false;
+            this.topPageButton.Click += new System.EventHandler(this.topPageButton_Click);
             // 
             // pictureBox1
             // 

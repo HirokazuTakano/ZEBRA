@@ -38,11 +38,12 @@
             // 
             // NGViewList
             // 
+            this.NGViewList.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NGViewList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.NGViewList.Location = new System.Drawing.Point(38, 129);
+            this.NGViewList.Location = new System.Drawing.Point(43, 129);
             this.NGViewList.Name = "NGViewList";
             this.NGViewList.RowTemplate.Height = 21;
-            this.NGViewList.Size = new System.Drawing.Size(501, 209);
+            this.NGViewList.Size = new System.Drawing.Size(652, 209);
             this.NGViewList.TabIndex = 0;
             // 
             // topPageButton
@@ -56,6 +57,7 @@
             this.topPageButton.TabIndex = 38;
             this.topPageButton.Text = "トップページ";
             this.topPageButton.UseVisualStyleBackColor = false;
+            this.topPageButton.Click += new System.EventHandler(this.topPageButton_Click);
             // 
             // pictureBox1
             // 
@@ -70,19 +72,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 14F);
-            this.label1.Location = new System.Drawing.Point(241, 61);
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(317, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 19);
+            this.label1.Size = new System.Drawing.Size(76, 19);
             this.label1.TabIndex = 40;
-            this.label1.Text = "NGリスト";
+            this.label1.Text = "NG一覧";
             // 
             // NGList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(588, 361);
+            this.ClientSize = new System.Drawing.Size(728, 361);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.topPageButton);
