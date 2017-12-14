@@ -207,6 +207,7 @@
             // 
             // fromDate
             // 
+            this.fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fromDate.Location = new System.Drawing.Point(234, 183);
             this.fromDate.Name = "fromDate";
             this.fromDate.Size = new System.Drawing.Size(121, 19);
@@ -214,6 +215,7 @@
             // 
             // toDate
             // 
+            this.toDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.toDate.Location = new System.Drawing.Point(234, 240);
             this.toDate.Name = "toDate";
             this.toDate.Size = new System.Drawing.Size(121, 19);
@@ -417,6 +419,7 @@
             this.topPageButton.TabIndex = 36;
             this.topPageButton.Text = "トップページ";
             this.topPageButton.UseVisualStyleBackColor = false;
+            this.topPageButton.Click += new System.EventHandler(this.topPageButton_Click);
             // 
             // searchButton
             // 
@@ -429,6 +432,7 @@
             this.searchButton.TabIndex = 37;
             this.searchButton.Text = "検索";
             this.searchButton.UseVisualStyleBackColor = false;
+
             // 
             // registButton
             // 
@@ -441,6 +445,7 @@
             this.registButton.TabIndex = 38;
             this.registButton.Text = "登録";
             this.registButton.UseVisualStyleBackColor = false;
+            this.registButton.Click += new System.EventHandler(this.registButton_Click);
             // 
             // ReportInput
             // 
@@ -484,6 +489,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ReportInput";
             this.Text = "Input";
+            this.Load += new System.EventHandler(this.ReportInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
