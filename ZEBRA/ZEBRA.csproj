@@ -59,6 +59,7 @@
       <DependentUpon>AdmitList.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonValidater.cs" />
+    <Compile Include="DbConnection.cs" />
     <Compile Include="ReportModify.cs">
       <SubType>Form</SubType>
     </Compile>
