@@ -60,6 +60,168 @@ namespace ZEBRA
             InitializeComponent();
         }
 
+        public int ReportId
+        {
+            get
+            {
+                return reportId;
+            }
+        }
+
+
+        public DateTime CreateDate
+        {
+            get
+            {
+                return createDate;
+            }
+            set
+            {
+                createDate = value;
+            }
+        }
+
+
+        public DateTime UpdateDate
+        {
+            get
+            {
+                return updateDate;
+            }
+            set
+            {
+                updateDate = value;
+            }
+        }
+
+        public DateTime VisitStratDate
+        {
+            get
+            {
+                return visitStratDate;
+            }
+            set
+            {
+                visitStratDate = value;
+            }
+        }
+
+        public DateTime VisitEndDate
+        {
+            get
+            {
+                return visitEndDate;
+            }
+            set
+            {
+                visitEndDate = value;
+            }
+        }
+
+
+        public string Detaile
+        {
+            get
+            {
+                return detaile;
+            }
+            set
+            {
+                detaile = value;
+            }
+        }
+
+
+        public string Visittype
+        {
+            get
+            {
+                return visittype;
+            }
+            set
+            {
+                visittype = value;
+            }
+        }
+
+        public string CusId
+        {
+            get
+            {
+                return cusId;
+            }
+        }
+
+
+        public int Approvalstatus
+        {
+            get
+            {
+                return approvalstatus;
+            }
+            set
+            {
+                approvalstatus = value;
+            }
+        }
+
+
+
+        public string AutherId
+        {
+            get
+            {
+                return autherId;
+            }
+        }
+
+        public string BossId
+        {
+            get
+            {
+                return bossId;
+            }
+        }
+
+        public string BossSei
+        {
+            get
+            {
+                return bossSei;
+            }
+            set
+            {
+                bossSei = value;
+            }
+        }
+
+        public string BossMei
+        {
+            get
+            {
+                return bossMei;
+            }
+            set
+            {
+                bossMei = value;
+            }
+        }
+
+        public string Bsscomment
+        {
+            get
+            {
+                return bosscomment;
+            }
+            set
+            {
+                bosscomment = value;
+            }
+        }
+
+
+
+
         private void NGList_Load(object sender, EventArgs e)
         {
             // 接続用のクラス
