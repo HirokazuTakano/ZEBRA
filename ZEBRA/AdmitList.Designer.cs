@@ -36,14 +36,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // admitList
+            // admitViewList
             // 
             this.admitViewList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.admitViewList.Location = new System.Drawing.Point(39, 128);
-            this.admitViewList.Name = "admitList";
+            this.admitViewList.Name = "admitViewList";
             this.admitViewList.RowTemplate.Height = 21;
-            this.admitViewList.Size = new System.Drawing.Size(494, 224);
+            this.admitViewList.Size = new System.Drawing.Size(653, 224);
             this.admitViewList.TabIndex = 0;
+            this.admitViewList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.admitViewList_CellContentClick);
             // 
             // topPageButton
             // 
@@ -76,18 +77,19 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "承認待ち";
             // 
-            // AdmitWait
+            // AdmitList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(564, 364);
+            this.ClientSize = new System.Drawing.Size(704, 364);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.admitViewList);
-            this.Name = "AdmitWait";
+            this.Name = "AdmitList";
             this.Text = "AdmitWait";
+            this.Load += new System.EventHandler(this.AdmitList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.admitViewList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
