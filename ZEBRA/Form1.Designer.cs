@@ -35,6 +35,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,12 +103,22 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "承認NG";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(267, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "ログアウト";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Ivory;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(363, 353);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
@@ -132,6 +143,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Button button2;
     }
 }
 
