@@ -63,6 +63,16 @@ namespace ZEBRA.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap zebra {
+            get {
+                object obj = ResourceManager.GetObject("zebra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap しまうま {
             get {
                 object obj = ResourceManager.GetObject("しまうま", resourceCulture);
