@@ -108,6 +108,9 @@
     <EmbeddedResource Include="Customer_search.resx">
       <DependentUpon>Customer_search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Datail.resx">
+      <DependentUpon>Datail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
