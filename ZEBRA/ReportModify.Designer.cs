@@ -95,6 +95,7 @@
             this.registButton.TabIndex = 29;
             this.registButton.Text = "修正";
             this.registButton.UseVisualStyleBackColor = false;
+            this.registButton.Click += new System.EventHandler(this.registButton_Click);
             // 
             // label15
             // 
