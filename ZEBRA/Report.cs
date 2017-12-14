@@ -8,5 +8,6 @@ namespace ZEBRA
 {
     public class Report
     {
+        
     }
 }
