@@ -31,7 +31,6 @@ namespace ZEBRA
                                    "password=p`ssw0rd;" +                 // パスワード
                                    "Connect Timeout=60;";
 
-            // ここ以降にSQLの処理を記述
             // 問い合わせのSQLを生成
             string sql =
                 "REPORT_ID, CREATE_DATE, UPDATE_DATE, VISIT_STRAT_DATE, VISIT_END_DATE, VISIT_TYPE " +
@@ -49,39 +48,36 @@ namespace ZEBRA
 
             List<string> reportlist = new List<string>();
 
-        
-                con.Open(); // DBに接続
 
-               
-
-                // DataGridViewが持つ、列の自動生成機能をオフ
-                list.AutoGenerateColumns = false;
-
-                // DataGridViewのデータをセット
-                list.DataSource = ds;
-                list.DataMember = "DS_REPORT";
-
-                // 表示列を追加
-                list.Columns.Add("vehicleId", "車両ID");
-                list.Columns["reportId"].DataPropertyName = "REPORT_ID";
-
-                list.Columns.Add("createdate", "車種名");
-                list.Columns["createdate"].DataPropertyName = "CREATE_DATE";
+            //con.Open(); // DBに接続
 
 
 
+            // DataGridViewが持つ、列の自動生成機能をオフ
+            list.AutoGenerateColumns = false;
 
+            // DataGridViewのデータをセット
+            list.DataSource = ds;
+            list.DataMember = "DS_REPORT";
 
+            // 表示列を追加
+            list.Columns.Add("vehicleId", "日付");
+            list.Columns["reportId"].DataPropertyName = "REPORT_ID";
 
+            list.Columns.Add("createdate", "作成者");
+            list.Columns["createdate"].DataPropertyName = "CREATE_DATE";
 
-                // ボタンを追加
-                DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-                button.Name = "editButton";
-                button.HeaderText = "操作";
-                button.UseColumnTextForButtonValue = true;  // Textプロパティ値をボタンに表示させる。
-                button.Text = "詳細画面へ";
-                list.Columns.Add(button);
-            }
+            //list.Columns.Add("createdate", "顧客名");
+            //list.Columns["createdate"].DataPropertyName = "CREATE_DATE";
+
+            // ボタンを追加
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            button.Name = "editButton";
+            button.HeaderText = "操作";
+            button.UseColumnTextForButtonValue = true;  // Textプロパティ値をボタンに表示させる。
+            button.Text = "詳細画面へ";
+            list.Columns.Add(button);
+        }
 
     }
 }
