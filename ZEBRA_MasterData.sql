@@ -109,3 +109,77 @@ CREATE TABLE dbo.TM_DAILY_REPORT(
  FOREIGN KEY (APPROVAL_STATUS) REFERENCES TS_STATUS (STATUS),
  ) ON [PRIMARY]
 ;
+
+
+-- 顧客データ
+INSERT INTO TM_CUSTOMER
+(CUS_ID, COMPANY_NAME, CUS_NAME, CUS_TEL)
+VALUES
+ ('c0001', 'リコージャパンジャパン', '犬山舞', '0369695454'),
+ ('c0002', 'リコー', '理工太郎', '0357893322'),
+ ('c0003', 'RITS', 'FucchiRachel', '0389895353'),
+ ('c0004', 'ジェーソン', '綾波玲', '0389895454'),
+ ('c0005', 'ヤオコー', '犬山舞', '0389895454'),
+ ('c0006', '伊藤園', '山本太郎', '0389895454'),
+ ('c0007', 'イオン', '島田浩一', '0389895454')
+ ;
+
+-- 部署データ
+INSERT INTO dbo.TM_SECTION
+(SECTION_ID, SECTION_NAME) 
+VALUES
+ ('S0001','営業部'), 
+ ('S0002','人事部'),
+ ('S0003','経理部'),
+ ('S0004','ICT事業部')
+ ;
+
+
+
+-- 従業員データ(上司に該当する従業員)
+INSERT  INTO dbo.TM_EMPLOYEE
+(EMP_ID,EMP_PASSWORD,NAME_SEI,NAME_MEI,BOSS_ID,EMP_SEC_ID,EMP_TEL)
+VALUES
+('E001','abcd','犬伏','萌々子',null,'S0001','08011112222'),
+('E002','abcd','高野','浩一',null,'S0002','08033334444'),
+('E003','abcd','藤本','麻菜',null,'S0003','08055556666'),
+('E004','abcd','石塚','玲',null,'S0004','08077778888')
+;
+
+-- 従業員データ(部下に該当する従業員)
+INSERT  INTO dbo.TM_EMPLOYEE
+(EMP_ID,EMP_PASSWORD,NAME_SEI,NAME_MEI,BOSS_ID,EMP_SEC_ID,EMP_TEL)
+VALUES
+('E005','password','山田','太郎','E001','S0001','09054546969'),
+('E006','password','沢谷','舞','E001','S0001','09056597845'),
+('E007','password','島袋','凌','E001','S0001','08065784201'),
+
+('E008','password','鈴木','四郎','E002','S0002','08065996301'),
+('E009','password','木下','花子','E002','S0002','07045632166'),
+('E010','password','佐藤','一郎','E002','S0002','09065485201'),
+
+('E011','password','田中','次郎','E003','S0003','07020002546'),
+('E012','password','安藤','三郎','E003','S0003','09065301456'),
+('E013','password','飯島','四郎','E003','S0003','08000215452'),
+
+('E014','password','上田','五郎','E004','S0004','09054521021'),
+('E015','password','新藤','六郎','E004','S0004','09067478235'),
+('E016','password','柴田','恭兵','E004','S0004','09063486480')
+;
+
+
+
+-- 日報データ
+INSERT INTO dbo.TM_DAILY_REPORT
+(VISIT_STRAT_DATE, VISIT_END_DATE, VISIT_TYPE, DETAILS, CUS_ID,
+ APPROVAL_STATUS, AUTHOR_ID, AUTHOR_BOSS_ID, BOSS_COMMENT) 
+VALUES 
+('2017-12-01 12:00:00','2017-12-01 14:00:00','相手宅','顧客に商品をご購入いただいた。',
+ 'c0001',3,'E002','E001','この調子で頑張れ！'),
+('2017-12-14 17:00:00','2017-12-14 17:15:00','電話','配送先の確認をしました',
+'c0005',1,'E003','E002',''),
+('2017-12-11 10:00:00','2017-12-12 10:00:00','メール','',
+'c0007',2,'E004','E003','内容を書いてください。')
+;
+
+
