@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.register = new System.Windows.Forms.Button();
+            this.topPageButton = new System.Windows.Forms.Button();
+            this.registButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.toMinute = new System.Windows.Forms.ComboBox();
+            this.toHour = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.fromMinute = new System.Windows.Forms.ComboBox();
+            this.fromHour = new System.Windows.Forms.ComboBox();
+            this.toDate = new System.Windows.Forms.DateTimePicker();
+            this.fromDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.another = new System.Windows.Forms.RadioButton();
             this.their = new System.Windows.Forms.RadioButton();
             this.opponentHouse = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
+            this.bossName = new System.Windows.Forms.Label();
             this.customer_search = new System.Windows.Forms.Button();
             this.customer = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.reportText = new System.Windows.Forms.TextBox();
+            this.createDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.mail = new System.Windows.Forms.RadioButton();
@@ -74,27 +74,27 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "日報修正";
             // 
-            // button1
+            // topPageButton
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(10, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "トップページ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
+            this.topPageButton.ForeColor = System.Drawing.Color.White;
+            this.topPageButton.Location = new System.Drawing.Point(10, 81);
+            this.topPageButton.Name = "topPageButton";
+            this.topPageButton.Size = new System.Drawing.Size(75, 23);
+            this.topPageButton.TabIndex = 30;
+            this.topPageButton.Text = "トップページ";
+            this.topPageButton.UseVisualStyleBackColor = false;
             // 
-            // register
+            // registButton
             // 
-            this.register.BackColor = System.Drawing.Color.DimGray;
-            this.register.ForeColor = System.Drawing.Color.White;
-            this.register.Location = new System.Drawing.Point(24, 506);
-            this.register.Name = "register";
-            this.register.Size = new System.Drawing.Size(75, 23);
-            this.register.TabIndex = 29;
-            this.register.Text = "修正";
-            this.register.UseVisualStyleBackColor = false;
+            this.registButton.BackColor = System.Drawing.Color.DimGray;
+            this.registButton.ForeColor = System.Drawing.Color.White;
+            this.registButton.Location = new System.Drawing.Point(24, 506);
+            this.registButton.Name = "registButton";
+            this.registButton.Size = new System.Drawing.Size(75, 23);
+            this.registButton.TabIndex = 29;
+            this.registButton.Text = "修正";
+            this.registButton.UseVisualStyleBackColor = false;
             // 
             // label15
             // 
@@ -141,25 +141,25 @@
             this.label11.TabIndex = 58;
             this.label11.Text = "時";
             // 
-            // comboBox4
+            // toMinute
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.toMinute.FormattingEnabled = true;
+            this.toMinute.Items.AddRange(new object[] {
             "0",
             "10",
             "20",
             "30",
             "40",
             "50"});
-            this.comboBox4.Location = new System.Drawing.Point(448, 219);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(44, 20);
-            this.comboBox4.TabIndex = 57;
+            this.toMinute.Location = new System.Drawing.Point(448, 219);
+            this.toMinute.Name = "toMinute";
+            this.toMinute.Size = new System.Drawing.Size(44, 20);
+            this.toMinute.TabIndex = 57;
             // 
-            // comboBox3
+            // toHour
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.toHour.FormattingEnabled = true;
+            this.toHour.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -184,10 +184,10 @@
             "21",
             "22",
             "23"});
-            this.comboBox3.Location = new System.Drawing.Point(371, 219);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(48, 20);
-            this.comboBox3.TabIndex = 56;
+            this.toHour.Location = new System.Drawing.Point(371, 219);
+            this.toHour.Name = "toHour";
+            this.toHour.Size = new System.Drawing.Size(48, 20);
+            this.toHour.TabIndex = 56;
             // 
             // label9
             // 
@@ -207,25 +207,25 @@
             this.label8.TabIndex = 54;
             this.label8.Text = "時";
             // 
-            // comboBox2
+            // fromMinute
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.fromMinute.FormattingEnabled = true;
+            this.fromMinute.Items.AddRange(new object[] {
             "0",
             "10",
             "20",
             "30",
             "40",
             "50"});
-            this.comboBox2.Location = new System.Drawing.Point(448, 163);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(44, 20);
-            this.comboBox2.TabIndex = 53;
+            this.fromMinute.Location = new System.Drawing.Point(448, 163);
+            this.fromMinute.Name = "fromMinute";
+            this.fromMinute.Size = new System.Drawing.Size(44, 20);
+            this.fromMinute.TabIndex = 53;
             // 
-            // comboBox1
+            // fromHour
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.fromHour.FormattingEnabled = true;
+            this.fromHour.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -250,24 +250,24 @@
             "21",
             "22",
             "23"});
-            this.comboBox1.Location = new System.Drawing.Point(371, 162);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(48, 20);
-            this.comboBox1.TabIndex = 52;
+            this.fromHour.Location = new System.Drawing.Point(371, 162);
+            this.fromHour.Name = "fromHour";
+            this.fromHour.Size = new System.Drawing.Size(48, 20);
+            this.fromHour.TabIndex = 52;
             // 
-            // dateTimePicker3
+            // toDate
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(229, 220);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(121, 19);
-            this.dateTimePicker3.TabIndex = 51;
+            this.toDate.Location = new System.Drawing.Point(229, 220);
+            this.toDate.Name = "toDate";
+            this.toDate.Size = new System.Drawing.Size(121, 19);
+            this.toDate.TabIndex = 51;
             // 
-            // dateTimePicker2
+            // fromDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(229, 163);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(121, 19);
-            this.dateTimePicker2.TabIndex = 50;
+            this.fromDate.Location = new System.Drawing.Point(229, 163);
+            this.fromDate.Name = "fromDate";
+            this.fromDate.Size = new System.Drawing.Size(121, 19);
+            this.fromDate.TabIndex = 50;
             // 
             // label7
             // 
@@ -311,14 +311,14 @@
             this.opponentHouse.Text = "相手宅";
             this.opponentHouse.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // bossName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(155, 474);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 12);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "高野　浩一";
+            this.bossName.AutoSize = true;
+            this.bossName.Location = new System.Drawing.Point(155, 474);
+            this.bossName.Name = "bossName";
+            this.bossName.Size = new System.Drawing.Size(61, 12);
+            this.bossName.TabIndex = 45;
+            this.bossName.Text = "高野　浩一";
             // 
             // customer_search
             // 
@@ -338,20 +338,20 @@
             this.customer.Size = new System.Drawing.Size(155, 19);
             this.customer.TabIndex = 43;
             // 
-            // textBox1
+            // reportText
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 362);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(368, 100);
-            this.textBox1.TabIndex = 42;
+            this.reportText.Location = new System.Drawing.Point(157, 362);
+            this.reportText.Multiline = true;
+            this.reportText.Name = "reportText";
+            this.reportText.Size = new System.Drawing.Size(368, 100);
+            this.reportText.TabIndex = 42;
             // 
-            // dateTimePicker1
+            // createDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(152, 133);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(198, 19);
-            this.dateTimePicker1.TabIndex = 41;
+            this.createDate.Location = new System.Drawing.Point(152, 133);
+            this.createDate.Name = "createDate";
+            this.createDate.Size = new System.Drawing.Size(198, 19);
+            this.createDate.TabIndex = 41;
             // 
             // label5
             // 
@@ -430,7 +430,7 @@
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
-            // ChangeDetail
+            // ReportModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -442,23 +442,23 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.toMinute);
+            this.Controls.Add(this.toHour);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.fromMinute);
+            this.Controls.Add(this.fromHour);
+            this.Controls.Add(this.toDate);
+            this.Controls.Add(this.fromDate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.another);
             this.Controls.Add(this.their);
             this.Controls.Add(this.opponentHouse);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.bossName);
             this.Controls.Add(this.customer_search);
             this.Controls.Add(this.customer);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.reportText);
+            this.Controls.Add(this.createDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.mail);
@@ -466,10 +466,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.register);
+            this.Controls.Add(this.topPageButton);
+            this.Controls.Add(this.registButton);
             this.Controls.Add(this.label1);
-            this.Name = "ChangeDetail";
+            this.Name = "ReportModify";
             this.Text = "ChangeDetail";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -480,30 +480,30 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button register;
+        private System.Windows.Forms.Button topPageButton;
+        private System.Windows.Forms.Button registButton;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox toMinute;
+        private System.Windows.Forms.ComboBox toHour;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox fromMinute;
+        private System.Windows.Forms.ComboBox fromHour;
+        private System.Windows.Forms.DateTimePicker toDate;
+        private System.Windows.Forms.DateTimePicker fromDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton another;
         private System.Windows.Forms.RadioButton their;
         private System.Windows.Forms.RadioButton opponentHouse;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label bossName;
         private System.Windows.Forms.Button customer_search;
         private System.Windows.Forms.TextBox customer;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox reportText;
+        private System.Windows.Forms.DateTimePicker createDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton mail;
