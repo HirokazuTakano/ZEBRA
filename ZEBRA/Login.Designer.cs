@@ -66,6 +66,7 @@
             // 
             this.password.Location = new System.Drawing.Point(143, 126);
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(100, 19);
             this.password.TabIndex = 3;
             // 
@@ -90,6 +91,7 @@
             this.loginButton.TabIndex = 37;
             this.loginButton.Text = "ログイン";
             this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // Login
             // 
@@ -105,6 +107,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
