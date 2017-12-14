@@ -16,6 +16,8 @@ namespace ZEBRA
 {
     public partial class MainMenu : Form
     {
+        public static Employee loginUser;
+
         public MainMenu()
         {
             InitializeComponent();
