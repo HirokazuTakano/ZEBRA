@@ -74,21 +74,25 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(12, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 30;
             this.button1.Text = "トップページ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // register
             // 
+            this.register.BackColor = System.Drawing.Color.Black;
+            this.register.ForeColor = System.Drawing.Color.White;
             this.register.Location = new System.Drawing.Point(25, 452);
             this.register.Name = "register";
             this.register.Size = new System.Drawing.Size(75, 23);
             this.register.TabIndex = 29;
             this.register.Text = "修正";
-            this.register.UseVisualStyleBackColor = true;
+            this.register.UseVisualStyleBackColor = false;
             // 
             // label15
             // 
@@ -316,12 +320,14 @@
             // 
             // customer_search
             // 
+            this.customer_search.BackColor = System.Drawing.Color.Black;
+            this.customer_search.ForeColor = System.Drawing.Color.White;
             this.customer_search.Location = new System.Drawing.Point(334, 223);
             this.customer_search.Name = "customer_search";
             this.customer_search.Size = new System.Drawing.Size(57, 23);
             this.customer_search.TabIndex = 44;
             this.customer_search.Text = "検索";
-            this.customer_search.UseVisualStyleBackColor = true;
+            this.customer_search.UseVisualStyleBackColor = false;
             // 
             // customer
             // 
