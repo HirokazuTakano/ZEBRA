@@ -82,6 +82,7 @@ namespace ZEBRA
             button.UseColumnTextForButtonValue = true;  // Textプロパティ値をボタンに表示させる。
             button.Text = "詳細画面へ";
             list.Columns.Add(button);
+
         }
         /// <summary>
         /// 承認待ちリスト画面に遷移
@@ -104,17 +105,41 @@ namespace ZEBRA
         private void NGLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
-            NGList admitList = new NGList();
-            admitList.Show(this);
+            NGList ngList = new NGList();
+            ngList.Show(this);
             Debug.WriteLine("NGリスト表示");
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
             Hide();
-            Login admitList = new Login();
-            admitList.Show(this);
+            Login logint = new Login();
+            logint.Show(this);
             Debug.WriteLine("ログアウトしました");
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            CustomerSearch customerSearch = new CustomerSearch();
+            customerSearch.Show(this);
+            Debug.WriteLine("顧客選択画面表示");
+        }
+
+        private void newReportButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            ReportInput customerSearch = new ReportInput();
+            customerSearch.Show(this);
+            Debug.WriteLine("新規作成画面表示");
+        }
+
+        private void list_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Hide();
+            ReportDatail reportDatail = new ReportDatail();
+            reportDatail.Show(this);
+            Debug.WriteLine("新規作成画面表示");
         }
     }
 }

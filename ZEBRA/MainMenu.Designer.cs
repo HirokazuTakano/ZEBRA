@@ -54,6 +54,7 @@
             this.newReportButton.TabIndex = 0;
             this.newReportButton.Text = "新規作成";
             this.newReportButton.UseVisualStyleBackColor = false;
+            this.newReportButton.Click += new System.EventHandler(this.newReportButton_Click);
             // 
             // searchWord
             // 
@@ -81,6 +82,7 @@
             this.list.RowTemplate.Height = 21;
             this.list.Size = new System.Drawing.Size(494, 266);
             this.list.TabIndex = 3;
+            this.list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_CellContentClick);
             // 
             // admitLinkLabel
             // 
@@ -160,6 +162,7 @@
             this.searchButton.TabIndex = 14;
             this.searchButton.Text = "検索";
             this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // MainMenu
             // 
