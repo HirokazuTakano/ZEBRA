@@ -17,6 +17,7 @@ namespace ZEBRA
 
         /// <summary>
         /// データベースに接続するクラスです（必ずクローズしてください！）.
+        /// SqlDataReader型でreturnします
         /// </summary>
         public SqlDataReader dbConnect(string sql)
         {

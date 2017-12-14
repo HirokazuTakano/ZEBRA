@@ -16,5 +16,22 @@ namespace ZEBRA
         {
             InitializeComponent();
         }
+
+        private void NGList_Load(object sender, EventArgs e)
+        {
+            ////データベース接続します.
+            //DbConnection db = new DbConnection();
+
+            //db.dbConnect();
+
+            //// 問い合わせのSQLを生成
+            //string sql =
+            //    "SELECT VEHICLE_ID, VEHICLE_NAME " +
+            //      "FROM dbo.TM_VEHICLE " +
+            //     "ORDER BY VEHICLE_ID ";
+
+            //// コネクションオブジェクトを使用して、SQLの発行準備
+            //SqlCommand command = new SqlCommand(sql, con);
+        }
     }
 }
