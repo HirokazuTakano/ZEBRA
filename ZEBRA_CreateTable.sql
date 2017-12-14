@@ -1,14 +1,14 @@
 USE zebradb;
 
--- システムテーブルがある場合削除する
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TS_STATUS') AND
-   OBJECTPROPERTY(id, N'IsUserTable') = 1)
-      DROP TABLE dbo.TS_STATUS
-
 -- 日報テーブルがある場合削除する
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TM_DAILY_REPORT') AND
    OBJECTPROPERTY(id, N'IsUserTable') = 1)
       DROP TABLE dbo.TM_DAILY_REPORT
+
+-- システムテーブルがある場合削除する
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TS_STATUS') AND
+   OBJECTPROPERTY(id, N'IsUserTable') = 1)
+      DROP TABLE dbo.TS_STATUS
 
 -- 顧客テーブルがある場合削除する
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TM_CUSTOMER') AND
@@ -40,12 +40,6 @@ CREATE TABLE dbo.TM_SECTION
  ) ON [PRIMARY]
 ;
 
-
-
--- 従業員テーブルがある場合削除する
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TM_EMPLOYEE') AND
-   OBJECTPROPERTY(id, N'IsUserTable') = 1)
-      DROP TABLE dbo.TM_EMPLOYEE
 
 
 -- 従業員テーブル作成
@@ -91,9 +85,6 @@ CREATE TABLE TS_STATUS
 ;
 INSERT INTO TS_STATUS
 VALUES(1, '認証待ち'),(2, '修正依頼'),(3, '認証済み');
-
-
-
 
 
 
