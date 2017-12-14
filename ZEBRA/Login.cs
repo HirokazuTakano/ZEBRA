@@ -66,6 +66,18 @@ namespace ZEBRA
                 if (reader.Read())
                     //ログイン
                 {
+                    Employee loginUser =
+                        new Employee(reader.GetString(0),
+                                     reader.GetString(1),
+                                     reader.GetString(2) + " " + reader.GetString(3),
+                                     reader.GetString(4),
+                                     null,
+                                     reader.GetString(5),
+                                     null,
+                                     reader.GetString(6)
+                                     );
+                    MainMenu.loginUser = loginUser;
+
                     Hide();
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show(this);
