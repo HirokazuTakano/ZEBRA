@@ -1,6 +1,6 @@
 ﻿namespace ZEBRA
 {
-    partial class Customer_search
+    partial class CustomerSearch
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.customerList = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.topPageButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.customerList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // customerList
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightYellow;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 132);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(290, 181);
-            this.dataGridView1.TabIndex = 0;
+            this.customerList.BackgroundColor = System.Drawing.Color.LightYellow;
+            this.customerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerList.Location = new System.Drawing.Point(36, 132);
+            this.customerList.Name = "customerList";
+            this.customerList.RowTemplate.Height = 21;
+            this.customerList.Size = new System.Drawing.Size(290, 181);
+            this.customerList.TabIndex = 0;
             // 
             // label1
             // 
@@ -66,31 +66,31 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // topPageButton
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(14, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "トップページ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
+            this.topPageButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.topPageButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.topPageButton.Location = new System.Drawing.Point(14, 83);
+            this.topPageButton.Name = "topPageButton";
+            this.topPageButton.Size = new System.Drawing.Size(75, 23);
+            this.topPageButton.TabIndex = 37;
+            this.topPageButton.Text = "トップページ";
+            this.topPageButton.UseVisualStyleBackColor = false;
             // 
-            // Customer_search
+            // CustomerSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(369, 325);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Customer_search";
+            this.Controls.Add(this.customerList);
+            this.Name = "CustomerSearch";
             this.Text = "Customer_search";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -99,9 +99,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView customerList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button topPageButton;
     }
 }

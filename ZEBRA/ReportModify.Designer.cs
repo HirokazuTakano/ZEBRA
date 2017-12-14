@@ -1,6 +1,6 @@
 ﻿namespace ZEBRA
 {
-    partial class ChangeDetail
+    partial class ReportModify
     {
         /// <summary>
         /// Required designer variable.

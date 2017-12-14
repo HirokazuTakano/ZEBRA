@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace ZEBRA
 {
-    public partial class Form1 : Form
+    public partial class AdmitReportDetail : Form
     {
-        public Form1()
+        public AdmitReportDetail()
         {
             InitializeComponent();
         }
-
-       
     }
 }

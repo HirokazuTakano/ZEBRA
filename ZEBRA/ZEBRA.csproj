@@ -46,49 +46,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdmitDetail.cs">
+    <Compile Include="AdmitReportDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdmitDetail.Designer.cs">
-      <DependentUpon>AdmitDetail.cs</DependentUpon>
+    <Compile Include="AdmitReportDetail.Designer.cs">
+      <DependentUpon>AdmitReportDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admit_List.cs">
+    <Compile Include="AdmitList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admit_List.Designer.cs">
-      <DependentUpon>Admit_List.cs</DependentUpon>
+    <Compile Include="AdmitList.Designer.cs">
+      <DependentUpon>AdmitList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChangeDetail.cs">
+    <Compile Include="CommonValidater.cs" />
+    <Compile Include="ReportModify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeDetail.Designer.cs">
-      <DependentUpon>ChangeDetail.cs</DependentUpon>
+    <Compile Include="ReportModify.Designer.cs">
+      <DependentUpon>ReportModify.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs" />
-    <Compile Include="Customer_search.cs">
+    <Compile Include="CustomerSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer_search.Designer.cs">
-      <DependentUpon>Customer_search.cs</DependentUpon>
+    <Compile Include="CustomerSearch.Designer.cs">
+      <DependentUpon>CustomerSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Datail.cs">
+    <Compile Include="ReportDatail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Datail.Designer.cs">
-      <DependentUpon>Datail.cs</DependentUpon>
+    <Compile Include="ReportDatail.Designer.cs">
+      <DependentUpon>ReportDatail.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Input.cs">
+    <Compile Include="ReportInput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Input.Designer.cs">
-      <DependentUpon>Input.cs</DependentUpon>
+    <Compile Include="ReportInput.Designer.cs">
+      <DependentUpon>ReportInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -96,43 +97,43 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="NG_List.cs">
+    <Compile Include="NGList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NG_List.Designer.cs">
-      <DependentUpon>NG_List.cs</DependentUpon>
+    <Compile Include="NGList.Designer.cs">
+      <DependentUpon>NGList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report.cs" />
     <Compile Include="Section.cs" />
     <Compile Include="Test.cs" />
-    <EmbeddedResource Include="AdmitDetail.resx">
-      <DependentUpon>AdmitDetail.cs</DependentUpon>
+    <EmbeddedResource Include="AdmitReportDetail.resx">
+      <DependentUpon>AdmitReportDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admit_List.resx">
-      <DependentUpon>Admit_List.cs</DependentUpon>
+    <EmbeddedResource Include="AdmitList.resx">
+      <DependentUpon>AdmitList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangeDetail.resx">
-      <DependentUpon>ChangeDetail.cs</DependentUpon>
+    <EmbeddedResource Include="ReportModify.resx">
+      <DependentUpon>ReportModify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer_search.resx">
-      <DependentUpon>Customer_search.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerSearch.resx">
+      <DependentUpon>CustomerSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Datail.resx">
-      <DependentUpon>Datail.cs</DependentUpon>
+    <EmbeddedResource Include="ReportDatail.resx">
+      <DependentUpon>ReportDatail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Input.resx">
-      <DependentUpon>Input.cs</DependentUpon>
+    <EmbeddedResource Include="ReportInput.resx">
+      <DependentUpon>ReportInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NG_List.resx">
-      <DependentUpon>NG_List.cs</DependentUpon>
+    <EmbeddedResource Include="NGList.resx">
+      <DependentUpon>NGList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,6 +1,6 @@
 ﻿namespace ZEBRA
 {
-    partial class Input
+    partial class ReportInput
     {
         /// <summary>
         /// Required designer variable.
@@ -59,8 +59,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.topPageButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -406,29 +406,29 @@
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // topPageButton
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(22, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "トップページ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
+            this.topPageButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.topPageButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.topPageButton.Location = new System.Drawing.Point(22, 95);
+            this.topPageButton.Name = "topPageButton";
+            this.topPageButton.Size = new System.Drawing.Size(75, 23);
+            this.topPageButton.TabIndex = 36;
+            this.topPageButton.Text = "トップページ";
+            this.topPageButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // searchButton
             // 
-            this.button2.BackColor = System.Drawing.Color.DimGray;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(349, 295);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "検索";
-            this.button2.UseVisualStyleBackColor = false;
+            this.searchButton.BackColor = System.Drawing.Color.DimGray;
+            this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchButton.Location = new System.Drawing.Point(349, 295);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 37;
+            this.searchButton.Text = "検索";
+            this.searchButton.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -442,15 +442,15 @@
             this.button3.Text = "登録";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // Input
+            // ReportInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(586, 595);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -482,7 +482,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Input";
+            this.Name = "ReportInput";
             this.Text = "Input";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -523,8 +523,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button topPageButton;
+        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button button3;
     }
 }

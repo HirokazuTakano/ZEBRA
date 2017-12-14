@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace ZEBRA
 {
-    public partial class Datail : Form
+    public partial class MainMenu : Form
     {
-        public Datail()
+        public MainMenu()
         {
             InitializeComponent();
         }
+
+       
     }
 }

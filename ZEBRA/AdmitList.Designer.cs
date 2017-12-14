@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.admitList = new System.Windows.Forms.DataGridView();
+            this.topPageButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admitList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // admitList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 128);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(494, 224);
-            this.dataGridView1.TabIndex = 0;
+            this.admitList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.admitList.Location = new System.Drawing.Point(39, 128);
+            this.admitList.Name = "admitList";
+            this.admitList.RowTemplate.Height = 21;
+            this.admitList.Size = new System.Drawing.Size(494, 224);
+            this.admitList.TabIndex = 0;
             // 
-            // button1
+            // topPageButton
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 25);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "トップページ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
+            this.topPageButton.ForeColor = System.Drawing.Color.White;
+            this.topPageButton.Location = new System.Drawing.Point(12, 86);
+            this.topPageButton.Name = "topPageButton";
+            this.topPageButton.Size = new System.Drawing.Size(79, 25);
+            this.topPageButton.TabIndex = 31;
+            this.topPageButton.Text = "トップページ";
+            this.topPageButton.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -84,11 +84,11 @@
             this.ClientSize = new System.Drawing.Size(564, 364);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.topPageButton);
+            this.Controls.Add(this.admitList);
             this.Name = "AdmitWait";
             this.Text = "AdmitWait";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admitList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,8 +97,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView admitList;
+        private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
     }

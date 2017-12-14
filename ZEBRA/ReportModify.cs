@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ZEBRA
 {
-    public partial class NG_List : Form
+    public partial class ReportModify : Form
     {
-        public NG_List()
+        public ReportModify()
         {
             InitializeComponent();
         }

@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace ZEBRA
 {
-    public partial class Customer_search : Form
+    public partial class ReportInput : Form
     {
-        public Customer_search()
+        public ReportInput()
         {
             InitializeComponent();
         }
+
+      
     }
 }

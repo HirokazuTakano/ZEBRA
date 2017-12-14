@@ -1,6 +1,6 @@
 ﻿namespace ZEBRA
 {
-    partial class Datail
+    partial class ReportDatail
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.topPageButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -154,17 +154,17 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "詳細";
             // 
-            // button1
+            // topPageButton
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "トップページ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
+            this.topPageButton.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.topPageButton.ForeColor = System.Drawing.Color.White;
+            this.topPageButton.Location = new System.Drawing.Point(12, 86);
+            this.topPageButton.Name = "topPageButton";
+            this.topPageButton.Size = new System.Drawing.Size(75, 23);
+            this.topPageButton.TabIndex = 31;
+            this.topPageButton.Text = "トップページ";
+            this.topPageButton.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -176,14 +176,14 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
-            // Datail
+            // ReportDatail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(481, 387);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.content);
             this.Controls.Add(this.visitType);
             this.Controls.Add(this.visitTo);
@@ -195,7 +195,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Datail";
+            this.Name = "ReportDatail";
             this.Text = "Datail";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -216,7 +216,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

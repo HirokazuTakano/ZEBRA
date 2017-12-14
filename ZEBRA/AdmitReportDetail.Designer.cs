@@ -1,6 +1,6 @@
 ﻿namespace ZEBRA
 {
-    partial class AdmitDetail
+    partial class AdmitReportDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.status = new System.Windows.Forms.ComboBox();
             this.bossComments = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.fillDate = new System.Windows.Forms.Label();
@@ -42,9 +42,9 @@
             this.visitTo = new System.Windows.Forms.Label();
             this.visitType = new System.Windows.Forms.Label();
             this.content = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.admitButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.topPageButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,16 +108,16 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "内容";
             // 
-            // comboBox1
+            // status
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.status.FormattingEnabled = true;
+            this.status.Items.AddRange(new object[] {
             "承認",
             "承認不可"});
-            this.comboBox1.Location = new System.Drawing.Point(45, 347);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(93, 20);
-            this.comboBox1.TabIndex = 6;
+            this.status.Location = new System.Drawing.Point(45, 347);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(93, 20);
+            this.status.TabIndex = 6;
             // 
             // bossComments
             // 
@@ -187,17 +187,17 @@
             this.content.TabIndex = 13;
             this.content.Text = "label12";
             // 
-            // button1
+            // admitButton
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(45, 398);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 27);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "確定";
-            this.button1.UseVisualStyleBackColor = false;
+            this.admitButton.BackColor = System.Drawing.Color.DimGray;
+            this.admitButton.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.admitButton.ForeColor = System.Drawing.Color.White;
+            this.admitButton.Location = new System.Drawing.Point(45, 398);
+            this.admitButton.Name = "admitButton";
+            this.admitButton.Size = new System.Drawing.Size(93, 27);
+            this.admitButton.TabIndex = 14;
+            this.admitButton.Text = "確定";
+            this.admitButton.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -209,26 +209,26 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // button2
+            // topPageButton
             // 
-            this.button2.BackColor = System.Drawing.Color.DimGray;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(12, 78);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 25);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "トップページ";
-            this.button2.UseVisualStyleBackColor = false;
+            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
+            this.topPageButton.ForeColor = System.Drawing.Color.White;
+            this.topPageButton.Location = new System.Drawing.Point(12, 78);
+            this.topPageButton.Name = "topPageButton";
+            this.topPageButton.Size = new System.Drawing.Size(79, 25);
+            this.topPageButton.TabIndex = 32;
+            this.topPageButton.Text = "トップページ";
+            this.topPageButton.UseVisualStyleBackColor = false;
             // 
-            // AdmitDetail
+            // AdmitReportDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(481, 440);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.admitButton);
             this.Controls.Add(this.content);
             this.Controls.Add(this.visitType);
             this.Controls.Add(this.visitTo);
@@ -236,14 +236,14 @@
             this.Controls.Add(this.fillDate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.bossComments);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.status);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AdmitDetail";
+            this.Name = "AdmitReportDetail";
             this.Text = "AdmitDetail";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -259,7 +259,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox status;
         private System.Windows.Forms.TextBox bossComments;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label fillDate;
@@ -267,8 +267,8 @@
         private System.Windows.Forms.Label visitTo;
         private System.Windows.Forms.Label visitType;
         private System.Windows.Forms.Label content;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button admitButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button topPageButton;
     }
 }
