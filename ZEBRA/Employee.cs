@@ -19,5 +19,6 @@ namespace ZEBRA
         private string empSecId; // 部署ID
         private string empSecName; // 部署名
         private string empTel; // 従業員電話番号
+
     }
 }
