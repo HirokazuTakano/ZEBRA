@@ -1,9 +1,33 @@
 USE zebradb;
 
+-- システムテーブルがある場合削除する
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TS_STATUS') AND
+   OBJECTPROPERTY(id, N'IsUserTable') = 1)
+      DROP TABLE dbo.TS_STATUS
+
+-- 日報テーブルがある場合削除する
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TM_DAILY_REPORT') AND
+   OBJECTPROPERTY(id, N'IsUserTable') = 1)
+      DROP TABLE dbo.TM_DAILY_REPORT
+
+-- 顧客テーブルがある場合削除する
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TM_CUSTOMER') AND
+   OBJECTPROPERTY(id, N'IsUserTable') = 1)
+      DROP TABLE dbo.TM_CUSTOMER
+
+-- 従業員テーブルがある場合削除する
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TM_EMPLOYEE') AND
+   OBJECTPROPERTY(id, N'IsUserTable') = 1)
+      DROP TABLE dbo.TM_EMPLOYEE
+
 --部署テーブルがある場合削除する
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TM_SECTION') AND
    OBJECTPROPERTY(id, N'IsUserTable') = 1)
       DROP TABLE dbo.TM_SECTION
+
+	  
+
+
 
 
 
@@ -31,7 +55,7 @@ CREATE TABLE dbo.TM_EMPLOYEE
 	EMP_PASSWORD varchar(8) NOT NULL,
 	NAME_SEI varchar(100) NOT NULL,
 	NAME_MEI varchar(100) NOT NULL,
-	BOSS_ID varchar(8) NOT NULL,
+	BOSS_ID varchar(8),
 	EMP_SEC_ID varchar(6) NOT NULL,
 	EMP_TEL varchar(15) NOT NULL,
  CONSTRAINT PK_TM_EMPLOYEE PRIMARY KEY CLUSTERED (EMP_ID),
@@ -41,10 +65,7 @@ CREATE TABLE dbo.TM_EMPLOYEE
 ;
 
 
--- 顧客テーブルがある場合削除する
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TM_CUSTOMER') AND
-   OBJECTPROPERTY(id, N'IsUserTable') = 1)
-      DROP TABLE dbo.TM_CUSTOMER
+
 
 -- 顧客テーブル作成
 CREATE TABLE dbo.TM_CUSTOMER
@@ -59,16 +80,13 @@ CREATE TABLE dbo.TM_CUSTOMER
 
 
 
--- システムテーブルがある場合削除する
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TS_STATUS') AND
-   OBJECTPROPERTY(id, N'IsUserTable') = 1)
-      DROP TABLE dbo.TS_GENDER
+
 -- システムテーブル作成(認証待ちのステータス)
 CREATE TABLE TS_STATUS
 (
   STATUS INT,
-  STATUS_NAME NVARCHAR(4),
-  CONSTRAINT PK_TS_GENDER PRIMARY KEY CLUSTERED (STATUS)
+  STATUS_NAME NVARCHAR(4) NOT NULL,
+  CONSTRAINT PM_TS_STATUS PRIMARY KEY CLUSTERED (STATUS)
  ) ON [PRIMARY]
 ;
 INSERT INTO TS_STATUS
@@ -76,10 +94,7 @@ VALUES(1, '認証待ち'),(2, '修正依頼'),(3, '認証済み');
 
 
 
--- 日報テーブルがある場合削除する
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'dbo.TM_DAILY_REPORT') AND
-   OBJECTPROPERTY(id, N'IsUserTable') = 1)
-      DROP TABLE dbo.TM_DAILY_REPORT
+
 
 
 -- 日報テーブル作成
