@@ -18,7 +18,7 @@ namespace ZEBRA
         /// <summary>
         /// データベースに接続するクラスです（必ずクローズしてください！）.
         /// </summary>
-        public void dbConnect()
+        public SqlDataReader dbConnect(string sql)
         {
             
             // DBへの接続文字列。
@@ -31,9 +31,22 @@ namespace ZEBRA
             {
                 con.Open();
 
-            } catch(SqlException ex)
+                // コネクションオブジェクトを使用して、SQLの発行準備
+                SqlCommand command = new SqlCommand(sql, con);
+
+                // SQL文を実行。
+                SqlDataReader reader = command.ExecuteReader();
+
+                return reader;
+            }
+            catch (SqlException ex)
             {
+                //thorowのほうがいいかも
+                SqlDataReader notRead = null;
                 Debug.WriteLine(ex.Message);
+
+
+                return notRead;
             }
         }
 

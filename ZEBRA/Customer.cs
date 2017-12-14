@@ -15,5 +15,15 @@ namespace ZEBRA
         private string companyName; // 会社名
         private string cusName; // 担当者名
         private string cusTel; // 顧客電話番号 
+
+       
+       public Customer(string cusId, string companyName, string cusName, string cusTel)
+        {
+            this.cusId = cusId;
+            this.companyName = companyName;
+            this.cusName = cusName;
+            this.cusTel = cusTel;
+        }
+
     }
 }
