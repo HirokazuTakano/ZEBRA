@@ -25,13 +25,18 @@ namespace ZEBRA
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ReportDatail_Load(object sender, EventArgs e, string fill, string visitDate, string visitTo, string visitType, string content)
+        public void SetData(string fill, string visitDate, string visitTo, string visitType, string content)
         {
             this.fillDate.Text = fill;
             this.visitDate.Text = visitDate;
             this.visitTo.Text = visitTo;
             this.visitType.Text = visitType;
             this.content.Text = content;
+        }
+
+        private void ReportDatail_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
