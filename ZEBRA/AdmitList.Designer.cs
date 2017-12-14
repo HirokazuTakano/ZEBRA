@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.admitList = new System.Windows.Forms.DataGridView();
+            this.admitViewList = new System.Windows.Forms.DataGridView();
             this.topPageButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.admitList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admitViewList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // admitList
             // 
-            this.admitList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.admitList.Location = new System.Drawing.Point(39, 128);
-            this.admitList.Name = "admitList";
-            this.admitList.RowTemplate.Height = 21;
-            this.admitList.Size = new System.Drawing.Size(494, 224);
-            this.admitList.TabIndex = 0;
+            this.admitViewList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.admitViewList.Location = new System.Drawing.Point(39, 128);
+            this.admitViewList.Name = "admitList";
+            this.admitViewList.RowTemplate.Height = 21;
+            this.admitViewList.Size = new System.Drawing.Size(494, 224);
+            this.admitViewList.TabIndex = 0;
             // 
             // topPageButton
             // 
@@ -85,10 +85,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.topPageButton);
-            this.Controls.Add(this.admitList);
+            this.Controls.Add(this.admitViewList);
             this.Name = "AdmitWait";
             this.Text = "AdmitWait";
-            ((System.ComponentModel.ISupportInitialize)(this.admitList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admitViewList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,7 +97,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView admitList;
+        private System.Windows.Forms.DataGridView admitViewList;
         private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
