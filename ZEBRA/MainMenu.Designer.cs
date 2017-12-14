@@ -79,7 +79,7 @@
             this.list.Location = new System.Drawing.Point(99, 261);
             this.list.Name = "list";
             this.list.RowTemplate.Height = 21;
-            this.list.Size = new System.Drawing.Size(229, 92);
+            this.list.Size = new System.Drawing.Size(494, 266);
             this.list.TabIndex = 3;
             // 
             // admitLinkLabel
@@ -114,6 +114,7 @@
             this.NGLinkLabel.TabIndex = 7;
             this.NGLinkLabel.TabStop = true;
             this.NGLinkLabel.Text = "承認NG";
+            this.NGLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.NGLinkLabel_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -136,6 +137,7 @@
             this.logoutButton.TabIndex = 11;
             this.logoutButton.Text = "ログアウト";
             this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // label3
             // 
@@ -164,7 +166,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(425, 370);
+            this.ClientSize = new System.Drawing.Size(665, 556);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.logoutButton);
