@@ -28,7 +28,7 @@ namespace ZEBRA
         int _toHour;
         int _toMinute;
         // 顧客
-        string _cusName;
+        string _cus;
         // 訪問種別
         string visitType = "";
         // 内容
@@ -82,7 +82,7 @@ namespace ZEBRA
             DateTime visitEnd = DateTime.Parse(_toDate + " " + _toHour + ":" + _toMinute);
 
             //顧客を取得
-            _cusName = customer.Text;
+            //_cus = customer.Text;
 
             //訪問種別を取得
             if(tell.Checked == true)
@@ -128,7 +128,7 @@ namespace ZEBRA
 
                 // 問い合わせのSQLを生成
                 string sql =
-                    "INSERT INTO dbo.TM_DAILY_REPORT"+
+                    "INSERT INTO TM_DAILY_REPORT"+
                     "(VISIT_STRAT_DATE, VISIT_END_DATE, CUS_ID, VISIT_TYPE, DETAILS, AUTHOR_ID, AUTHOR_BOSS_ID)"+
                     "VALUES"+
                     "(@VISIT_STRAT_DATE, @VISIT_END_DATE, @CUS_ID, @VISIT_TYPE, @DETAILS, @AUTHOR_ID, @AUTHOR_BOSS_ID); ";
@@ -182,75 +182,73 @@ namespace ZEBRA
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// 
-        private void ReportInput_Load(object sender, EventArgs e)
-        {
+        //private void ReportInput_Load(object sender, EventArgs e)
+        //{
 
-            SqlConnection con = new SqlConnection();
-
-
-            // DBへの接続文字列。
-            con.ConnectionString = "data source=localhost\\SQLEXPRESS;" + // 接続先のDBサーバーを指定
-                                   "initial catalog=zebradb;" +            // 接続先のDBを指定
-                                   "user id=sa;" +                        // ユーザー
-                                   "password=p@ssw0rd;" +                 // パスワード
-                                   "Connect Timeout=60;";
-            try
-            {
-                //SQL文を生成
-                string sql =
-                    "SELECT * FROM dbo.TM_CUSTOMR ORDER BY CUS_ID; ";
-
-                //コネクションをオブジェクトとして、SQL発行準備
-                SqlCommand command = new SqlCommand(sql, con);
-
-                //アダプター生成
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-                //データセットを作成
-                DataSet ds = new DataSet();
-
-                //CUSTOMER_TABLEという名前のテーブルクラスに結果をセットし、保持させる
-                adapter.Fill(ds, "CUSTOMER_TABLE");
+        //    SqlConnection con = new SqlConnection();
 
 
-                // データテーブルを生成
-                DataTable customerDt = ds.Tables["CUSTOMER_TABLE"];
+        //    // DBへの接続文字列。
+        //    con.ConnectionString = "data source=localhost\\SQLEXPRESS;" + // 接続先のDBサーバーを指定
+        //                           "initial catalog=zebradb;" +            // 接続先のDBを指定
+        //                           "user id=sa;" +                        // ユーザー
+        //                           "password=p@ssw0rd;" +                 // パスワード
+        //                           "Connect Timeout=60;";
+        //    try
+        //    {
+        //        //SQL文を生成
+        //        string sql =
+        //            "SELECT * FROM dbo.TM_CUSTOMR ORDER BY CUS_ID; ";
 
-                //データを一行ずつ読みこんで、リストに追加する
-                foreach (DataRow dr in customerDt.Rows)
-                {
-                    string cusId = dr["CUS_ID"].ToString();
-                    string companyName = dr["COMPANY_NAME"].ToString();
-                    string cusName = dr["CUS_NAME"].ToString();
-                    string cusTel = dr["CUS_TEL"].ToString();
+        //        //コネクションをオブジェクトとして、SQL発行準備
+        //        SqlCommand command = new SqlCommand(sql, con);
 
-                    Customer customer = new Customer(cusId,companyName,cusName,cusTel);
-                    customerList.Add(customer);      
+        //        //アダプター生成
+        //        SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+        //        //データセットを作成
+        //        DataSet ds = new DataSet();
+
+        //        //CUSTOMER_TABLEという名前のテーブルクラスに結果をセットし、保持させる
+        //        adapter.Fill(ds, "CUSTOMER_TABLE");
+
+
+        //        // データテーブルを生成
+        //        DataTable customerDt = ds.Tables["CUSTOMER_TABLE"];
+
+        //        //データを一行ずつ読みこんで、リストに追加する
+        //        foreach (DataRow dr in customerDt.Rows)
+        //        {
+        //            string cusId = dr["CUS_ID"].ToString();
+        //            string companyName = dr["COMPANY_NAME"].ToString();
+        //            string cusName = dr["CUS_NAME"].ToString();
+        //            string cusTel = dr["CUS_TEL"].ToString();
+
+        //            Customer customer = new Customer(cusId,companyName,cusName,cusTel);
+        //            customerList.Add(customer);      
             
-                }
+        //        }
 
-            }
-            catch (SqlException ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        Debug.WriteLine(ex.Message);
+        //    }
 
-        }
-
+        //}
 
         /// <summary>
-        /// 顧客の「検索」ボタンを押下されたら、顧客検索フォームに値を渡す
+        /// 顧客の「検索」ボタンが押下されたら、顧客検索フォームへ遷移する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private string searchButton_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
-            string customerId = null;
+            //会社名or顧客名を取得
+            _cus = customer.Text;
 
-
-
-
-            return customerId;
+            CustomerSearch search = new CustomerSearch(_cus);
+            search.ShowDialog(this);  // ここで処理が止まる。
 
         }
     }

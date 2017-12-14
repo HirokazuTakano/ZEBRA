@@ -432,7 +432,7 @@
             this.searchButton.TabIndex = 37;
             this.searchButton.Text = "検索";
             this.searchButton.UseVisualStyleBackColor = false;
-
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // registButton
             // 
@@ -489,7 +489,6 @@
             this.Controls.Add(this.label1);
             this.Name = "ReportInput";
             this.Text = "Input";
-            this.Load += new System.EventHandler(this.ReportInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -45,6 +45,7 @@
             this.customerList.RowTemplate.Height = 21;
             this.customerList.Size = new System.Drawing.Size(290, 181);
             this.customerList.TabIndex = 0;
+
             // 
             // label1
             // 
@@ -77,6 +78,7 @@
             this.topPageButton.TabIndex = 37;
             this.topPageButton.Text = "トップページ";
             this.topPageButton.UseVisualStyleBackColor = false;
+            this.topPageButton.Click += new System.EventHandler(this.topPageButton_Click);
             // 
             // CustomerSearch
             // 
@@ -90,6 +92,7 @@
             this.Controls.Add(this.customerList);
             this.Name = "CustomerSearch";
             this.Text = "Customer_search";
+            this.Load += new System.EventHandler(this.CustomerSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
