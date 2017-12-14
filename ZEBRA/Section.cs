@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ZEBRA
 {
-    class Section
+    /// <summary>
+    /// 部署クラス　高野
+    /// </summary>
+    public class Section
     {
+        private string sectionId; // 部署ID
+        private string sectionName; // 部署名
     }
 }

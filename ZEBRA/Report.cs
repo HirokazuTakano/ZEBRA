@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace ZEBRA
 {
-    class Report
+    /// <summary>
+    /// 日報クラス　高野
+    /// </summary>
+    public class Report
     {
+        private readonly int reportId; // 日報ID
+        private DateTime createDate; // 作成日時
+        private DateTime updsteDate; // 更新日時
+        private DateTime visitStratDate; // 訪問開始日時
+        private DateTime
     }
 }
