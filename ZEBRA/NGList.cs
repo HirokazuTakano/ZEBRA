@@ -62,7 +62,7 @@ namespace ZEBRA
                 "SELECT * " +
                  "FROM dbo.TM_DAILY_REPORT R INNER JOIN dbo.TM_CUSTOMER C " +
                  "ON R.CUS_ID = C.CUS_ID " +
-                 "WHERE AUTHOR_ID = @userId " +
+                 "WHERE (AUTHOR_ID = @userId) AND (APPROVAL_STATUS = 2 ) " +
                  "ORDER BY REPORT_ID ;";
 
             // コネクションオブジェクトを使用して、SQLの発行準備
@@ -114,7 +114,7 @@ namespace ZEBRA
 
                 reportList.Add(repo);
 
-                customerList.Add(int.Parse(dr["REPORT_ID"].ToString()), (dr["REPORT_ID"].ToString() + dr["REPORT_ID"].ToString()));
+                customerList.Add(int.Parse(dr["REPORT_ID"].ToString()), (dr["COMPANY_NAME"].ToString() + dr["CUS_NAME"].ToString()));
             }
 
 
