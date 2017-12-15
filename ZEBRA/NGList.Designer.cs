@@ -45,6 +45,7 @@
             this.NGViewList.RowTemplate.Height = 21;
             this.NGViewList.Size = new System.Drawing.Size(652, 209);
             this.NGViewList.TabIndex = 0;
+            this.NGViewList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.NGViewList_CellContentClick);
             // 
             // topPageButton
             // 

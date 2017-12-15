@@ -12,47 +12,49 @@ using System.Windows.Forms;
 
 namespace ZEBRA
 {
+
+    
     /// <summary>
     /// NG一覧クラス　沢谷
     /// 
     /// </summary>
     public partial class NGList : Form
     {
-
-        private readonly int reportId; // 日報ID
-        private DateTime createDate; // 作成日時
-        private DateTime updateDate; // 更新日時
-        private DateTime visitStratDate; // 訪問開始日時
-        private DateTime visitEndDate;　　// 訪問終了日時
-        private string visittype;　　　　// 訪問種別
-        private string detaile;         //本文
-        private readonly string cusId;          //顧客ID 
-        private int approvalstatus;    // 承認フラグ
-        private readonly string autherId;       // 作成者ID
-        private readonly string bossId;         // 上司ID
-        private string bossSei;        // 上司姓
-        private string bossMei;        //　上司名
-        private string bosscomment;    //　上司コメント
+        private List<Report> reportList;
 
 
-        public NGList(int reportId, DateTime createDate, DateTime updateDate, DateTime visitStratDate, DateTime visitEndDate
-                     , string visittype, string detaile, string cusId, int approvalstatus, string autherId, string bossId
-                     , string bossSei, string bossMei, string bosscomment)
-        {
-            this.reportId = reportId;
-            this.createDate = createDate;
-            this.updateDate = updateDate;
-            this.visitStratDate = visitStratDate;
-            this.visitEndDate = visitEndDate;
-            this.visittype = visittype;
-            this.detaile = detaile;
-            this.cusId = cusId;
-            this.autherId = autherId;
-            this.bossId = bossId;
-            this.bossSei = bossSei;
-            this.bossMei = bossMei;
-            this.bosscomment = bosscomment;
-        }
+        //private readonly int reportId; // 日報ID
+        //private DateTime createDate; // 作成日時
+        //private DateTime updateDate; // 更新日時
+        //private DateTime visitStratDate; // 訪問開始日時
+        //private DateTime visitEndDate;　　// 訪問終了日時
+        //private string visittype;　　　　// 訪問種別
+        //private string detaile;         //本文
+        //private readonly string cusId;          //顧客ID 
+        //private int approvalstatus;    // 承認フラグ
+        //private readonly string autherId;       // 作成者ID
+        //private readonly string bossId;         // 上司ID
+        //private string bossSei;        // 上司姓
+        //private string bossMei;        //　上司名
+        //private string bosscomment;    //　上司コメント
+        //public NGList(int reportId, DateTime createDate, DateTime updateDate, DateTime visitStratDate, DateTime visitEndDate
+        //             , string visittype, string detaile, string cusId, int approvalstatus, string autherId, string bossId
+        //             , string bossSei, string bossMei, string bosscomment)
+        //{
+        //    this.reportId = reportId;
+        //    this.createDate = createDate;
+        //    this.updateDate = updateDate;
+        //    this.visitStratDate = visitStratDate;
+        //    this.visitEndDate = visitEndDate;
+        //    this.visittype = visittype;
+        //    this.detaile = detaile;
+        //    this.cusId = cusId;
+        //    this.autherId = autherId;
+        //    this.bossId = bossId;
+        //    this.bossSei = bossSei;
+        //    this.bossMei = bossMei;
+        //    this.bosscomment = bosscomment;
+        //}
 
 
         public NGList()
@@ -60,168 +62,173 @@ namespace ZEBRA
             InitializeComponent();
         }
 
-        public int ReportId
-        {
-            get
-            {
-                return reportId;
-            }
-        }
+        //public int ReportId
+        //{
+        //    get
+        //    {
+        //        return reportId;
+        //    }
+        //}
 
 
-        public DateTime CreateDate
-        {
-            get
-            {
-                return createDate;
-            }
-            set
-            {
-                createDate = value;
-            }
-        }
+        //public DateTime CreateDate
+        //{
+        //    get
+        //    {
+        //        return createDate;
+        //    }
+        //    set
+        //    {
+        //        createDate = value;
+        //    }
+        //}
 
 
-        public DateTime UpdateDate
-        {
-            get
-            {
-                return updateDate;
-            }
-            set
-            {
-                updateDate = value;
-            }
-        }
+        //public DateTime UpdateDate
+        //{
+        //    get
+        //    {
+        //        return updateDate;
+        //    }
+        //    set
+        //    {
+        //        updateDate = value;
+        //    }
+        //}
 
-        public DateTime VisitStratDate
-        {
-            get
-            {
-                return visitStratDate;
-            }
-            set
-            {
-                visitStratDate = value;
-            }
-        }
+        //public DateTime VisitStratDate
+        //{
+        //    get
+        //    {
+        //        return visitStratDate;
+        //    }
+        //    set
+        //    {
+        //        visitStratDate = value;
+        //    }
+        //}
 
-        public DateTime VisitEndDate
-        {
-            get
-            {
-                return visitEndDate;
-            }
-            set
-            {
-                visitEndDate = value;
-            }
-        }
-
-
-        public string Detaile
-        {
-            get
-            {
-                return detaile;
-            }
-            set
-            {
-                detaile = value;
-            }
-        }
+        //public DateTime VisitEndDate
+        //{
+        //    get
+        //    {
+        //        return visitEndDate;
+        //    }
+        //    set
+        //    {
+        //        visitEndDate = value;
+        //    }
+        //}
 
 
-        public string Visittype
-        {
-            get
-            {
-                return visittype;
-            }
-            set
-            {
-                visittype = value;
-            }
-        }
-
-        public string CusId
-        {
-            get
-            {
-                return cusId;
-            }
-        }
+        //public string Detaile
+        //{
+        //    get
+        //    {
+        //        return detaile;
+        //    }
+        //    set
+        //    {
+        //        detaile = value;
+        //    }
+        //}
 
 
-        public int Approvalstatus
-        {
-            get
-            {
-                return approvalstatus;
-            }
-            set
-            {
-                approvalstatus = value;
-            }
-        }
+        //public string Visittype
+        //{
+        //    get
+        //    {
+        //        return visittype;
+        //    }
+        //    set
+        //    {
+        //        visittype = value;
+        //    }
+        //}
+
+        //public string CusId
+        //{
+        //    get
+        //    {
+        //        return cusId;
+        //    }
+        //}
 
 
-
-        public string AutherId
-        {
-            get
-            {
-                return autherId;
-            }
-        }
-
-        public string BossId
-        {
-            get
-            {
-                return bossId;
-            }
-        }
-
-        public string BossSei
-        {
-            get
-            {
-                return bossSei;
-            }
-            set
-            {
-                bossSei = value;
-            }
-        }
-
-        public string BossMei
-        {
-            get
-            {
-                return bossMei;
-            }
-            set
-            {
-                bossMei = value;
-            }
-        }
-
-        public string Bsscomment
-        {
-            get
-            {
-                return bosscomment;
-            }
-            set
-            {
-                bosscomment = value;
-            }
-        }
+        //public int Approvalstatus
+        //{
+        //    get
+        //    {
+        //        return approvalstatus;
+        //    }
+        //    set
+        //    {
+        //        approvalstatus = value;
+        //    }
+        //}
 
 
 
+        //public string AutherId
+        //{
+        //    get
+        //    {
+        //        return autherId;
+        //    }
+        //}
 
+        //public string BossId
+        //{
+        //    get
+        //    {
+        //        return bossId;
+        //    }
+        //}
+
+        //public string BossSei
+        //{
+        //    get
+        //    {
+        //        return bossSei;
+        //    }
+        //    set
+        //    {
+        //        bossSei = value;
+        //    }
+        //}
+
+        //public string BossMei
+        //{
+        //    get
+        //    {
+        //        return bossMei;
+        //    }
+        //    set
+        //    {
+        //        bossMei = value;
+        //    }
+        //}
+
+        //public string Bsscomment
+        //{
+        //    get
+        //    {
+        //        return bosscomment;
+        //    }
+        //    set
+        //    {
+        //        bosscomment = value;
+        //    }
+        //}
+
+
+
+
+            /// <summary>
+            /// NGリストを取得して表示させます
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
         private void NGList_Load(object sender, EventArgs e)
         {
             // 接続用のクラス
@@ -263,6 +270,12 @@ namespace ZEBRA
 
             // DataGridViewのデータをセット
             NGViewList.DataSource = ds;
+
+            Report repo = null;
+
+            DataTable reportDt = ds.Tables["DS_AdmitList"];
+            foreach (DataRow dr in ds)
+
             NGViewList.DataMember = "DS_AdmitList";
 
             // 表示列を追加
@@ -291,6 +304,8 @@ namespace ZEBRA
             button.UseColumnTextForButtonValue = true;  // Textプロパティ値をボタンに表示させる。
             button.Text = "修正";
             NGViewList.Columns.Add(button);
+
+
         }
 
         private void topPageButton_Click(object sender, EventArgs e)
@@ -299,6 +314,22 @@ namespace ZEBRA
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show(this);
             Debug.WriteLine("トップページに飛びました");
+        }
+
+        private void NGViewList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // senderにはイベントを発生させたコントロールが入っている
+            DataGridView dgv = (DataGridView)sender;
+
+            if (dgv.Columns[e.ColumnIndex].Name == "editButton")
+            {
+                // 車両IDのインデックスを取得
+                int cellIndex = dgv.Columns["vehicleId"].Index;
+
+                // クリックされた行の車両IDを表示
+                MessageBox.Show("車両IDは" + dgv.Rows[e.RowIndex].Cells[cellIndex].Value);
+
+            }
         }
     }
 }
