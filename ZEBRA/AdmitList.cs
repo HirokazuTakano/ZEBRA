@@ -163,9 +163,13 @@ namespace ZEBRA
 
         private void topPageButton_Click(object sender, EventArgs e)
         {
-            Hide();
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.Show(this);
+            this.Close();
+        }
+
+        private void AdmitList_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Hide();
+            Owner.Show();
             Debug.WriteLine("トップページに飛びました");
         }
     }

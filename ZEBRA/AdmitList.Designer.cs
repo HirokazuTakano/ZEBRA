@@ -91,6 +91,7 @@
             this.Controls.Add(this.admitViewList);
             this.Name = "AdmitList";
             this.Text = "AdmitWait";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdmitList_FormClosed);
             this.Load += new System.EventHandler(this.AdmitList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.admitViewList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
