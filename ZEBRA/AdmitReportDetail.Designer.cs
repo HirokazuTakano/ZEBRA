@@ -198,6 +198,7 @@
             this.admitButton.TabIndex = 14;
             this.admitButton.Text = "確定";
             this.admitButton.UseVisualStyleBackColor = false;
+            this.admitButton.Click += new System.EventHandler(this.admitButton_Click);
             // 
             // pictureBox1
             // 
@@ -245,6 +246,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AdmitReportDetail";
             this.Text = "AdmitDetail";
+            this.Load += new System.EventHandler(this.AdmitReportDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

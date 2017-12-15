@@ -32,11 +32,13 @@ namespace ZEBRA
         private string bossSei;        // 上司姓
         private string bossMei;        //　上司名
         private string bosscomment;    //　上司コメント
+        private string visitTo;    //　訪問先
+      
 
 
         public AdmitList(int reportId, DateTime createDate, DateTime updateDate, DateTime visitStratDate, DateTime visitEndDate
                      , string visittype, string detaile, string cusId, int approvalstatus, string autherId, string bossId
-                     , string bossSei, string bossMei, string bosscomment)
+                     , string bossSei, string bossMei, string bosscomment　,string visitTo)
         {
             this.reportId = reportId;
             this.createDate = createDate;
@@ -51,10 +53,13 @@ namespace ZEBRA
             this.bossSei = bossSei;
             this.bossMei = bossMei;
             this.bosscomment = bosscomment;
+            this.VisitTo = visitTo;
+          
         }
 
 
-        public int ReportId
+
+       public int ReportId
         {
             get
             {
@@ -213,6 +218,19 @@ namespace ZEBRA
             }
         }
 
+        public string VisitTo
+        {
+            get
+            {
+                return visitTo;
+            }
+
+            set
+            {
+                visitTo = value;
+            }
+        }
+
         public AdmitList()
         {
             InitializeComponent();
@@ -234,12 +252,16 @@ namespace ZEBRA
             // 問い合わせのSQLを生成
             string sql =
                 "SELECT * " +
-                 "FROM dbo.TM_DAILY_REPORT R INNER JOIN dbo.TM_CUSTOMER C " +
-                 "ON R.CUS_ID = C.CUS_ID " +
-                 "ORDER BY REPORT_ID ";
+                  "FROM dbo.TM_DAILY_REPORT " +
+                 "WHERE  APPROVAL_STATUS = 1 AND AUTHOR_BOSS_ID = @EMP_ID";
+
 
             // コネクションオブジェクトを使用して、SQLの発行準備
             SqlCommand command = new SqlCommand(sql, con);
+
+            // パラメタに値を設定
+            command.Parameters.Add(
+                    new SqlParameter("@EMP_ID", MainMenu.loginUser.EmpId));
 
 
             // アダプターを作成
@@ -265,6 +287,7 @@ namespace ZEBRA
             admitViewList.Columns.Add("reportId", "レポート番号");
             admitViewList.Columns["reportId"].DataPropertyName = "REPORT_ID";
 
+
             admitViewList.Columns.Add("createdate", "作成日");
             admitViewList.Columns["createdate"].DataPropertyName = "CREATE_DATE";
 
@@ -287,22 +310,56 @@ namespace ZEBRA
             button.UseColumnTextForButtonValue = true;  // Textプロパティ値をボタンに表示させる。
             button.Text = "詳細";
             admitViewList.Columns.Add(button);
+
+
+
+
+
+
         }
 
         private void admitViewList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            AdmitReportDetail ard = new AdmitReportDetail();
-            ard.ShowDialog(this);  // ここで処理が止まる。
-            Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
-            //DataGridView dgv = (DataGridView)sender;
-            ////"Button"列ならば、ボタンがクリックされた
-            //if (dgv.Columns[e.ColumnIndex].Name == "button")
-            //{
-            //    MessageBox.Show(e.RowIndex.ToString() +
-            //        "行のボタンがクリックされました。");
-            //}
 
+            // senderにはイベントを発生させたコントロールが入っている
+            DataGridView dgv = (DataGridView)sender;
+
+
+            if (dgv.Columns[e.ColumnIndex].Name == "editButton")
+            {
+                // 車両IDのインデックスを取得
+                int _date = dgv.Columns["createdate"].Index;
+                int _visit = dgv.Columns["start"].Index;
+                int _visitTo = dgv.Columns["start"].Index;
+                int _type = dgv.Columns["type"].Index;
+                int _content = dgv.Columns["createdate"].Index;
+              
+
+                //// クリックされた行の車両IDを表示
+                //MessageBox.Show("車両IDは" +
+                //    dgv.Rows[e.RowIndex].Cells[cellIndex].Value);
+
+
+
+
+
+                AdmitReportDetail f = new AdmitReportDetail();
+                //子画面のプロパティに値をセットする
+                f.Date = ""+dgv.Rows[e.RowIndex].Cells[_date].Value;
+                f.Visit = "" + dgv.Rows[e.RowIndex].Cells[_visit].Value;
+                f.VisitTo = "" + dgv.Rows[e.RowIndex].Cells[_visitTo].Value;
+                f.Type = "" + dgv.Rows[e.RowIndex].Cells[_type].Value;
+                f.Content = "" + dgv.Rows[e.RowIndex].Cells[_content].Value;
+
+                f.ShowDialog();
+
+
+                ////子画面から値を取得する
+                //this.label1.Text = f.strParam;
+                //f.Dispose();
+
+            }
         }
 
         private void topPageButton_Click(object sender, EventArgs e)
