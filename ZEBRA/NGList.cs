@@ -274,26 +274,7 @@ namespace ZEBRA
             Report repo = null;
 
             DataTable reportDt = ds.Tables["DS_AdmitList"];
-            foreach (DataRow dr in reportDt.Rows)
-            {
-                //          [REPORT_ID]
-                //,[CREATE_DATE]
-                //,[UPDATE_DATE]
-                //,[VISIT_STRAT_DATE]
-                //,[VISIT_END_DATE]
-                //,[VISIT_TYPE]
-                //,[DETAILS]
-                //,[CUS_ID]
-                //,[APPROVAL_STATUS]
-                //,[AUTHOR_ID]
-                //,[AUTHOR_BOSS_ID]
-                //,[BOSS_COMMENT]
-                repo = new Report(int.Parse(dr["REPORT_ID"].ToString()), DateTime.Parse(dr["CREATE_DATE"].ToString()), DateTime.Parse(dr["UPDATE_DATE"].ToString()),
-                    DateTime.Parse(dr["VISIT_START_DATE"].ToString()), DateTime.Parse(dr["VISIT_END_DATE"].ToString()),
-                    (dr["VISIT_TYPE"].ToString()), (dr["DETAILS"].ToString()), (dr["CUS_ID"].ToString()), int.Parse(dr["APPROVAL_STATUS"].ToString()),
-                        (dr["AUTHOR_ID"].ToString()), (dr["AUTHOR_BOSS_ID"].ToString()), "田中", "太郎", (dr["BOSS_COMMENT"].ToString()));
-            }
-
+            foreach (DataRow dr in ds)
 
             NGViewList.DataMember = "DS_AdmitList";
 
@@ -342,20 +323,8 @@ namespace ZEBRA
 
             if (dgv.Columns[e.ColumnIndex].Name == "editButton")
             {
-                ReportModify modify = new ReportModify();
-
                 // 車両IDのインデックスを取得
-                int cellIndex = dgv.Columns["REPORT_ID"].Index;
-
-                foreach(Report repo in reportList)
-                {
-                    if ((int)dgv.Rows[e.RowIndex].Cells[cellIndex].Value == repo.ReportId)
-                    {
-                        modify.getReport(repo);
-                        modify.Show();
-                    }
-                }
-               
+                int cellIndex = dgv.Columns["vehicleId"].Index;
 
                 // クリックされた行の車両IDを表示
                 MessageBox.Show("車両IDは" + dgv.Rows[e.RowIndex].Cells[cellIndex].Value);

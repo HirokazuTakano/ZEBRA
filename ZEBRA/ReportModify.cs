@@ -16,6 +16,7 @@ namespace ZEBRA
     {
         private Report report;
 
+
         public ReportModify()
         {
             InitializeComponent();
@@ -31,8 +32,9 @@ namespace ZEBRA
 
         private void registButton_Click(object sender, EventArgs e)
         {
+            
 
-            int reportId = 0;
+            string reportId = "";
             string radioButton = "";
             DateTime dt = DateTime.Now;
             DateTime startDate = dt;
@@ -171,6 +173,21 @@ namespace ZEBRA
             cs.ShowDialog(this);
             Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
         }
+
+        //private void ReportModify_Load(object sender, EventArgs e)
+        //{
+        //    DateTime dt = DateTime.Now;
+
+        //    createDate.Text = dt.ToString();
+        //    fromDate.Text =;
+        //    fromHour.Tex =;
+        //    fromMinutes.Text =;
+        //    toDate.Text = ;
+        //    toHour.Text = ;
+        //    toMinutes.Text = ;
+        //    customer.Text = ;
+        //    reportText.Text =:
+        //}
     }
     
 }
