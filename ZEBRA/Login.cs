@@ -71,9 +71,9 @@ namespace ZEBRA
                                      reader.GetString(1),
                                      reader.GetString(2) + " " + reader.GetString(3),
                                      reader.GetString(4),
-                                     null,
+                                     "上司名(仮)",
                                      reader.GetString(5),
-                                     null,
+                                     "部署名(仮)",
                                      reader.GetString(6)
                                      );
                     MainMenu.loginUser = loginUser;
