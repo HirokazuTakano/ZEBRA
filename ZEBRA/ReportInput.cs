@@ -213,7 +213,7 @@ namespace ZEBRA
             userId = emp.EmpId;
             bossId = emp.BossId;
 
-            bossName.Text = "上司（仮）";
+            bossName.Text = MainMenu.loginUser.BossName;
 
             //// DBへの接続文字列。
             //con.ConnectionString = "data source=localhost\\SQLEXPRESS;" + // 接続先のDBサーバーを指定
