@@ -25,7 +25,6 @@ namespace ZEBRA
         private Dictionary<int, string> customerList = new Dictionary<int, string>();
 
         private string cusName;
-        private string compName;
 
 
 
@@ -59,9 +58,12 @@ namespace ZEBRA
 
             // 問い合わせのSQLを生成
             string sql =
-                "SELECT * " +
+                "SELECT AUTHOR_ID REPORT_ID, CREATE_DATE, UPDATE_DATE, VISIT_STRAT_DATE, VISIT_END_DATE, " +
+                "VISIT_TYPE, DETAILS, R.CUS_ID AS CUS_ID, APPROVAL_STATUS, R.AUTHOR_BOSS_ID, E.NAME_SEI AS BOSS_SEI," + 
+                " E.NAME_MEI AS BOSS_MEI, R.BOSS_COMMENT AS BOSS_COMMENT " +
                  "FROM dbo.TM_DAILY_REPORT R INNER JOIN dbo.TM_CUSTOMER C " +
                  "ON R.CUS_ID = C.CUS_ID " +
+                 "INNER JOIN dbo.TM_EMPLOYEE E ON R.AUTHOR_BOSS_ID = E.BOSS_ID " +
                  "WHERE (AUTHOR_ID = @userId) AND (APPROVAL_STATUS = 2 ) " +
                  "ORDER BY REPORT_ID ;";
 
@@ -107,10 +109,13 @@ namespace ZEBRA
                 //,[AUTHOR_ID]
                 //,[AUTHOR_BOSS_ID]
                 //,[BOSS_COMMENT]
+
+                //なぜか型変換がうまくいかない
                 repo = new Report(int.Parse(dr["REPORT_ID"].ToString()), DateTime.Parse(dr["CREATE_DATE"].ToString()), DateTime.Parse(dr["UPDATE_DATE"].ToString()),
                     DateTime.Parse(dr["VISIT_STRAT_DATE"].ToString()), DateTime.Parse(dr["VISIT_END_DATE"].ToString()),
                     (dr["VISIT_TYPE"].ToString()), (dr["DETAILS"].ToString()), (dr["CUS_ID"].ToString()), int.Parse(dr["APPROVAL_STATUS"].ToString()),
-                        (dr["AUTHOR_ID"].ToString()), (dr["AUTHOR_BOSS_ID"].ToString()), "田中", "太郎", (dr["BOSS_COMMENT"].ToString()));
+                        (dr["AUTHOR_ID"].ToString()), (dr["AUTHOR_BOSS_ID"].ToString()), (dr["AUTHOR_BOSS_SEI"].ToString()),
+                        (dr["AUTHOR_BOSS_MEI"].ToString()), (dr["BOSS_COMMENT"].ToString()));
 
                 reportList.Add(repo);
 
