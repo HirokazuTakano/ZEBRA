@@ -115,7 +115,7 @@ namespace ZEBRA
             string _toMinute = toMinute.Text;
 
             //顧客を取得
-           // Customer = customer.Text;
+            _customerId = customer.Text;
 
             string visitType = "";
             //訪問種別を取得
