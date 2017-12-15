@@ -77,10 +77,10 @@
             // 
             this.list.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.list.Location = new System.Drawing.Point(99, 261);
+            this.list.Location = new System.Drawing.Point(54, 261);
             this.list.Name = "list";
             this.list.RowTemplate.Height = 21;
-            this.list.Size = new System.Drawing.Size(494, 266);
+            this.list.Size = new System.Drawing.Size(648, 266);
             this.list.TabIndex = 3;
             this.list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_CellContentClick);
             // 
@@ -169,7 +169,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(665, 556);
+            this.ClientSize = new System.Drawing.Size(730, 556);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.logoutButton);
