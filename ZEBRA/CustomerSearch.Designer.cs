@@ -32,6 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.topPageButton = new System.Windows.Forms.Button();
+            this.searchCusText = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cusSearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -40,12 +43,12 @@
             // 
             this.customerList.BackgroundColor = System.Drawing.Color.LightYellow;
             this.customerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerList.Location = new System.Drawing.Point(36, 132);
+            this.customerList.Location = new System.Drawing.Point(23, 171);
             this.customerList.Name = "customerList";
             this.customerList.RowTemplate.Height = 21;
-            this.customerList.Size = new System.Drawing.Size(290, 181);
+            this.customerList.Size = new System.Drawing.Size(570, 181);
             this.customerList.TabIndex = 0;
-
+            this.customerList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerList_CellContentClick);
             // 
             // label1
             // 
@@ -80,12 +83,41 @@
             this.topPageButton.UseVisualStyleBackColor = false;
             this.topPageButton.Click += new System.EventHandler(this.topPageButton_Click);
             // 
+            // searchCusText
+            // 
+            this.searchCusText.Location = new System.Drawing.Point(113, 128);
+            this.searchCusText.Name = "searchCusText";
+            this.searchCusText.Size = new System.Drawing.Size(149, 19);
+            this.searchCusText.TabIndex = 38;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(54, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "顧客検索";
+            // 
+            // cusSearchButton
+            // 
+            this.cusSearchButton.Location = new System.Drawing.Point(268, 126);
+            this.cusSearchButton.Name = "cusSearchButton";
+            this.cusSearchButton.Size = new System.Drawing.Size(62, 23);
+            this.cusSearchButton.TabIndex = 40;
+            this.cusSearchButton.Text = "検索";
+            this.cusSearchButton.UseVisualStyleBackColor = true;
+            this.cusSearchButton.Click += new System.EventHandler(this.cusSearch_Click);
+            // 
             // CustomerSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(369, 325);
+            this.ClientSize = new System.Drawing.Size(619, 379);
+            this.Controls.Add(this.cusSearchButton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.searchCusText);
             this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -106,5 +138,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button topPageButton;
+        private System.Windows.Forms.TextBox searchCusText;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button cusSearchButton;
     }
 }

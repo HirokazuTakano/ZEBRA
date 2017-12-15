@@ -82,6 +82,7 @@ namespace ZEBRA
 
             Report repo = null;
 
+<<<<<<< HEAD
             DataTable reportDt = ds.Tables["NGViewList"];
             foreach (DataRow dr in reportDt.Rows)
             {
@@ -105,6 +106,10 @@ namespace ZEBRA
                 reportList.Add(repo);
             }
 
+=======
+            DataTable reportDt = ds.Tables["DS_AdmitList"];
+            foreach (DataRow dr in ds)
+>>>>>>> e6467556ba3bbc65f5f1c737f6c0eaa8fa8435ad
 
             NGViewList.DataMember = "NGViewList";
 
@@ -161,9 +166,8 @@ namespace ZEBRA
 
             if (dgv.Columns[e.ColumnIndex].Name == "editButton")
             {
-                ReportModify modify = new ReportModify();
-
                 // 車両IDのインデックスを取得
+<<<<<<< HEAD
                 int cellIndex = dgv.Columns["reportId"].Index;
 
                 foreach(Report repo in reportList)
@@ -179,6 +183,9 @@ namespace ZEBRA
                         modify.getReport(repo);
                         modify.Show(this);
                     }
+=======
+                int cellIndex = dgv.Columns["vehicleId"].Index;
+>>>>>>> e6467556ba3bbc65f5f1c737f6c0eaa8fa8435ad
 
                     
                     

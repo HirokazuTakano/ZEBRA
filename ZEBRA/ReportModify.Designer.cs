@@ -473,6 +473,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ReportModify";
             this.Text = "ChangeDetail";
+       //     this.Load += new System.EventHandler(this.ReportModify_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

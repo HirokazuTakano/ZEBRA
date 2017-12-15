@@ -26,11 +26,10 @@ namespace ZEBRA
 
 
 
-        public CommonValidater(DateTime createDate, DateTime startDate, string startHour,
+        public CommonValidater(DateTime startDate, string startHour,
             string startMin, DateTime endDate, string endHour, string endMin, string customerName,
             string visitType, string detail)
         {
-            this.createDate = createDate;
             this.startDate = startDate;
             this.startHour = startHour;
             this.startMin = startMin;

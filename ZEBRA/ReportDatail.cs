@@ -25,13 +25,31 @@ namespace ZEBRA
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void SetData(string fill, string visitDate, string visitTo, string visitType, string content)
+        public void SetData(string fill, string visitDate, string visitTo, string visitType, string content, int approvalStatus, string bossComment)
         {
             this.fillDate.Text = fill;
             this.visitDate.Text = visitDate;
             this.visitTo.Text = visitTo;
             this.visitType.Text = visitType;
             this.content.Text = content;
+
+            string statusMsg = "";
+            switch (approvalStatus)
+            {
+                case 1:
+                    statusMsg = "承認待ち";
+                    break;
+                case 2:
+                    statusMsg = "修正依頼";
+                    break;
+                case 3:
+                    statusMsg = "承認済み";
+                    break;
+            }
+            this.approvalStatus.Text = statusMsg;
+
+            this.bossComment.Text = bossComment;
+
         }
 
         private void ReportDatail_Load(object sender, EventArgs e)

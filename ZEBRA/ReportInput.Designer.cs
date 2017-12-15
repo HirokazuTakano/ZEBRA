@@ -37,7 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.createDate = new System.Windows.Forms.DateTimePicker();
             this.reportText = new System.Windows.Forms.TextBox();
-            this.customer = new System.Windows.Forms.TextBox();
+            this.customerId = new System.Windows.Forms.TextBox();
             this.bossName = new System.Windows.Forms.Label();
             this.opponentHouse = new System.Windows.Forms.RadioButton();
             this.their = new System.Windows.Forms.RadioButton();
@@ -62,6 +62,8 @@
             this.topPageButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.registButton = new System.Windows.Forms.Button();
+            this.customerName = new System.Windows.Forms.Label();
+            this.companyName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +97,7 @@
             // tell
             // 
             this.tell.AutoSize = true;
-            this.tell.Location = new System.Drawing.Point(162, 333);
+            this.tell.Location = new System.Drawing.Point(162, 372);
             this.tell.Name = "tell";
             this.tell.Size = new System.Drawing.Size(47, 16);
             this.tell.TabIndex = 3;
@@ -106,7 +108,7 @@
             // mail
             // 
             this.mail.AutoSize = true;
-            this.mail.Location = new System.Drawing.Point(274, 333);
+            this.mail.Location = new System.Drawing.Point(274, 372);
             this.mail.Name = "mail";
             this.mail.Size = new System.Drawing.Size(51, 16);
             this.mail.TabIndex = 4;
@@ -117,7 +119,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 382);
+            this.label4.Location = new System.Drawing.Point(61, 421);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 5;
@@ -126,7 +128,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 495);
+            this.label5.Location = new System.Drawing.Point(61, 534);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 6;
@@ -141,23 +143,23 @@
             // 
             // reportText
             // 
-            this.reportText.Location = new System.Drawing.Point(162, 382);
+            this.reportText.Location = new System.Drawing.Point(162, 421);
             this.reportText.Multiline = true;
             this.reportText.Name = "reportText";
             this.reportText.Size = new System.Drawing.Size(368, 100);
             this.reportText.TabIndex = 11;
             // 
-            // customer
+            // customerId
             // 
-            this.customer.Location = new System.Drawing.Point(162, 299);
-            this.customer.Name = "customer";
-            this.customer.Size = new System.Drawing.Size(155, 19);
-            this.customer.TabIndex = 12;
+            this.customerId.Location = new System.Drawing.Point(162, 302);
+            this.customerId.Name = "customerId";
+            this.customerId.Size = new System.Drawing.Size(155, 19);
+            this.customerId.TabIndex = 12;
             // 
             // bossName
             // 
             this.bossName.AutoSize = true;
-            this.bossName.Location = new System.Drawing.Point(160, 495);
+            this.bossName.Location = new System.Drawing.Point(160, 534);
             this.bossName.Name = "bossName";
             this.bossName.Size = new System.Drawing.Size(61, 12);
             this.bossName.TabIndex = 14;
@@ -166,7 +168,7 @@
             // opponentHouse
             // 
             this.opponentHouse.AutoSize = true;
-            this.opponentHouse.Location = new System.Drawing.Point(372, 333);
+            this.opponentHouse.Location = new System.Drawing.Point(372, 372);
             this.opponentHouse.Name = "opponentHouse";
             this.opponentHouse.Size = new System.Drawing.Size(59, 16);
             this.opponentHouse.TabIndex = 15;
@@ -177,7 +179,7 @@
             // their
             // 
             this.their.AutoSize = true;
-            this.their.Location = new System.Drawing.Point(162, 355);
+            this.their.Location = new System.Drawing.Point(162, 394);
             this.their.Name = "their";
             this.their.Size = new System.Drawing.Size(47, 16);
             this.their.TabIndex = 16;
@@ -188,7 +190,7 @@
             // another
             // 
             this.another.AutoSize = true;
-            this.another.Location = new System.Drawing.Point(274, 355);
+            this.another.Location = new System.Drawing.Point(274, 394);
             this.another.Name = "another";
             this.another.Size = new System.Drawing.Size(54, 16);
             this.another.TabIndex = 17;
@@ -199,7 +201,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(51, 337);
+            this.label7.Location = new System.Drawing.Point(51, 376);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 18;
@@ -426,7 +428,7 @@
             this.searchButton.BackColor = System.Drawing.Color.DimGray;
             this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchButton.Location = new System.Drawing.Point(349, 295);
+            this.searchButton.Location = new System.Drawing.Point(453, 324);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 37;
@@ -439,7 +441,7 @@
             this.registButton.BackColor = System.Drawing.Color.DimGray;
             this.registButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.registButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.registButton.Location = new System.Drawing.Point(49, 546);
+            this.registButton.Location = new System.Drawing.Point(49, 585);
             this.registButton.Name = "registButton";
             this.registButton.Size = new System.Drawing.Size(75, 23);
             this.registButton.TabIndex = 38;
@@ -447,12 +449,32 @@
             this.registButton.UseVisualStyleBackColor = false;
             this.registButton.Click += new System.EventHandler(this.registButton_Click);
             // 
+            // customerName
+            // 
+            this.customerName.AutoSize = true;
+            this.customerName.Location = new System.Drawing.Point(222, 329);
+            this.customerName.Name = "customerName";
+            this.customerName.Size = new System.Drawing.Size(77, 12);
+            this.customerName.TabIndex = 39;
+            this.customerName.Text = "顧客担当者名";
+            // 
+            // companyName
+            // 
+            this.companyName.AutoSize = true;
+            this.companyName.Location = new System.Drawing.Point(160, 329);
+            this.companyName.Name = "companyName";
+            this.companyName.Size = new System.Drawing.Size(41, 12);
+            this.companyName.TabIndex = 40;
+            this.companyName.Text = "会社名";
+            // 
             // ReportInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(586, 595);
+            this.ClientSize = new System.Drawing.Size(586, 611);
+            this.Controls.Add(this.companyName);
+            this.Controls.Add(this.customerName);
             this.Controls.Add(this.registButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.topPageButton);
@@ -477,7 +499,7 @@
             this.Controls.Add(this.their);
             this.Controls.Add(this.opponentHouse);
             this.Controls.Add(this.bossName);
-            this.Controls.Add(this.customer);
+            this.Controls.Add(this.customerId);
             this.Controls.Add(this.reportText);
             this.Controls.Add(this.createDate);
             this.Controls.Add(this.label5);
@@ -507,7 +529,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker createDate;
         private System.Windows.Forms.TextBox reportText;
-        private System.Windows.Forms.TextBox customer;
+        private System.Windows.Forms.TextBox customerId;
         private System.Windows.Forms.Label bossName;
         private System.Windows.Forms.RadioButton opponentHouse;
         private System.Windows.Forms.RadioButton their;
@@ -532,5 +554,7 @@
         private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button registButton;
+        private System.Windows.Forms.Label customerName;
+        private System.Windows.Forms.Label companyName;
     }
 }

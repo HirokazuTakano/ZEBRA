@@ -16,6 +16,7 @@ namespace ZEBRA
     {
         private Report report;
 
+
         public ReportModify()
         {
             InitializeComponent();
@@ -31,8 +32,9 @@ namespace ZEBRA
 
         private void registButton_Click(object sender, EventArgs e)
         {
+            
 
-            int reportId = 0;
+            string reportId = "";
             string radioButton = "";
             DateTime dt = DateTime.Now;
             DateTime startDate = dt;
@@ -67,27 +69,27 @@ namespace ZEBRA
 
 
 
-    CommonValidater validater = new CommonValidater(DateTime.Parse(reportText.Text), DateTime.Parse(fromDate.Text), fromHour.Text, fromMinute.Text, DateTime.Parse(toDate.Text), toHour.Text, toMinute.Text, customer.Text, radioButton, reportText.Text);
+            // CommonValidater validater = new CommonValidater(DateTime.Parse(reportText.Text), DateTime.Parse(fromDate.Text), fromHour.Text, fromMinute.Text, DateTime.Parse(toDate.Text), toHour.Text, toMinute.Text, customer.Text, radioButton, reportText.Text);
 
-    Boolean commonValidateCheck = validater.InputCheck();
+            // Boolean commonValidateCheck = validater.InputCheck();
 
-            if (commonValidateCheck == true)
-            {
+            //if (commonValidateCheck == true)
+            //{
 
-                //入力されたfrom日付をデータ型に結合
-                string str = fromDate.ToString() + "" + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
-                        startDate = DateTime.Parse(str);
+            //    入力されたfrom日付をデータ型に結合
+            //    string str = fromDate.ToString() + "" + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
+            //    startDate = DateTime.Parse(str);
 
 
-                //入力されたto日付をデータ型に結合
-                string str2 = toDate.ToString() + "" + toHour.Text + ":" + toMinute.Text + ":" + "00";
-                        endDate = DateTime.Parse(str);
+            //    入力されたto日付をデータ型に結合
+            //    string str2 = toDate.ToString() + "" + toHour.Text + ":" + toMinute.Text + ":" + "00";
+            //    endDate = DateTime.Parse(str);
 
-                }
-                else
-                {
-                    MessageBox.Show("入力間違いがあります");
-                }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("入力間違いがあります");
+            //}
 
 
 
@@ -171,6 +173,21 @@ namespace ZEBRA
             cs.ShowDialog(this);
             Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
         }
+
+        //private void ReportModify_Load(object sender, EventArgs e)
+        //{
+        //    DateTime dt = DateTime.Now;
+
+        //    createDate.Text = dt.ToString();
+        //    fromDate.Text =;
+        //    fromHour.Tex =;
+        //    fromMinutes.Text =;
+        //    toDate.Text = ;
+        //    toHour.Text = ;
+        //    toMinutes.Text = ;
+        //    customer.Text = ;
+        //    reportText.Text =:
+        //}
     }
     
 }
