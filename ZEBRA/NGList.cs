@@ -82,7 +82,6 @@ namespace ZEBRA
 
             Report repo = null;
 
-<<<<<<< HEAD
             DataTable reportDt = ds.Tables["NGViewList"];
             foreach (DataRow dr in reportDt.Rows)
             {
@@ -106,10 +105,6 @@ namespace ZEBRA
                 reportList.Add(repo);
             }
 
-=======
-            DataTable reportDt = ds.Tables["DS_AdmitList"];
-            foreach (DataRow dr in ds)
->>>>>>> e6467556ba3bbc65f5f1c737f6c0eaa8fa8435ad
 
             NGViewList.DataMember = "NGViewList";
 
@@ -161,20 +156,18 @@ namespace ZEBRA
         /// <param name="e"></param>
         private void NGViewList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            ReportModify modify = new ReportModify();
+            
             // senderにはイベントを発生させたコントロールが入っている
             DataGridView dgv = (DataGridView)sender;
 
             if (dgv.Columns[e.ColumnIndex].Name == "editButton")
             {
-                // 車両IDのインデックスを取得
-<<<<<<< HEAD
                 int cellIndex = dgv.Columns["reportId"].Index;
-
                 foreach(Report repo in reportList)
                 {
                     if ((int)dgv.Rows[e.RowIndex].Cells[cellIndex].Value == repo.ReportId)
                     {
-
                        　//Report report = new Report(dgv.Columns["reportId"].Index, DateTime.Parse(""  + dgv.Columns["createdate"].Index), DateTime.Parse("" + dgv.Columns["update"].Index),
                         //        DateTime.Parse("" + dgv.Columns["start"].Index), DateTime.Parse("" + dgv.Columns["start"].Index),
                         //        "" + dgv.Columns["type"].Index, "" + dgv.Columns["detail"].Index, "" + dgv.Columns["cusId"].Index, dgv.Columns["approval"].Index,
@@ -182,13 +175,7 @@ namespace ZEBRA
 
                         modify.getReport(repo);
                         modify.Show(this);
-                    }
-=======
-                int cellIndex = dgv.Columns["vehicleId"].Index;
->>>>>>> e6467556ba3bbc65f5f1c737f6c0eaa8fa8435ad
-
-                    
-                    
+                    }     
                 }
 
             }
