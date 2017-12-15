@@ -14,6 +14,7 @@ namespace ZEBRA
 {
     public partial class CustomerSearch : Form
     {
+        private string _ownerPage;
         private string _cusId;
         private string _compName;
         private string _cusName;
@@ -25,8 +26,9 @@ namespace ZEBRA
         }
 
         //コンストラクタ　　会社名or顧客名を取得
-        public CustomerSearch(string _cusId)
+        public CustomerSearch(string ownerPage)
         {
+            this._ownerPage = ownerPage;
             this.searchCusList = new List<Customer>();
         }
 
@@ -48,77 +50,21 @@ namespace ZEBRA
         {
             Debug.WriteLine("顧客検索フォームです");
 
-            //SqlConnection con = new SqlConnection();
+            // グリットビューのガワを作成
+            customerList.Columns.Add("cusId", "顧客ID");
+            customerList.Columns.Add("companyName", "会社名");
+            customerList.Columns.Add("cusName", "顧客名");
+            customerList.Columns.Add("cusTel", "電話番号");
 
-
-            //// DBへの接続文字列。
-            //con.ConnectionString = "data source=localhost\\SQLEXPRESS;" + // 接続先のDBサーバーを指定
-            //                       "initial catalog=zebradb;" +            // 接続先のDBを指定
-            //                       "user id=sa;" +                        // ユーザー
-            //                       "password=p@ssw0rd;" +                 // パスワード
-            //                       "Connect Timeout=60;";
-
-            //try
-            //{
-            //    //SQL文を生成
-            //    string sql =
-            //        "SELECT * " +
-            //            "FROM TM_CUSTOMER " +
-            //            "WHERE COMPANY_NAME LIKE '%@companyName%'  OR COS_NAME LIKE '%@cusName%'; ";
-
-            //    //コネクションをオブジェクトとして、SQL発行準備
-            //    SqlCommand command = new SqlCommand(sql, con);
-
-
-            //    // パラメタに値を設定
-            //    command.Parameters.Add(new SqlParameter("@companyName", _cus));
-            //    command.Parameters.Add(new SqlParameter("@cusName", _cus));
-
-            //    //アダプター生成
-            //    SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-            //    //データセットを作成
-            //    DataSet ds = new DataSet();
-
-            //    //DS_VEHICLEという名前のテーブルクラスに結果をセットし、保持させる
-            //    adapter.Fill(ds, "DS_VEHICLE");
-
-            //    // DataGridViewが持つ、列の自動生成機能をオフ
-            //    customerList.AutoGenerateColumns = false;
-
-            //    // DataGridViewのデータをセット
-            //    customerList.DataSource = ds;
-            //    customerList.DataMember = "DS_CUSTOMER";
-
-            //    // 表示列を追加
-            //    customerList.Columns.Add("cusId", "顧客ID");
-            //    customerList.Columns["cusId"].DataPropertyName = "CUS_ID";
-
-            //    customerList.Columns.Add("companyName", "会社名");
-            //    customerList.Columns["companyName"].DataPropertyName = "COMPANY_NAME";
-
-            //    customerList.Columns.Add("cusName", "顧客名");
-            //    customerList.Columns["cusName"].DataPropertyName = "CUS_NAME";
-
-            //    customerList.Columns.Add("cusTel", "電話番号");
-            //    customerList.Columns["cusTel"].DataPropertyName = "CUS_TEL";
-
-
-
-            //    // ボタンを追加
-            //    DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-            //    button.Name = "editButton";
-            //    button.HeaderText = "操作";
-            //    // Textプロパティ値をボタンに表示させる。
-            //    button.UseColumnTextForButtonValue = true;
-            //    button.Text = "選択";
-            //    customerList.Columns.Add(button);
-
-            //}
-            //catch (SqlException ex)
-            //{
-            //    Debug.WriteLine(ex.Message);
-            //}
+            
+            // ボタンを追加
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            button.Name = "editButton";
+            button.HeaderText = "操作";
+            // Textプロパティ値をボタンに表示させる。
+            button.UseColumnTextForButtonValue = true;
+            button.Text = "選択";
+            customerList.Columns.Add(button);
 
         }
 
@@ -148,8 +94,8 @@ namespace ZEBRA
                 "SELECT * " +
                     "FROM TM_CUSTOMER " +
                     "WHERE COMPANY_NAME LIKE @companyName  OR CUS_NAME LIKE @cusName; ";
-            
-            
+
+
             // コネクションオブジェクトを使用して、SQLの発行準備
             SqlCommand command = new SqlCommand(sql, con);
             command.Parameters.Add(
@@ -165,7 +111,7 @@ namespace ZEBRA
 
 
             string forbreakpoint = "ブレイクポイントを作成";
-            
+
 
             //// レコードを1行ずつ読む。
             //Customer cus = null;
@@ -189,29 +135,12 @@ namespace ZEBRA
             customerList.DataSource = ds;
             customerList.DataMember = "DS_CUSTOMER"; // Nullぽ
 
-            // 表示列を追加
-            customerList.Columns.Add("cusId", "顧客ID");
+            
             customerList.Columns["cusId"].DataPropertyName = "CUS_ID";
-
-            customerList.Columns.Add("companyName", "会社名");
             customerList.Columns["companyName"].DataPropertyName = "COMPANY_NAME";
-
-            customerList.Columns.Add("cusName", "顧客名");
             customerList.Columns["cusName"].DataPropertyName = "CUS_NAME";
-
-            customerList.Columns.Add("cusTel", "電話番号");
             customerList.Columns["cusTel"].DataPropertyName = "CUS_TEL";
 
-
-
-            // ボタンを追加
-            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-            button.Name = "editButton";
-            button.HeaderText = "操作";
-            // Textプロパティ値をボタンに表示させる。
-            button.UseColumnTextForButtonValue = true;
-            button.Text = "選択";
-            customerList.Columns.Add(button);
 
 
 
@@ -244,13 +173,31 @@ namespace ZEBRA
                 _cusName = (string)dgv.Rows[e.RowIndex].Cells[cellIndexCusName].Value;
 
 
-                MessageBox.Show(_cusId + _compName + _cusName);
-                //Owner.(TextBox)customer.Text = _cusId;
 
-                ReportInput rp = (ReportInput)Owner;
-                rp.CustomerId = _cusId;
-                rp.Company = _compName;
-                rp.CustomerName = _cusName;
+
+                // コンストラクタ生成時の引数で受け取った, 識別子でOwner画面を判断
+                if (_ownerPage.Equals("ReportInput"))
+                {
+                    MessageBox.Show(_cusId + _compName + _cusName);
+                    //Owner.(TextBox)customer.Text = _cusId;
+
+                    ReportInput ri = (ReportInput)Owner;
+                    ri.CustomerId = _cusId;
+                    ri.Company = _compName;
+                    ri.CustomerName = _cusName;
+
+                } else if (_ownerPage.Equals(""))
+                {
+                    MessageBox.Show(_cusId + _compName + _cusName);
+                    //Owner.(TextBox)customer.Text = _cusId;
+
+                    ReportModify rm = (ReportModify)Owner;
+                    //rm.CusId = _cusId;
+                    //rm.CompName = _compName;
+                    //rm.CusName = _cusName;
+                }
+
+
 
                 this.Close();
 
