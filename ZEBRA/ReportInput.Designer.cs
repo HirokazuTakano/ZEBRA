@@ -35,7 +35,6 @@
             this.mail = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.createDate = new System.Windows.Forms.DateTimePicker();
             this.reportText = new System.Windows.Forms.TextBox();
             this.customerId = new System.Windows.Forms.TextBox();
             this.bossName = new System.Windows.Forms.Label();
@@ -43,8 +42,6 @@
             this.their = new System.Windows.Forms.RadioButton();
             this.another = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.fromDate = new System.Windows.Forms.DateTimePicker();
-            this.toDate = new System.Windows.Forms.DateTimePicker();
             this.fromHour = new System.Windows.Forms.ComboBox();
             this.fromMinute = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,6 +64,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.createDate = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.fromDate = new System.Windows.Forms.Label();
+            this.toDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,13 +138,6 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "上司";
             // 
-            // createDate
-            // 
-            this.createDate.Location = new System.Drawing.Point(157, 153);
-            this.createDate.Name = "createDate";
-            this.createDate.Size = new System.Drawing.Size(198, 19);
-            this.createDate.TabIndex = 9;
-            // 
             // reportText
             // 
             this.reportText.Location = new System.Drawing.Point(162, 421);
@@ -165,7 +159,7 @@
             // bossName
             // 
             this.bossName.AutoSize = true;
-            this.bossName.Location = new System.Drawing.Point(160, 534);
+            this.bossName.Location = new System.Drawing.Point(176, 534);
             this.bossName.Name = "bossName";
             this.bossName.Size = new System.Drawing.Size(61, 12);
             this.bossName.TabIndex = 14;
@@ -213,22 +207,6 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "訪問種別";
             // 
-            // fromDate
-            // 
-            this.fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fromDate.Location = new System.Drawing.Point(234, 183);
-            this.fromDate.Name = "fromDate";
-            this.fromDate.Size = new System.Drawing.Size(121, 19);
-            this.fromDate.TabIndex = 20;
-            // 
-            // toDate
-            // 
-            this.toDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.toDate.Location = new System.Drawing.Point(234, 240);
-            this.toDate.Name = "toDate";
-            this.toDate.Size = new System.Drawing.Size(121, 19);
-            this.toDate.TabIndex = 21;
-            // 
             // fromHour
             // 
             this.fromHour.FormattingEnabled = true;
@@ -257,7 +235,7 @@
             "21",
             "22",
             "23"});
-            this.fromHour.Location = new System.Drawing.Point(376, 182);
+            this.fromHour.Location = new System.Drawing.Point(336, 182);
             this.fromHour.Name = "fromHour";
             this.fromHour.Size = new System.Drawing.Size(48, 20);
             this.fromHour.TabIndex = 22;
@@ -272,7 +250,7 @@
             "30",
             "40",
             "50"});
-            this.fromMinute.Location = new System.Drawing.Point(453, 183);
+            this.fromMinute.Location = new System.Drawing.Point(413, 183);
             this.fromMinute.Name = "fromMinute";
             this.fromMinute.Size = new System.Drawing.Size(44, 20);
             this.fromMinute.TabIndex = 23;
@@ -280,7 +258,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(430, 188);
+            this.label8.Location = new System.Drawing.Point(390, 188);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(17, 12);
             this.label8.TabIndex = 24;
@@ -289,7 +267,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(513, 188);
+            this.label9.Location = new System.Drawing.Point(473, 188);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(17, 12);
             this.label9.TabIndex = 25;
@@ -323,7 +301,7 @@
             "21",
             "22",
             "23"});
-            this.toHour.Location = new System.Drawing.Point(376, 239);
+            this.toHour.Location = new System.Drawing.Point(336, 228);
             this.toHour.Name = "toHour";
             this.toHour.Size = new System.Drawing.Size(48, 20);
             this.toHour.TabIndex = 26;
@@ -338,7 +316,7 @@
             "30",
             "40",
             "50"});
-            this.toMinute.Location = new System.Drawing.Point(453, 239);
+            this.toMinute.Location = new System.Drawing.Point(413, 228);
             this.toMinute.Name = "toMinute";
             this.toMinute.Size = new System.Drawing.Size(44, 20);
             this.toMinute.TabIndex = 27;
@@ -346,7 +324,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(513, 245);
+            this.label10.Location = new System.Drawing.Point(473, 234);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 12);
             this.label10.TabIndex = 29;
@@ -355,7 +333,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(430, 245);
+            this.label11.Location = new System.Drawing.Point(390, 234);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(17, 12);
             this.label11.TabIndex = 28;
@@ -373,7 +351,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("MS UI Gothic", 15F);
-            this.label13.Location = new System.Drawing.Point(280, 216);
+            this.label13.Location = new System.Drawing.Point(280, 205);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(0, 20);
             this.label13.TabIndex = 31;
@@ -390,7 +368,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(160, 245);
+            this.label15.Location = new System.Drawing.Point(160, 228);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(18, 12);
             this.label15.TabIndex = 33;
@@ -447,9 +425,9 @@
             this.registButton.BackColor = System.Drawing.Color.DimGray;
             this.registButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.registButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.registButton.Location = new System.Drawing.Point(49, 585);
+            this.registButton.Location = new System.Drawing.Point(22, 565);
             this.registButton.Name = "registButton";
-            this.registButton.Size = new System.Drawing.Size(75, 23);
+            this.registButton.Size = new System.Drawing.Size(85, 34);
             this.registButton.TabIndex = 38;
             this.registButton.Text = "登録";
             this.registButton.UseVisualStyleBackColor = false;
@@ -505,12 +483,52 @@
             this.label18.TabIndex = 45;
             this.label18.Text = "顧客担当者名";
             // 
+            // createDate
+            // 
+            this.createDate.AutoSize = true;
+            this.createDate.Location = new System.Drawing.Point(160, 158);
+            this.createDate.Name = "createDate";
+            this.createDate.Size = new System.Drawing.Size(41, 12);
+            this.createDate.TabIndex = 46;
+            this.createDate.Text = "label19";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(0, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 12);
+            this.label19.TabIndex = 47;
+            this.label19.Text = "label19";
+            // 
+            // fromDate
+            // 
+            this.fromDate.AutoSize = true;
+            this.fromDate.Location = new System.Drawing.Point(257, 188);
+            this.fromDate.Name = "fromDate";
+            this.fromDate.Size = new System.Drawing.Size(41, 12);
+            this.fromDate.TabIndex = 48;
+            this.fromDate.Text = "label20";
+            // 
+            // toDate
+            // 
+            this.toDate.AutoSize = true;
+            this.toDate.Location = new System.Drawing.Point(257, 228);
+            this.toDate.Name = "toDate";
+            this.toDate.Size = new System.Drawing.Size(41, 12);
+            this.toDate.TabIndex = 49;
+            this.toDate.Text = "label20";
+            // 
             // ReportInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(586, 611);
+            this.ClientSize = new System.Drawing.Size(570, 611);
+            this.Controls.Add(this.toDate);
+            this.Controls.Add(this.fromDate);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.createDate);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label6);
@@ -533,8 +551,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.fromMinute);
             this.Controls.Add(this.fromHour);
-            this.Controls.Add(this.toDate);
-            this.Controls.Add(this.fromDate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.another);
             this.Controls.Add(this.their);
@@ -542,7 +558,6 @@
             this.Controls.Add(this.bossName);
             this.Controls.Add(this.customerId);
             this.Controls.Add(this.reportText);
-            this.Controls.Add(this.createDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.mail);
@@ -568,7 +583,6 @@
         private System.Windows.Forms.RadioButton mail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker createDate;
         private System.Windows.Forms.TextBox reportText;
         private System.Windows.Forms.TextBox customerId;
         private System.Windows.Forms.Label bossName;
@@ -576,8 +590,6 @@
         private System.Windows.Forms.RadioButton their;
         private System.Windows.Forms.RadioButton another;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker fromDate;
-        private System.Windows.Forms.DateTimePicker toDate;
         private System.Windows.Forms.ComboBox fromHour;
         private System.Windows.Forms.ComboBox fromMinute;
         private System.Windows.Forms.Label label8;
@@ -600,5 +612,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label createDate;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label fromDate;
+        private System.Windows.Forms.Label toDate;
     }
 }
