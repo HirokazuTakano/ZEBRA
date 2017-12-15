@@ -62,8 +62,11 @@
             this.topPageButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.registButton = new System.Windows.Forms.Button();
-            this.customerName = new System.Windows.Forms.Label();
-            this.companyName = new System.Windows.Forms.Label();
+            this.companyName = new System.Windows.Forms.TextBox();
+            this.customerName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,9 +154,12 @@
             // 
             // customerId
             // 
-            this.customerId.Location = new System.Drawing.Point(162, 302);
+            this.customerId.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.customerId.Location = new System.Drawing.Point(347, 281);
+            this.customerId.Multiline = true;
             this.customerId.Name = "customerId";
-            this.customerId.Size = new System.Drawing.Size(155, 19);
+            this.customerId.ReadOnly = true;
+            this.customerId.Size = new System.Drawing.Size(150, 19);
             this.customerId.TabIndex = 12;
             // 
             // bossName
@@ -428,9 +434,9 @@
             this.searchButton.BackColor = System.Drawing.Color.DimGray;
             this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchButton.Location = new System.Drawing.Point(453, 324);
+            this.searchButton.Location = new System.Drawing.Point(162, 299);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.Size = new System.Drawing.Size(75, 26);
             this.searchButton.TabIndex = 37;
             this.searchButton.Text = "検索";
             this.searchButton.UseVisualStyleBackColor = false;
@@ -449,23 +455,55 @@
             this.registButton.UseVisualStyleBackColor = false;
             this.registButton.Click += new System.EventHandler(this.registButton_Click);
             // 
-            // customerName
-            // 
-            this.customerName.AutoSize = true;
-            this.customerName.Location = new System.Drawing.Point(222, 329);
-            this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(77, 12);
-            this.customerName.TabIndex = 39;
-            this.customerName.Text = "顧客担当者名";
-            // 
             // companyName
             // 
-            this.companyName.AutoSize = true;
-            this.companyName.Location = new System.Drawing.Point(160, 329);
+            this.companyName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.companyName.Location = new System.Drawing.Point(347, 306);
+            this.companyName.Multiline = true;
             this.companyName.Name = "companyName";
-            this.companyName.Size = new System.Drawing.Size(41, 12);
-            this.companyName.TabIndex = 40;
-            this.companyName.Text = "会社名";
+            this.companyName.ReadOnly = true;
+            this.companyName.Size = new System.Drawing.Size(150, 19);
+            this.companyName.TabIndex = 41;
+            // 
+            // customerName
+            // 
+            this.customerName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.customerName.Location = new System.Drawing.Point(347, 331);
+            this.customerName.Multiline = true;
+            this.customerName.Name = "customerName";
+            this.customerName.ReadOnly = true;
+            this.customerName.Size = new System.Drawing.Size(150, 19);
+            this.customerName.TabIndex = 42;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(291, 285);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 11);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "顧客ID";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label17.Location = new System.Drawing.Point(290, 310);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 11);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "会社名";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label18.Location = new System.Drawing.Point(270, 335);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(71, 11);
+            this.label18.TabIndex = 45;
+            this.label18.Text = "顧客担当者名";
             // 
             // ReportInput
             // 
@@ -473,8 +511,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(586, 611);
-            this.Controls.Add(this.companyName);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.customerName);
+            this.Controls.Add(this.companyName);
             this.Controls.Add(this.registButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.topPageButton);
@@ -554,7 +595,10 @@
         private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button registButton;
-        private System.Windows.Forms.Label customerName;
-        private System.Windows.Forms.Label companyName;
+        private System.Windows.Forms.TextBox companyName;
+        private System.Windows.Forms.TextBox customerName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }
