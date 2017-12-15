@@ -31,6 +31,7 @@ namespace ZEBRA
         private String _visitTo;
         private String _type;
         private String _content;
+        private String _company;
 
         public String Date
         {
@@ -109,6 +110,19 @@ namespace ZEBRA
             }
         }
 
+        public string Company
+        {
+            get
+            {
+                return _company;
+            }
+
+            set
+            {
+                _company = value;
+            }
+        }
+
         private void AdmitReportDetail_Load(object sender, EventArgs e)
         {
             this.reportId.Text = _reportId;
@@ -117,6 +131,7 @@ namespace ZEBRA
             this.visitTo.Text = _visitTo;
             this.visitType.Text = _type;
             this.content.Text = _content;
+            this.visitTo.Text = _company;
 
         }
 
@@ -152,10 +167,10 @@ namespace ZEBRA
                 //// SQL文を実行。approvalStatus
                 //SqlDataReader reader = command.ExecuteReader();
 
-
+                string bosscomment = bossComments.Text;
                 // パラメタに値を設定
                 command.Parameters.Add(new SqlParameter("@REPORT_ID", _reportId));
-                command.Parameters.Add(new SqlParameter("@BOSS_COMMENT",  _content ));
+                command.Parameters.Add(new SqlParameter("@BOSS_COMMENT", bosscomment));
 
                 int ret = command.ExecuteNonQuery();
 
@@ -174,7 +189,7 @@ namespace ZEBRA
             Hide();
             AdmitList admitList = new AdmitList();
             admitList.Show(this);
-            Debug.WriteLine("トップページに飛びました");
+    
 
 
 
@@ -185,7 +200,49 @@ namespace ZEBRA
         //承認しない場合
         private void Noadmit_Click(object sender, EventArgs e)
         {
+            // 接続用のクラス
+            SqlConnection con = new SqlConnection();
 
+            // DBへの接続文字列。
+            con.ConnectionString = "data source=localhost\\SQLEXPRESS;" + // 接続先のDBサーバーを指定
+                                   "initial catalog=zebradb;" +            // 接続先のDBを指定
+                                   "user id=sa;" +                        // ユーザー
+                                   "password=p@ssw0rd;" +                 // パスワード
+                                   "Connect Timeout=60;";
+
+            try
+            {
+                con.Open(); // DBに接続
+
+                // 問い合わせのSQLを生成
+                string sql =
+                    "UPDATE TM_DAILY_REPORT " +
+
+                    "SET BOSS_COMMENT = @BOSS_COMMENT, APPROVAL_STATUS = 2 " +
+                    "WHERE REPORT_ID = @REPORT_ID;";
+
+                // コネクションオブジェクトを使用して、SQLの発行準備
+                SqlCommand command = new SqlCommand(sql, con);
+
+                //// SQL文を実行。approvalStatus
+                //SqlDataReader reader = command.ExecuteReader();
+
+                string bosscomment = bossComments.Text;
+                // パラメタに値を設定
+                command.Parameters.Add(new SqlParameter("@REPORT_ID", _reportId));
+                command.Parameters.Add(new SqlParameter("@BOSS_COMMENT", bosscomment));
+
+                int ret = command.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
 
             Hide();
             AdmitList admitList = new AdmitList();

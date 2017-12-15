@@ -18,218 +18,8 @@ namespace ZEBRA
     /// </summary>
     public partial class AdmitList : Form
     {
-        private readonly int reportId; // 日報ID
-        private DateTime createDate; // 作成日時
-        private DateTime updateDate; // 更新日時
-        private DateTime visitStratDate; // 訪問開始日時
-        private DateTime visitEndDate;　　// 訪問終了日時
-        private string visittype;　　　　// 訪問種別
-        private string detaile;         //本文
-        private readonly string cusId;          //顧客ID 
-        private int approvalstatus;    // 承認フラグ
-        private readonly string autherId;       // 作成者ID
-        private readonly string bossId;         // 上司ID
-        private string bossSei;        // 上司姓
-        private string bossMei;        //　上司名
-        private string bosscomment;    //　上司コメント
-        private string visitTo;    //　訪問先
       
 
-
-        public AdmitList(int reportId, DateTime createDate, DateTime updateDate, DateTime visitStratDate, DateTime visitEndDate
-                     , string visittype, string detaile, string cusId, int approvalstatus, string autherId, string bossId
-                     , string bossSei, string bossMei, string bosscomment　,string visitTo)
-        {
-            this.reportId = reportId;
-            this.createDate = createDate;
-            this.updateDate = updateDate;
-            this.visitStratDate = visitStratDate;
-            this.visitEndDate = visitEndDate;
-            this.visittype = visittype;
-            this.detaile = detaile;
-            this.cusId = cusId;
-            this.autherId = autherId;
-            this.bossId = bossId;
-            this.bossSei = bossSei;
-            this.bossMei = bossMei;
-            this.bosscomment = bosscomment;
-            this.VisitTo = visitTo;
-          
-        }
-
-
-
-       public int ReportId
-        {
-            get
-            {
-                return reportId;
-            }
-        }
-
-
-        public DateTime CreateDate
-        {
-            get
-            {
-                return createDate;
-            }
-            set
-            {
-                createDate = value;
-            }
-        }
-
-
-        public DateTime UpdateDate
-        {
-            get
-            {
-                return updateDate;
-            }
-            set
-            {
-                updateDate = value;
-            }
-        }
-
-        public DateTime VisitStratDate
-        {
-            get
-            {
-                return visitStratDate;
-            }
-            set
-            {
-                visitStratDate = value;
-            }
-        }
-
-        public DateTime VisitEndDate
-        {
-            get
-            {
-                return visitEndDate;
-            }
-            set
-            {
-                visitEndDate = value;
-            }
-        }
-
-
-        public string Detaile
-        {
-            get
-            {
-                return detaile;
-            }
-            set
-            {
-                detaile = value;
-            }
-        }
-
-
-        public string Visittype
-        {
-            get
-            {
-                return visittype;
-            }
-            set
-            {
-                visittype = value;
-            }
-        }
-
-        public string CusId
-        {
-            get
-            {
-                return cusId;
-            }
-        }
-
-
-        public int Approvalstatus
-        {
-            get
-            {
-                return approvalstatus;
-            }
-            set
-            {
-                approvalstatus = value;
-            }
-        }
-
-
-
-        public string AutherId
-        {
-            get
-            {
-                return autherId;
-            }
-        }
-
-        public string BossId
-        {
-            get
-            {
-                return bossId;
-            }
-        }
-
-        public string BossSei
-        {
-            get
-            {
-                return bossSei;
-            }
-            set
-            {
-                bossSei = value;
-            }
-        }
-
-        public string BossMei
-        {
-            get
-            {
-                return bossMei;
-            }
-            set
-            {
-                bossMei = value;
-            }
-        }
-
-        public string Bsscomment
-        {
-            get
-            {
-                return bosscomment;
-            }
-            set
-            {
-                bosscomment = value;
-            }
-        }
-
-        public string VisitTo
-        {
-            get
-            {
-                return visitTo;
-            }
-
-            set
-            {
-                visitTo = value;
-            }
-        }
 
         public AdmitList()
         {
@@ -251,10 +41,12 @@ namespace ZEBRA
 
             // 問い合わせのSQLを生成
             string sql =
-                "SELECT * " +
-                  "FROM dbo.TM_DAILY_REPORT " +
+                 "SELECT * " +
+                 "FROM dbo.TM_DAILY_REPORT R INNER JOIN dbo.TM_CUSTOMER C " +
+                 "ON R.CUS_ID = C.CUS_ID " +
                  "WHERE  APPROVAL_STATUS = 1 AND AUTHOR_BOSS_ID = @EMP_ID";
 
+          
 
             // コネクションオブジェクトを使用して、SQLの発行準備
             SqlCommand command = new SqlCommand(sql, con);
@@ -290,6 +82,10 @@ namespace ZEBRA
 
             admitViewList.Columns.Add("createdate", "作成日");
             admitViewList.Columns["createdate"].DataPropertyName = "CREATE_DATE";
+
+
+            admitViewList.Columns.Add("company", "訪問先");
+            admitViewList.Columns["company"].DataPropertyName = "COMPANY_NAME";
 
 
             admitViewList.Columns.Add("start", "訪問開始日時");
@@ -335,7 +131,8 @@ namespace ZEBRA
                 int _visitTo = dgv.Columns["start"].Index;
                 int _type = dgv.Columns["type"].Index;
                 int _content = dgv.Columns["detail"].Index;
-              
+                int _company = dgv.Columns["company"].Index;
+
 
                 AdmitReportDetail f = new AdmitReportDetail();
                 //子画面のプロパティに値をセットする
@@ -345,12 +142,17 @@ namespace ZEBRA
                 f.VisitTo = "" + dgv.Rows[e.RowIndex].Cells[_visitTo].Value;
                 f.Type = "" + dgv.Rows[e.RowIndex].Cells[_type].Value;
                 f.Content = "" + dgv.Rows[e.RowIndex].Cells[_content].Value;
+                f.Company = "" + dgv.Rows[e.RowIndex].Cells[_company].Value;
 
                 f.ShowDialog();
                 f.Dispose();
 
-
-
+                // 再起動後のForm2を生成
+                AdmitList admitList = new AdmitList();
+                // 自身を閉じる
+                this.Close();
+                // 再起動のForm2を起動する
+                admitList.Show();
 
                 ////子画面から値を取得する
                 //this.label1.Text = f.strParam;

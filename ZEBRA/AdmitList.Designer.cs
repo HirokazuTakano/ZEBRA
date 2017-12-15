@@ -43,7 +43,7 @@
             this.admitViewList.Location = new System.Drawing.Point(39, 128);
             this.admitViewList.Name = "admitViewList";
             this.admitViewList.RowTemplate.Height = 21;
-            this.admitViewList.Size = new System.Drawing.Size(732, 224);
+            this.admitViewList.Size = new System.Drawing.Size(847, 224);
             this.admitViewList.TabIndex = 0;
             this.admitViewList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.admitViewList_CellContentClick);
             // 
@@ -84,7 +84,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(783, 364);
+            this.ClientSize = new System.Drawing.Size(898, 364);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.topPageButton);

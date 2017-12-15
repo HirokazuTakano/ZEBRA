@@ -43,7 +43,6 @@
             this.content = new System.Windows.Forms.Label();
             this.admitButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.topPageButton = new System.Windows.Forms.Button();
             this.Noadmit = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.reportId = new System.Windows.Forms.Label();
@@ -201,17 +200,6 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // topPageButton
-            // 
-            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
-            this.topPageButton.ForeColor = System.Drawing.Color.White;
-            this.topPageButton.Location = new System.Drawing.Point(12, 78);
-            this.topPageButton.Name = "topPageButton";
-            this.topPageButton.Size = new System.Drawing.Size(79, 25);
-            this.topPageButton.TabIndex = 32;
-            this.topPageButton.Text = "トップページ";
-            this.topPageButton.UseVisualStyleBackColor = false;
-            // 
             // Noadmit
             // 
             this.Noadmit.BackColor = System.Drawing.Color.DimGray;
@@ -253,7 +241,6 @@
             this.Controls.Add(this.reportId);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Noadmit);
-            this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.admitButton);
             this.Controls.Add(this.content);
@@ -295,7 +282,6 @@
         private System.Windows.Forms.Label content;
         private System.Windows.Forms.Button admitButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.Button Noadmit;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label reportId;
