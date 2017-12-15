@@ -247,8 +247,13 @@ namespace ZEBRA
             //会社名or顧客名を取得
             _cus = customer.Text;
 
-            CustomerSearch search = new CustomerSearch(_cus);
-            search.ShowDialog(this);  // ここで処理が止まる。
+            CustomerSearch search = new CustomerSearch();
+            search.Show(this);  // ここで処理が止まる。
+
+        }
+
+        private void ReportInput_Load(object sender, EventArgs e)
+        {
 
         }
     }
