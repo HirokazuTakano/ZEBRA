@@ -83,12 +83,12 @@ namespace ZEBRA
             {
 
                 //入力されたfrom日付をデータ型に結合
-                string str = fromDate.ToString() + "" + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
+                string str = fromDate.ToString() + " " + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
                 startDate = DateTime.Parse(str);
 
 
                 //入力されたto日付をデータ型に結合
-                string str2 = toDate.ToString() + "" + toHour.Text + ":" + toMinute.Text + ":" + "00";
+                string str2 = toDate.ToString() + " " + toHour.Text + ":" + toMinute.Text + ":" + "00";
                 endDate = DateTime.Parse(str);
 
             }
@@ -191,7 +191,7 @@ namespace ZEBRA
             toDate.Text = enddt.ToString();
             toHour.Text = (enddt.Hour).ToString();
             toMinute.Text = (enddt.Minute).ToString();
-            customerId.Text = report.CusId;
+            customerId.Text = cusName;
             reportText.Text = report.Detaile;
             bossName.Text = report.BossSei + report.BossMei;
 
