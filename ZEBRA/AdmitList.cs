@@ -302,6 +302,9 @@ namespace ZEBRA
             admitViewList.Columns.Add("type", "訪問種別");
             admitViewList.Columns["type"].DataPropertyName = "VISIT_TYPE";
 
+            admitViewList.Columns.Add("detail", "内容");
+            admitViewList.Columns["detail"].DataPropertyName = "DETAILS";
+
 
             // ボタンを追加
             DataGridViewButtonColumn button = new DataGridViewButtonColumn();
@@ -310,9 +313,6 @@ namespace ZEBRA
             button.UseColumnTextForButtonValue = true;  // Textプロパティ値をボタンに表示させる。
             button.Text = "詳細";
             admitViewList.Columns.Add(button);
-
-
-
 
 
 
@@ -329,23 +329,17 @@ namespace ZEBRA
             if (dgv.Columns[e.ColumnIndex].Name == "editButton")
             {
                 // 車両IDのインデックスを取得
+                int _reportId = dgv.Columns["reportId"].Index;
                 int _date = dgv.Columns["createdate"].Index;
                 int _visit = dgv.Columns["start"].Index;
                 int _visitTo = dgv.Columns["start"].Index;
                 int _type = dgv.Columns["type"].Index;
-                int _content = dgv.Columns["createdate"].Index;
+                int _content = dgv.Columns["detail"].Index;
               
-
-                //// クリックされた行の車両IDを表示
-                //MessageBox.Show("車両IDは" +
-                //    dgv.Rows[e.RowIndex].Cells[cellIndex].Value);
-
-
-
-
 
                 AdmitReportDetail f = new AdmitReportDetail();
                 //子画面のプロパティに値をセットする
+                f.ReportId = "" + dgv.Rows[e.RowIndex].Cells[_reportId].Value;
                 f.Date = ""+dgv.Rows[e.RowIndex].Cells[_date].Value;
                 f.Visit = "" + dgv.Rows[e.RowIndex].Cells[_visit].Value;
                 f.VisitTo = "" + dgv.Rows[e.RowIndex].Cells[_visitTo].Value;
@@ -353,6 +347,9 @@ namespace ZEBRA
                 f.Content = "" + dgv.Rows[e.RowIndex].Cells[_content].Value;
 
                 f.ShowDialog();
+                f.Dispose();
+
+
 
 
                 ////子画面から値を取得する
