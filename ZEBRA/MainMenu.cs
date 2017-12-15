@@ -232,7 +232,8 @@ namespace ZEBRA
 
             // 問い合わせのSQLを生成
             string sql =
-               "SELECT CREATE_DATE,VISIT_STRAT_DATE,VISIT_END_DATE,VISIT_TYPE,DETAILS,STATUS,BOSS_COMMENT " +
+               "SELECT CREATE_DATE, VISIT_STRAT_DATE, VISIT_END_DATE, " +
+                 "C.CUS_ID, C.COMPANY_NAME, C.CUS_NAME, VISIT_TYPE, DETAILS, STATUS, BOSS_COMMENT " +
                  "FROM dbo.TM_DAILY_REPORT R LEFT JOIN dbo.TM_CUSTOMER C " +
                  "ON R.CUS_ID = C.CUS_ID " +
                  "LEFT JOIN dbo.TS_STATUS S ON APPROVAL_STATUS = STATUS " +
@@ -242,8 +243,7 @@ namespace ZEBRA
             SqlCommand command = new SqlCommand(sql, con);
 
             // パラメタに値を設定
-            command.Parameters.Add(
-                    new SqlParameter("@REPORT_ID", o));
+            command.Parameters.Add(new SqlParameter("@REPORT_ID", o));
 
             try
             {
@@ -252,9 +252,26 @@ namespace ZEBRA
                 // SQL文を実行。
                 SqlDataReader reader = command.ExecuteReader();
 
-                reportDatail.SetData(reader.GetDateTime(0).ToString(), reader.GetDateTime(1).ToString(),
-                    reader.GetDateTime(2).ToString(),reader.GetString(3), reader.GetString(4),
-                    reader.GetInt32(5), reader.GetString(6));
+                while (reader.Read())
+                {
+
+                    Debug.WriteLine(reader.GetDateTime(0).ToString());
+                    Debug.WriteLine(reader.GetInt32(8));
+
+                    reportDatail.SetData
+                        (reader.GetDateTime(0).ToString(), 
+                         reader.GetDateTime(1).ToString() + " ～ " + reader.GetDateTime(2).ToString(),
+                         "顧客ＩＤ:" + reader.GetString(3) + Environment.NewLine 
+                         +"会社名:" + reader.GetString(4) + Environment.NewLine 
+                         +"顧客担当者名:" + reader.GetString(5), 
+                         reader.GetString(6),
+                         reader.GetString(7),
+                         reader.GetInt32(8),
+                         reader.GetString(9)
+                         );
+                }
+
+                
             }
             catch (SqlException ex)
             {

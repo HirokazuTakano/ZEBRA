@@ -25,10 +25,10 @@ namespace ZEBRA
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void SetData(string fill, string visitDate, string visitTo, string visitType, string content, int approvalStatus, string bossComment)
+        public void SetData(string createDate, string visitDateFromTo, string visitTo, string visitType, string content, int approvalStatus, string bossComment)
         {
-            this.fillDate.Text = fill;
-            this.visitDate.Text = visitDate;
+            this.fillDate.Text = createDate;
+            this.visitDate.Text = visitDateFromTo;
             this.visitTo.Text = visitTo;
             this.visitType.Text = visitType;
             this.content.Text = content;
@@ -55,6 +55,19 @@ namespace ZEBRA
         private void ReportDatail_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void topPageButton_Click(object sender, EventArgs e)
+        {
+            //this.Close();
+            //MainMenu mm = (MainMenu)Owner;
+            //mm.Show();
+
+        }
+
+        private void ReportDatail_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }
