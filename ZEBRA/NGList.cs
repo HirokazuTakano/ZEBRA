@@ -191,7 +191,10 @@ namespace ZEBRA
                             cusName = customerList[(int)dgv.Rows[e.RowIndex].Cells[cellIndex].Value];
                         }
                         modify.getReport(reportList[i], cusName);
+                        
                         modify.Show(this);
+
+                        this.Close();
 
                         break;
                     }     

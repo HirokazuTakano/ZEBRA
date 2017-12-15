@@ -104,7 +104,7 @@ namespace ZEBRA
 
             // DBへの接続文字列。
             con.ConnectionString = "data source=localhost\\SQLEXPRESS;" + // 接続先のDBサーバーを指定
-                                   "initial catalog=testdb;" +            // 接続先のDBを指定
+                                   "initial catalog=zebradb;" +            // 接続先のDBを指定
                                    "user id=sa;" +                        // ユーザー
                                    "password=p@ssw0rd;" +                 // パスワード
                                    "Connect Timeout=60;";
@@ -115,7 +115,7 @@ namespace ZEBRA
 
                 string sql =
       "UPDATE dbo.TM_DAILY_REPORT " +
-      "SET UPDATE_DATE= @UPDATE_DATE, VISIT_STRAT_DATE= @VISIT_STRAT_DATE, " +
+      "SET UPDATE_DATE = @UPDATE_DATE, VISIT_STRAT_DATE = @VISIT_STRAT_DATE, " +
       "VISIT_END_DATE= @VISIT_END_DATE, VISIT_TYPE= @VISIT_TYPE, DETAILS = @DETAIL, " +
       "APPROVAL_STATUS = @APPROVAL_STATUS " + 
       "WHERE REPORT_ID = @REPORT_ID" ;
@@ -151,11 +151,13 @@ namespace ZEBRA
             {
                     DialogResult result =  MessageBox.Show("更新が完了しました", "確認ダイアログ", MessageBoxButtons.OK);
                     
-                    if(result == DialogResult.Yes)
+                    if(result == DialogResult.OK)
                     {
-                        NGList ngList = new NGList();
-                        ngList.ShowDialog(this);
+                        MainMenu main  = new MainMenu();
+                        main.Show(this);
                         Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
+                        this.Close();
+
                     }
                     else
                     {
