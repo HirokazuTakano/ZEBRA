@@ -247,15 +247,12 @@ namespace ZEBRA
                 MessageBox.Show(_cusId + _compName + _cusName);
                 //Owner.(TextBox)customer.Text = _cusId;
 
-
-
-
+                ReportInput rp = (ReportInput)Owner;
+                rp.CustomerId = _cusId;
+                rp.Company = _compName;
+                rp.CustomerName = _cusName;
 
                 this.Close();
-
-
-                //Form1のTextBox1.Textの値を設定
-                //
 
 
             }

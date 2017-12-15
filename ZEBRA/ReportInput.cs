@@ -44,6 +44,7 @@ namespace ZEBRA
             set
             {
                 _customerId = value;
+                customerId.Text = _customerId;
             }
         }
         //顧客名のプロパティ
@@ -57,6 +58,7 @@ namespace ZEBRA
             set
             {
                 _customerName = value;
+                customerName.Text = _customerName;
             }
         }
 
@@ -71,6 +73,7 @@ namespace ZEBRA
             set
             {
                 _company = value;
+                companyName.Text = _company;
             }
         }
 
@@ -115,7 +118,7 @@ namespace ZEBRA
             string _toMinute = toMinute.Text;
 
             //顧客を取得
-            _customerId = customer.Text;
+            _customerId = customerId.Text;
 
             string visitType = "";
             //訪問種別を取得
