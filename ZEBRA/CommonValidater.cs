@@ -21,6 +21,8 @@ namespace ZEBRA
         private DateTime startDateAll;
         private DateTime endDateAll;
 
+        private List<string> errorList = new List<string>();
+
         int resultDate;
 
 
@@ -49,30 +51,36 @@ namespace ZEBRA
             if (startDate == null || startDate.Equals(""))
             {
                 result = false;
+                errorList.Add("startDate");
             }
             else if (startHour == null || startHour.Equals(""))
             {
                 result = false;
+                errorList.Add("startHour");
             }
 
             else if (startMin == null || startMin.Equals(""))
             {
                 result = false;
+                errorList.Add("startMin");
             }
 
             else if (endDate == null || endDate.Equals(""))
             {
                 result = false;
+                errorList.Add("endDate");
             }
 
             else if (endHour == null || endHour.Equals(""))
             {
                 result = false;
+                errorList.Add("endHour");
             }
 
             else if (endMin == null || endMin.Equals(""))
             {
                 result = false;
+                errorList.Add("endMin");
             }
             else
             {
