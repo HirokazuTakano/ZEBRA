@@ -21,12 +21,13 @@ namespace ZEBRA
             InitializeComponent();
         }
 
-        //会社名or顧客名を取得
+        //コンストラクタ　　会社名or顧客名を取得
         public CustomerSearch(string _cus)
         {
             this._cus = _cus;
         }
 
+        //「トップページ」ボタンを押下
         private void topPageButton_Click(object sender, EventArgs e)
         {
             MainMenu main = new MainMenu();
