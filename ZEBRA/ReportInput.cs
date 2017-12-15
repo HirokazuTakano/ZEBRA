@@ -223,9 +223,62 @@ namespace ZEBRA
 
             }else
             {
+                List<string> msgList = new List<string>();
+                List<string> errorList = validate.ErrorList;
                 
+                foreach(string errorMessage in errorList)
+                {
+                    if (errorMessage.Equals("startHour"))
+                    {
+                        msgList.Add("日時のFrom（時間）が未入力です");
+                    }
 
-                MessageBox.Show("入力ミス！");
+                    if (errorMessage.Equals("startMin"))
+                    {
+                        msgList.Add("日時のFrom（分）が未入力です");
+                    }
+
+                    if (errorMessage.Equals("endHour"))
+                    {
+                        msgList.Add("日時のTo（時間）が未入力です");
+                    }
+                    if (errorMessage.Equals("endMin"))
+                    {
+                        msgList.Add("日時のto（分）が未入力です");
+                    }
+
+                    if (errorMessage.Equals("endFuture"))
+                    {
+                        msgList.Add("ToはFromより後の時間にしてください");
+                    }
+
+                    if (errorMessage.Equals("customerName"))
+                    {
+                        msgList.Add("訪問先の顧客を選択してください");
+                    }
+
+                    if (errorMessage.Equals("visitType"))
+                    {
+                        msgList.Add("訪問種別を選択してください");
+                    }
+
+                    if (errorMessage.Equals("detail"))
+                    {
+                        msgList.Add("内容を入力してください");
+                    }
+
+                }
+
+
+                string messageAll = "";
+
+                foreach(string msg in msgList)
+                {
+                    messageAll += msg + Environment.NewLine;
+                }
+
+                MessageBox.Show(messageAll);
+                
             }
             
         }
