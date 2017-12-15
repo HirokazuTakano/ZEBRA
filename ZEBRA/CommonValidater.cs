@@ -8,11 +8,9 @@ namespace ZEBRA
 {
     class CommonValidater
     {
-        //private DateTime startDate;
         private string startDate;
         private string startHour;
         private string startMin;
-        //private DateTime endDate;
         private string endDate;
         private string endHour;
         private string endMin;
@@ -26,21 +24,6 @@ namespace ZEBRA
         int resultDate;
 
 
-
-        //public CommonValidater(DateTime startDate, string startHour,
-        //    string startMin, DateTime endDate, string endHour, string endMin, string customerName,
-        //    string visitType, string detail)
-        //{
-        //    this.startDate = startDate;
-        //    this.startHour = startHour;
-        //    this.startMin = startMin;
-        //    this.endDate = endDate;
-        //    this.endHour = endHour;
-        //    this.endMin = endMin;
-        //    this.customerName = customerName;
-        //    this.visitType = visitType;
-        //    this.detail = detail;
-        //}
 
         public CommonValidater(string startDate, string startHour,
              string startMin, string endDate, string endHour, string endMin, string customerName,
@@ -95,17 +78,12 @@ namespace ZEBRA
             {
 
                 //日にち、時間、分をつなげてDateTime型をstartDateAllへ
-                //string str = startDate.ToString() + " " + startHour + ":" + startMin + ":" + "00";
                 int startH = int.Parse(startHour);
                 int startM = int.Parse(startMin);
-
                 DateTime visitStart = DateTime.Parse(startDate + " " + startH + ":" + startM);
-
                 startDateAll = visitStart;
 
                 //日にち、時間、分をつなげてDateTime型をendDateAllへ
-                //string str2 = endDate.ToString() + " " + endHour + ":" + endMin + ":" + "00";
-
                 int endH = int.Parse(endHour);
                 int endM = int.Parse(endMin);
                 DateTime visitEnd = DateTime.Parse(endDate + " " + endH + ":" + endM);
@@ -122,11 +100,9 @@ namespace ZEBRA
                 else
                 {
                     //終了が開始より前にならないか
-                    resultDate = DateTime.Compare(endDateAll, startDateAll);
-                    if (resultDate == 1)
+                    if(endDateAll < StartDateAll)
                     {
                         result = false;
-
                     }
 
                 }
