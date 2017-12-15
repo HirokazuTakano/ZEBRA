@@ -49,9 +49,7 @@
             this.their = new System.Windows.Forms.RadioButton();
             this.opponentHouse = new System.Windows.Forms.RadioButton();
             this.bossName = new System.Windows.Forms.Label();
-            this.customerId = new System.Windows.Forms.TextBox();
             this.reportText = new System.Windows.Forms.TextBox();
-            this.createDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.mail = new System.Windows.Forms.RadioButton();
@@ -60,8 +58,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.customerName = new System.Windows.Forms.Label();
-            this.companyName = new System.Windows.Forms.Label();
+            this.customer = new System.Windows.Forms.Label();
+            this.createDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +83,7 @@
             this.topPageButton.TabIndex = 30;
             this.topPageButton.Text = "トップページ";
             this.topPageButton.UseVisualStyleBackColor = false;
+            this.topPageButton.Click += new System.EventHandler(this.topPageButton_Click);
             // 
             // registButton
             // 
@@ -324,13 +323,6 @@
             this.bossName.TabIndex = 45;
             this.bossName.Text = "高野　浩一";
             // 
-            // customerId
-            // 
-            this.customerId.Location = new System.Drawing.Point(157, 279);
-            this.customerId.Name = "customerId";
-            this.customerId.Size = new System.Drawing.Size(155, 19);
-            this.customerId.TabIndex = 43;
-            // 
             // reportText
             // 
             this.reportText.Location = new System.Drawing.Point(157, 362);
@@ -338,13 +330,6 @@
             this.reportText.Name = "reportText";
             this.reportText.Size = new System.Drawing.Size(368, 100);
             this.reportText.TabIndex = 42;
-            // 
-            // createDate
-            // 
-            this.createDate.Location = new System.Drawing.Point(152, 133);
-            this.createDate.Name = "createDate";
-            this.createDate.Size = new System.Drawing.Size(198, 19);
-            this.createDate.TabIndex = 41;
             // 
             // label5
             // 
@@ -389,7 +374,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 286);
+            this.label3.Location = new System.Drawing.Point(46, 269);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 12);
             this.label3.TabIndex = 36;
@@ -423,23 +408,23 @@
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
-            // customerName
+            // customer
             // 
-            this.customerName.AutoSize = true;
-            this.customerName.Location = new System.Drawing.Point(169, 260);
-            this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(35, 12);
-            this.customerName.TabIndex = 64;
-            this.customerName.Text = "label6";
+            this.customer.AutoSize = true;
+            this.customer.Location = new System.Drawing.Point(155, 269);
+            this.customer.Name = "customer";
+            this.customer.Size = new System.Drawing.Size(35, 12);
+            this.customer.TabIndex = 64;
+            this.customer.Text = "label6";
             // 
-            // companyName
+            // createDate
             // 
-            this.companyName.AutoSize = true;
-            this.companyName.Location = new System.Drawing.Point(241, 260);
-            this.companyName.Name = "companyName";
-            this.companyName.Size = new System.Drawing.Size(41, 12);
-            this.companyName.TabIndex = 65;
-            this.companyName.Text = "label16";
+            this.createDate.AutoSize = true;
+            this.createDate.Location = new System.Drawing.Point(157, 137);
+            this.createDate.Name = "createDate";
+            this.createDate.Size = new System.Drawing.Size(35, 12);
+            this.createDate.TabIndex = 65;
+            this.createDate.Text = "label6";
             // 
             // ReportModify
             // 
@@ -447,8 +432,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(570, 554);
-            this.Controls.Add(this.companyName);
-            this.Controls.Add(this.customerName);
+            this.Controls.Add(this.createDate);
+            this.Controls.Add(this.customer);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -468,9 +453,7 @@
             this.Controls.Add(this.their);
             this.Controls.Add(this.opponentHouse);
             this.Controls.Add(this.bossName);
-            this.Controls.Add(this.customerId);
             this.Controls.Add(this.reportText);
-            this.Controls.Add(this.createDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.mail);
@@ -513,9 +496,7 @@
         private System.Windows.Forms.RadioButton their;
         private System.Windows.Forms.RadioButton opponentHouse;
         private System.Windows.Forms.Label bossName;
-        private System.Windows.Forms.TextBox customerId;
         private System.Windows.Forms.TextBox reportText;
-        private System.Windows.Forms.DateTimePicker createDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton mail;
@@ -524,7 +505,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label customerName;
-        private System.Windows.Forms.Label companyName;
+        private System.Windows.Forms.Label customer;
+        private System.Windows.Forms.Label createDate;
     }
 }

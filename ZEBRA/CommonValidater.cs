@@ -47,40 +47,28 @@ namespace ZEBRA
         {
             Boolean result = true;
 
-
-            if (startDate == null || startDate.Equals(""))
+            if (startHour == null || startHour.Equals(""))
             {
                 result = false;
-                errorList.Add("startDate");
-            }
-            else if (startHour == null || startHour.Equals(""))
-            {
-                result = false;
-                errorList.Add("startHour");
+                ErrorList.Add("startHour");
             }
 
             else if (startMin == null || startMin.Equals(""))
             {
                 result = false;
-                errorList.Add("startMin");
-            }
-
-            else if (endDate == null || endDate.Equals(""))
-            {
-                result = false;
-                errorList.Add("endDate");
+                ErrorList.Add("startMin");
             }
 
             else if (endHour == null || endHour.Equals(""))
             {
                 result = false;
-                errorList.Add("endHour");
+                ErrorList.Add("endHour");
             }
 
             else if (endMin == null || endMin.Equals(""))
             {
                 result = false;
-                errorList.Add("endMin");
+                ErrorList.Add("endMin");
             }
             else
             {
@@ -104,6 +92,7 @@ namespace ZEBRA
                 if (resultDate == 1)
                 {
                     result = false;
+                    ErrorList.Add("fromFuture");
                 }
                 else
                 {
@@ -111,6 +100,7 @@ namespace ZEBRA
                     if(endDateAll < StartDateAll)
                     {
                         result = false;
+                        ErrorList.Add("endFuture");
                     }
 
                 }
@@ -122,11 +112,13 @@ namespace ZEBRA
             if (customerName == null || customerName.Equals(""))
             {
                 result = false;
+                ErrorList.Add("customerName");
             }
 
             if (visitType == null || visitType.Equals(""))
             {
                 result = false;
+                ErrorList.Add("visitType");
             }
 
 
@@ -134,6 +126,7 @@ namespace ZEBRA
             if (detail == null || detail.Equals(""))
             {
                 result = false;
+                ErrorList.Add("detail");
             }
 
 
@@ -158,6 +151,19 @@ namespace ZEBRA
             get
             {
                 return endDateAll;
+            }
+        }
+
+        public List<string> ErrorList
+        {
+            get
+            {
+                return errorList;
+            }
+
+            set
+            {
+                errorList = value;
             }
         }
     }
