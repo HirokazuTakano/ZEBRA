@@ -266,6 +266,13 @@ namespace ZEBRA
 
             bossName.Text = MainMenu.loginUser.BossName;
 
+            //現在日を取得
+            DateTime today = DateTime.Today;
+            //日付の部分だけを取得    0:00:00
+            createDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
+            fromDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
+            toDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
+
         }
     }
 }
