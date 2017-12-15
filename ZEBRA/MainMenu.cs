@@ -129,10 +129,7 @@ namespace ZEBRA
         /// <param name="e"></param>
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            Hide();
-            Login logint = new Login();
-            logint.Show(this);
-            Debug.WriteLine("ログアウトしました");
+            this.Close();
         }
 
         /// <summary>
@@ -285,6 +282,23 @@ namespace ZEBRA
             Hide();
             reportDatail.Show(this);
             Debug.WriteLine("詳細画面表示");
+        }
+
+
+        /// <summary>
+        /// メインメニューの×ボタンが押下された時, 強制ログアウト
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // ログインユーザ情報をnullにする
+            MainMenu.loginUser = null;
+
+            // 親(ログイン画面)を表示して, 自身をクローズ
+            MessageBox.Show("ログアウトします");
+            Debug.WriteLine("ログアウトしました");
+            Owner.Show();
         }
     }
 }

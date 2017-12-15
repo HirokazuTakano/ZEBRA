@@ -61,6 +61,7 @@
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(100, 19);
             this.id.TabIndex = 2;
+            this.id.Text = "E001";
             // 
             // password
             // 
@@ -69,6 +70,7 @@
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(100, 19);
             this.password.TabIndex = 3;
+            this.password.Text = "password";
             // 
             // pictureBox1
             // 
