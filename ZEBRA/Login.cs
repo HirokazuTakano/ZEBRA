@@ -44,8 +44,10 @@ namespace ZEBRA
             // 問い合わせのSQLを生成
             string sql =
                "SELECT * " +
-                 "FROM dbo.TM_EMPLOYEE " +
-                "WHERE EMP_ID = @EMP_ID AND EMP_PASSWORD = @EMP_PASSWORD ";
+                 "FROM dbo.TM_EMPLOYEE E LEFT JOIN dbo.TM_EMPLOYEE EE " +
+                 "ON E.BOSS_ID = EE.EMP_ID " +
+                 "LEFT JOIN dbo.TM_SECTION S ON E.EMP_SEC_ID = S.SECTION_ID " +
+                "WHERE E.EMP_ID = @EMP_ID AND E.EMP_PASSWORD = @EMP_PASSWORD ";
 
             // コネクションオブジェクトを使用して、SQLの発行準備
             SqlCommand command = new SqlCommand(sql, con);
@@ -71,9 +73,9 @@ namespace ZEBRA
                                      reader.GetString(1),
                                      reader.GetString(2) + " " + reader.GetString(3),
                                      reader.GetString(4),
-                                     "上司名(仮)",
+                                     reader.GetString(9) + " " + reader.GetString(10),
                                      reader.GetString(5),
-                                     "部署名(仮)",
+                                     reader.GetString(15),
                                      reader.GetString(6)
                                      );
                     MainMenu.loginUser = loginUser;
