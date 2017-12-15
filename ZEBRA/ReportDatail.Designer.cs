@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.topPageButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ぁ = new System.Windows.Forms.Label();
             this.approvalStatus = new System.Windows.Forms.Label();
@@ -148,19 +147,6 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "詳細";
             // 
-            // topPageButton
-            // 
-            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
-            this.topPageButton.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.topPageButton.ForeColor = System.Drawing.Color.White;
-            this.topPageButton.Location = new System.Drawing.Point(12, 86);
-            this.topPageButton.Name = "topPageButton";
-            this.topPageButton.Size = new System.Drawing.Size(75, 23);
-            this.topPageButton.TabIndex = 31;
-            this.topPageButton.Text = "トップページ";
-            this.topPageButton.UseVisualStyleBackColor = false;
-            this.topPageButton.Click += new System.EventHandler(this.topPageButton_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ZEBRA.Properties.Resources.zebra;
@@ -233,7 +219,6 @@
             this.Controls.Add(this.approvalStatus);
             this.Controls.Add(this.ぁ);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.visitType);
             this.Controls.Add(this.visitTo);
             this.Controls.Add(this.visitDate);
@@ -265,7 +250,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label ぁ;
         private System.Windows.Forms.Label approvalStatus;
