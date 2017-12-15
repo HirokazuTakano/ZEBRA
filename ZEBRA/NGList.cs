@@ -15,212 +15,21 @@ namespace ZEBRA
 
     
     /// <summary>
-    /// NG一覧クラス　沢谷
+    /// NG一覧クラス　沢谷　犬伏
     /// 
     /// </summary>
     public partial class NGList : Form
     {
-        private List<Report> reportList;
+        private List<Report> reportList = new List<Report>();
 
 
-        //private readonly int reportId; // 日報ID
-        //private DateTime createDate; // 作成日時
-        //private DateTime updateDate; // 更新日時
-        //private DateTime visitStratDate; // 訪問開始日時
-        //private DateTime visitEndDate;　　// 訪問終了日時
-        //private string visittype;　　　　// 訪問種別
-        //private string detaile;         //本文
-        //private readonly string cusId;          //顧客ID 
-        //private int approvalstatus;    // 承認フラグ
-        //private readonly string autherId;       // 作成者ID
-        //private readonly string bossId;         // 上司ID
-        //private string bossSei;        // 上司姓
-        //private string bossMei;        //　上司名
-        //private string bosscomment;    //　上司コメント
-        //public NGList(int reportId, DateTime createDate, DateTime updateDate, DateTime visitStratDate, DateTime visitEndDate
-        //             , string visittype, string detaile, string cusId, int approvalstatus, string autherId, string bossId
-        //             , string bossSei, string bossMei, string bosscomment)
-        //{
-        //    this.reportId = reportId;
-        //    this.createDate = createDate;
-        //    this.updateDate = updateDate;
-        //    this.visitStratDate = visitStratDate;
-        //    this.visitEndDate = visitEndDate;
-        //    this.visittype = visittype;
-        //    this.detaile = detaile;
-        //    this.cusId = cusId;
-        //    this.autherId = autherId;
-        //    this.bossId = bossId;
-        //    this.bossSei = bossSei;
-        //    this.bossMei = bossMei;
-        //    this.bosscomment = bosscomment;
-        //}
+
 
 
         public NGList()
         {
             InitializeComponent();
         }
-
-        //public int ReportId
-        //{
-        //    get
-        //    {
-        //        return reportId;
-        //    }
-        //}
-
-
-        //public DateTime CreateDate
-        //{
-        //    get
-        //    {
-        //        return createDate;
-        //    }
-        //    set
-        //    {
-        //        createDate = value;
-        //    }
-        //}
-
-
-        //public DateTime UpdateDate
-        //{
-        //    get
-        //    {
-        //        return updateDate;
-        //    }
-        //    set
-        //    {
-        //        updateDate = value;
-        //    }
-        //}
-
-        //public DateTime VisitStratDate
-        //{
-        //    get
-        //    {
-        //        return visitStratDate;
-        //    }
-        //    set
-        //    {
-        //        visitStratDate = value;
-        //    }
-        //}
-
-        //public DateTime VisitEndDate
-        //{
-        //    get
-        //    {
-        //        return visitEndDate;
-        //    }
-        //    set
-        //    {
-        //        visitEndDate = value;
-        //    }
-        //}
-
-
-        //public string Detaile
-        //{
-        //    get
-        //    {
-        //        return detaile;
-        //    }
-        //    set
-        //    {
-        //        detaile = value;
-        //    }
-        //}
-
-
-        //public string Visittype
-        //{
-        //    get
-        //    {
-        //        return visittype;
-        //    }
-        //    set
-        //    {
-        //        visittype = value;
-        //    }
-        //}
-
-        //public string CusId
-        //{
-        //    get
-        //    {
-        //        return cusId;
-        //    }
-        //}
-
-
-        //public int Approvalstatus
-        //{
-        //    get
-        //    {
-        //        return approvalstatus;
-        //    }
-        //    set
-        //    {
-        //        approvalstatus = value;
-        //    }
-        //}
-
-
-
-        //public string AutherId
-        //{
-        //    get
-        //    {
-        //        return autherId;
-        //    }
-        //}
-
-        //public string BossId
-        //{
-        //    get
-        //    {
-        //        return bossId;
-        //    }
-        //}
-
-        //public string BossSei
-        //{
-        //    get
-        //    {
-        //        return bossSei;
-        //    }
-        //    set
-        //    {
-        //        bossSei = value;
-        //    }
-        //}
-
-        //public string BossMei
-        //{
-        //    get
-        //    {
-        //        return bossMei;
-        //    }
-        //    set
-        //    {
-        //        bossMei = value;
-        //    }
-        //}
-
-        //public string Bsscomment
-        //{
-        //    get
-        //    {
-        //        return bosscomment;
-        //    }
-        //    set
-        //    {
-        //        bosscomment = value;
-        //    }
-        //}
-
 
 
 
@@ -247,7 +56,7 @@ namespace ZEBRA
                 "SELECT * " +
                  "FROM dbo.TM_DAILY_REPORT R INNER JOIN dbo.TM_CUSTOMER C " +
                  "ON R.CUS_ID = C.CUS_ID " +
-                 "ORDER BY REPORT_ID ";
+                 "ORDER BY REPORT_ID ;";
 
             // コネクションオブジェクトを使用して、SQLの発行準備
             SqlCommand command = new SqlCommand(sql, con);
@@ -256,7 +65,7 @@ namespace ZEBRA
             // アダプターを作成
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "DS_AdmitList");
+            adapter.Fill(ds, "NGViewList");
 
             List<string> reportlist = new List<string>();
 
@@ -273,7 +82,7 @@ namespace ZEBRA
 
             Report repo = null;
 
-            DataTable reportDt = ds.Tables["DS_AdmitList"];
+            DataTable reportDt = ds.Tables["NGViewList"];
             foreach (DataRow dr in reportDt.Rows)
             {
                 //          [REPORT_ID]
@@ -289,13 +98,15 @@ namespace ZEBRA
                 //,[AUTHOR_BOSS_ID]
                 //,[BOSS_COMMENT]
                 repo = new Report(int.Parse(dr["REPORT_ID"].ToString()), DateTime.Parse(dr["CREATE_DATE"].ToString()), DateTime.Parse(dr["UPDATE_DATE"].ToString()),
-                    DateTime.Parse(dr["VISIT_START_DATE"].ToString()), DateTime.Parse(dr["VISIT_END_DATE"].ToString()),
+                    DateTime.Parse(dr["VISIT_STRAT_DATE"].ToString()), DateTime.Parse(dr["VISIT_END_DATE"].ToString()),
                     (dr["VISIT_TYPE"].ToString()), (dr["DETAILS"].ToString()), (dr["CUS_ID"].ToString()), int.Parse(dr["APPROVAL_STATUS"].ToString()),
                         (dr["AUTHOR_ID"].ToString()), (dr["AUTHOR_BOSS_ID"].ToString()), "田中", "太郎", (dr["BOSS_COMMENT"].ToString()));
+
+                reportList.Add(repo);
             }
 
 
-            NGViewList.DataMember = "DS_AdmitList";
+            NGViewList.DataMember = "NGViewList";
 
             // 表示列を追加
             NGViewList.Columns.Add("reportId", "レポート番号");
@@ -304,17 +115,15 @@ namespace ZEBRA
             NGViewList.Columns.Add("createdate", "作成日");
             NGViewList.Columns["createdate"].DataPropertyName = "CREATE_DATE";
 
-
             NGViewList.Columns.Add("start", "訪問開始日時");
             NGViewList.Columns["start"].DataPropertyName = "VISIT_STRAT_DATE";
-
 
             NGViewList.Columns.Add("end", "訪問終了日時");
             NGViewList.Columns["end"].DataPropertyName = "VISIT_END_DATE";
 
             NGViewList.Columns.Add("type", "訪問種別");
             NGViewList.Columns["type"].DataPropertyName = "VISIT_TYPE";
-
+            
 
             // ボタンを追加
             DataGridViewButtonColumn button = new DataGridViewButtonColumn();
@@ -327,6 +136,11 @@ namespace ZEBRA
 
         }
 
+        /// <summary>
+        /// トップページへ遷移します
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void topPageButton_Click(object sender, EventArgs e)
         {
             Hide();
@@ -335,6 +149,11 @@ namespace ZEBRA
             Debug.WriteLine("トップページに飛びました");
         }
 
+        /// <summary>
+        /// クリックした要素を詳細に渡します。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NGViewList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // senderにはイベントを発生させたコントロールが入っている
@@ -345,20 +164,25 @@ namespace ZEBRA
                 ReportModify modify = new ReportModify();
 
                 // 車両IDのインデックスを取得
-                int cellIndex = dgv.Columns["REPORT_ID"].Index;
+                int cellIndex = dgv.Columns["reportId"].Index;
 
                 foreach(Report repo in reportList)
                 {
                     if ((int)dgv.Rows[e.RowIndex].Cells[cellIndex].Value == repo.ReportId)
                     {
-                        modify.getReport(repo);
-                        modify.Show();
-                    }
-                }
-               
 
-                // クリックされた行の車両IDを表示
-                MessageBox.Show("車両IDは" + dgv.Rows[e.RowIndex].Cells[cellIndex].Value);
+                       　//Report report = new Report(dgv.Columns["reportId"].Index, DateTime.Parse(""  + dgv.Columns["createdate"].Index), DateTime.Parse("" + dgv.Columns["update"].Index),
+                        //        DateTime.Parse("" + dgv.Columns["start"].Index), DateTime.Parse("" + dgv.Columns["start"].Index),
+                        //        "" + dgv.Columns["type"].Index, "" + dgv.Columns["detail"].Index, "" + dgv.Columns["cusId"].Index, dgv.Columns["approval"].Index,
+                        //            "" + dgv.Columns["authorId"].Index, "" + dgv.Columns["authorBoss"].Index, "田中", "太郎", "" + dgv.Columns["bossComment"].Index);
+
+                        modify.getReport(repo);
+                        modify.Show(this);
+                    }
+
+                    
+                    
+                }
 
             }
         }
