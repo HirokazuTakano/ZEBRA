@@ -20,7 +20,9 @@ namespace ZEBRA
     {
 
         // 顧客
-        string _customer;
+        string _customerName;
+        string _company;
+        string _customerId;
 
         //上司のID
         string bossId;
@@ -30,6 +32,47 @@ namespace ZEBRA
         // 接続用のクラス
         SqlConnection con = new SqlConnection();
 
+
+        //顧客IDのプロパティ
+        public string CustomerId
+        {
+            get
+            {
+                return _customerId;
+            }
+
+            set
+            {
+                _customerId = value;
+            }
+        }
+        //顧客名のプロパティ
+        public string CustomerName
+        {
+            get
+            {
+                return _customerName;
+            }
+
+            set
+            {
+                _customerName = value;
+            }
+        }
+
+        //会社名
+        public string Company
+        {
+            get
+            {
+                return _company;
+            }
+
+            set
+            {
+                _company = value;
+            }
+        }
 
         public ReportInput()
         {
@@ -72,7 +115,7 @@ namespace ZEBRA
             string _toMinute = toMinute.Text;
 
             //顧客を取得
-            _customer = customer.Text;
+           // Customer = customer.Text;
 
             string visitType = "";
             //訪問種別を取得
@@ -103,7 +146,7 @@ namespace ZEBRA
             //入力情報をチェック
 
             CommonValidater validate = new CommonValidater(_fromDate, _fromHour,_fromMinute, 
-                _toDate, _toHour, _toMinute, _customer, visitType, _reportText);
+                _toDate, _toHour, _toMinute, _customerId, visitType, _reportText);
 
             //////////////Validateが通った場合、Insert実行
             if(validate.InputCheck())
@@ -139,7 +182,7 @@ namespace ZEBRA
                     // パラメタに値を設定
                     command.Parameters.Add(new SqlParameter("@VISIT_STRAT_DATE", _visitStart));
                     command.Parameters.Add(new SqlParameter("@VISIT_END_DATE", _visitEnd));
-                    command.Parameters.Add(new SqlParameter("@CUS_ID", _customer));
+                    command.Parameters.Add(new SqlParameter("@CUS_ID", _customerId));
                     command.Parameters.Add(new SqlParameter("@VISIT_TYPE", visitType));
                     command.Parameters.Add(new SqlParameter("@DETAILS", _reportText));
                     command.Parameters.Add(new SqlParameter("@AUTHOR_ID", userId));
@@ -175,6 +218,8 @@ namespace ZEBRA
 
             }else
             {
+                
+
                 MessageBox.Show("入力ミス！");
             }
             
@@ -190,11 +235,13 @@ namespace ZEBRA
         private void searchButton_Click(object sender, EventArgs e)
         {
             //会社名or顧客名を取得
-            _customer = customer.Text;
+            //Customer = customer.Text;
 
             CustomerSearch search = new CustomerSearch();
             search.Show(this);  // ここで処理が止まる。
         }
+
+
 
 
 
