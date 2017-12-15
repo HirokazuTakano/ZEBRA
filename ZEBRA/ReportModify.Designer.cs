@@ -50,7 +50,7 @@
             this.opponentHouse = new System.Windows.Forms.RadioButton();
             this.bossName = new System.Windows.Forms.Label();
             this.customer_search = new System.Windows.Forms.Button();
-            this.customer = new System.Windows.Forms.TextBox();
+            this.customerId = new System.Windows.Forms.TextBox();
             this.reportText = new System.Windows.Forms.TextBox();
             this.createDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,6 +61,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.customerName = new System.Windows.Forms.Label();
+            this.companyName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -333,12 +335,12 @@
             this.customer_search.UseVisualStyleBackColor = false;
             this.customer_search.Click += new System.EventHandler(this.customer_search_Click);
             // 
-            // customer
+            // customerId
             // 
-            this.customer.Location = new System.Drawing.Point(157, 279);
-            this.customer.Name = "customer";
-            this.customer.Size = new System.Drawing.Size(155, 19);
-            this.customer.TabIndex = 43;
+            this.customerId.Location = new System.Drawing.Point(157, 279);
+            this.customerId.Name = "customerId";
+            this.customerId.Size = new System.Drawing.Size(155, 19);
+            this.customerId.TabIndex = 43;
             // 
             // reportText
             // 
@@ -432,12 +434,32 @@
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
+            // customerName
+            // 
+            this.customerName.AutoSize = true;
+            this.customerName.Location = new System.Drawing.Point(169, 260);
+            this.customerName.Name = "customerName";
+            this.customerName.Size = new System.Drawing.Size(35, 12);
+            this.customerName.TabIndex = 64;
+            this.customerName.Text = "label6";
+            // 
+            // companyName
+            // 
+            this.companyName.AutoSize = true;
+            this.companyName.Location = new System.Drawing.Point(241, 260);
+            this.companyName.Name = "companyName";
+            this.companyName.Size = new System.Drawing.Size(41, 12);
+            this.companyName.TabIndex = 65;
+            this.companyName.Text = "label16";
+            // 
             // ReportModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(570, 554);
+            this.Controls.Add(this.companyName);
+            this.Controls.Add(this.customerName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -458,7 +480,7 @@
             this.Controls.Add(this.opponentHouse);
             this.Controls.Add(this.bossName);
             this.Controls.Add(this.customer_search);
-            this.Controls.Add(this.customer);
+            this.Controls.Add(this.customerId);
             this.Controls.Add(this.reportText);
             this.Controls.Add(this.createDate);
             this.Controls.Add(this.label5);
@@ -473,7 +495,6 @@
             this.Controls.Add(this.label1);
             this.Name = "ReportModify";
             this.Text = "ChangeDetail";
-       //     this.Load += new System.EventHandler(this.ReportModify_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -504,7 +525,7 @@
         private System.Windows.Forms.RadioButton opponentHouse;
         private System.Windows.Forms.Label bossName;
         private System.Windows.Forms.Button customer_search;
-        private System.Windows.Forms.TextBox customer;
+        private System.Windows.Forms.TextBox customerId;
         private System.Windows.Forms.TextBox reportText;
         private System.Windows.Forms.DateTimePicker createDate;
         private System.Windows.Forms.Label label5;
@@ -515,5 +536,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label customerName;
+        private System.Windows.Forms.Label companyName;
     }
 }

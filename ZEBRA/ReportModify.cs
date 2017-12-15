@@ -15,7 +15,51 @@ namespace ZEBRA
     public partial class ReportModify : Form
     {
         private Report report;
+        private string cusId;
+        private string compName;
+        private string cusName;
 
+        public string CusId
+        {
+            get
+            {
+                return cusId;
+            }
+
+            set
+            {
+                cusId = value;
+                customerId.Text = cusId;
+            }
+        }
+
+        public string CompName
+        {
+            get
+            {
+                return compName;
+            }
+
+            set
+            {
+                compName = value;
+                customerId.Text = compName;
+            }
+        }
+
+        public string CusName
+        {
+            get
+            {
+                return cusName;
+            }
+
+            set
+            {
+                cusName = value;
+                customerId.Text = cusName;
+            }
+        }
 
         public ReportModify()
         {
@@ -24,7 +68,7 @@ namespace ZEBRA
 
 
 
-        public void getReport(Report repo)
+        public void getReport(Report repo, String cus)
         {
             report = repo;
           
@@ -34,12 +78,14 @@ namespace ZEBRA
         {
             
 
-            string reportId = "";
+            int reportId = 0;
             string radioButton = "";
             DateTime dt = DateTime.Now;
             DateTime startDate = dt;
             DateTime endDate = dt;
 
+            //レポートIDをもらいます
+            reportId = report.ReportId;
 
             //ラジオボックスでチェックされたものを確認
             if (tell.Checked == true)
@@ -69,27 +115,27 @@ namespace ZEBRA
 
 
 
-            // CommonValidater validater = new CommonValidater(DateTime.Parse(reportText.Text), DateTime.Parse(fromDate.Text), fromHour.Text, fromMinute.Text, DateTime.Parse(toDate.Text), toHour.Text, toMinute.Text, customer.Text, radioButton, reportText.Text);
+            CommonValidater validater = new CommonValidater(DateTime.Parse(fromDate.Text), fromHour.Text, fromMinute.Text, DateTime.Parse(toDate.Text), toHour.Text, toMinute.Text, customerId.Text, radioButton, reportText.Text);
 
-            // Boolean commonValidateCheck = validater.InputCheck();
+            Boolean commonValidateCheck = validater.InputCheck();
 
-            //if (commonValidateCheck == true)
-            //{
+            if (commonValidateCheck == true)
+            {
 
-            //    入力されたfrom日付をデータ型に結合
-            //    string str = fromDate.ToString() + "" + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
-            //    startDate = DateTime.Parse(str);
+                //入力されたfrom日付をデータ型に結合
+                string str = fromDate.ToString() + "" + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
+                startDate = DateTime.Parse(str);
 
 
-            //    入力されたto日付をデータ型に結合
-            //    string str2 = toDate.ToString() + "" + toHour.Text + ":" + toMinute.Text + ":" + "00";
-            //    endDate = DateTime.Parse(str);
+                //入力されたto日付をデータ型に結合
+                string str2 = toDate.ToString() + "" + toHour.Text + ":" + toMinute.Text + ":" + "00";
+                endDate = DateTime.Parse(str);
 
-            //}
-            //else
-            //{
-            //    MessageBox.Show("入力間違いがあります");
-            //}
+            }
+            else
+            {
+                MessageBox.Show("入力間違いがあります");
+            }
 
 
 
@@ -128,7 +174,7 @@ namespace ZEBRA
                 command.Parameters.Add(
                       new SqlParameter("@DETAIL", reportText.Text));
                 command.Parameters.Add(
-                        new SqlParameter("@CUS_ID", customer.Text));
+                        new SqlParameter("@CUS_ID", customerId.Text));
                 command.Parameters.Add(
                        new SqlParameter("@APPROVAL_STATUS", 1));
                 command.Parameters.Add(
@@ -169,7 +215,7 @@ namespace ZEBRA
 
         private void customer_search_Click(object sender, EventArgs e)
         {
-            CustomerSearch cs = new CustomerSearch();
+            CustomerSearch cs = new CustomerSearch("ReportModify");
             cs.ShowDialog(this);
             Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
         }
@@ -177,16 +223,55 @@ namespace ZEBRA
         //private void ReportModify_Load(object sender, EventArgs e)
         //{
         //    DateTime dt = DateTime.Now;
+        //    DateTime startdt = report.VisitStratDate;
+        //    DateTime enddt = report.VisitEndDate;
+        //    string visitType = report.Visittype;
 
         //    createDate.Text = dt.ToString();
-        //    fromDate.Text =;
-        //    fromHour.Tex =;
-        //    fromMinutes.Text =;
-        //    toDate.Text = ;
-        //    toHour.Text = ;
-        //    toMinutes.Text = ;
-        //    customer.Text = ;
-        //    reportText.Text =:
+        //    fromDate.Text = startdt.ToString();
+        //    fromHour.Text = (startdt.Hour).ToString();
+        //    fromMinute.Text = (startdt.Minute).ToString();
+        //    toDate.Text = enddt.ToString();
+        //    toHour.Text = (enddt.Hour).ToString();
+        //    toMinute.Text = (enddt.Minute).ToString();
+        //    customerId.Text = report.CusId;
+        //    reportText.Text = report.Detaile;
+        //    bossName.Text = report.BossSei + report.BossMei;
+
+        //    //ラジオボックスでチェックされたものを確認
+        //    if (visitType == "電話")
+        //    {
+        //        tell.Checked = true;
+        //    }
+        //    else if (visitType == "メール")
+        //    {
+        //        mail.Checked = true;
+        //    }
+        //    else if (visitType == "相手宅")
+        //    {
+             
+        //        opponentHouse.Checked = true;
+        //    }
+        //    else if (visitType == "自社")
+        //    {
+        //        their.Checked = true;
+                
+        //    }
+        //    else if (visitType == "その他")
+        //    {
+        //        another.Checked = true;
+                
+        //    }
+        //    else
+
+        //    {
+        //         visitType = null;
+        //    }
+
+
+
+
+
         //}
     }
     
