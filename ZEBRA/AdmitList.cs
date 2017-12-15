@@ -293,7 +293,6 @@ namespace ZEBRA
         {
 
             AdmitReportDetail ard = new AdmitReportDetail();
-            ard.set
             ard.ShowDialog(this);  // ここで処理が止まる。
             Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
             //DataGridView dgv = (DataGridView)sender;
