@@ -262,6 +262,7 @@
             this.toDate.Name = "toDate";
             this.toDate.Size = new System.Drawing.Size(121, 19);
             this.toDate.TabIndex = 51;
+            
             // 
             // fromDate
             // 

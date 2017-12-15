@@ -14,18 +14,32 @@ namespace ZEBRA
 {
     public partial class ReportModify : Form
     {
-       
+        
 
         public ReportModify()
         {
             InitializeComponent();
         }
 
+
+       s
+
+        getReport(Report repo)
+        {
+            report = repo;
+          
+        }
+
         private void registButton_Click(object sender, EventArgs e)
         {
+         
+
             string radioButton = "";
             DateTime dt = DateTime.Now;
+            DateTime startDate = dt;
+            DateTime endDate = dt;
 
+            //ラジオボックスでチェックされたものを確認
             if (tell.Checked == true)
             {
                 radioButton = "電話";
@@ -45,8 +59,36 @@ namespace ZEBRA
             else if (another.Checked == true)
             {
                 radioButton = "その他";
+            }else
+        
+            {
+                radioButton = null;
             }
-           
+
+
+
+    CommonValidater validater = new CommonValidater(DateTime.Parse(reportText.Text), DateTime.Parse(fromDate.Text), fromHour.Text, fromMinute.Text, DateTime.Parse(toDate.Text), toHour.Text, toMinute.Text, customer.Text, radioButton, reportText.Text);
+
+    Boolean commonValidateCheck = validater.InputCheck();
+
+            if (commonValidateCheck == true)
+            {
+
+                //入力されたfrom日付をデータ型に結合
+                string str = fromDate.ToString() + "" + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
+                        startDate = DateTime.Parse(str);
+
+
+                //入力されたto日付をデータ型に結合
+                string str2 = toDate.ToString() + "" + toHour.Text + ":" + toMinute.Text + ":" + "00";
+                        endDate = DateTime.Parse(str);
+
+                }
+                else
+                {
+                    MessageBox.Show("入力間違いがあります");
+                }
+
 
 
             // 接続用のクラス
@@ -65,7 +107,9 @@ namespace ZEBRA
 
                 string sql =
       "UPDATE dbo.TM_DAILY_REPORT " +
-      "SET UPDATE_DATE= @UPDATE_DATE, VISIT_STRAT_DATE= @VISIT_STRAT_DATE, VISIT_END_DATE= @VISIT_END_DATE, VISIT_TYPE= @VISIT_TYPE, DETAILS = @DETAIL. CUS_ID= @CUS_ID, APPROVAL_STATUS = @APPROVAL_STATUS " + 
+      "SET UPDATE_DATE= @UPDATE_DATE, VISIT_STRAT_DATE= @VISIT_STRAT_DATE, " +
+      "VISIT_END_DATE= @VISIT_END_DATE, VISIT_TYPE= @VISIT_TYPE, DETAILS = @DETAIL. CUS_ID= @CUS_ID, " +
+      "APPROVAL_STATUS = @APPROVAL_STATUS " + 
       "WHERE REPORT_ID = @REPORT_ID" ;
 
             // コネクションオブジェクトを使用して、SQLの発行準備
@@ -74,9 +118,9 @@ namespace ZEBRA
                 command.Parameters.Add(
                          new SqlParameter("@UPDATE_DATE", dt));
                 command.Parameters.Add(
-                        new SqlParameter("@VISIT_STRAT_DATE", fromDate.Text));
+                        new SqlParameter("@VISIT_STRAT_DATE", startDate));
                 command.Parameters.Add(
-                       new SqlParameter("@VISIT_END_DATE", customer.Text));
+                       new SqlParameter("@VISIT_END_DATE", endDate));
                 command.Parameters.Add(
                         new SqlParameter("@VISIT_TYPE", radioButton));
                 command.Parameters.Add(
@@ -99,7 +143,12 @@ namespace ZEBRA
             // 更新が成功したらmessage
             if (ret == 1)
             {
-                    MessageBox.Show("更新が完了しました");
+                    DialogResult result =  MessageBox.Show("更新が完了しました", "確認ダイアログ", MessageBoxButtons.OK);
+                    
+                    if(result == DialogResult.Yes)
+                    {
+
+                    }
             }
             }
             catch (SqlException ex)
@@ -114,9 +163,7 @@ namespace ZEBRA
 
         }
 
-
-
-
+      
     }
     
 }
