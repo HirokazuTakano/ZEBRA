@@ -22,6 +22,12 @@ namespace ZEBRA
     {
         private List<Report> reportList = new List<Report>();
 
+        private Dictionary<int, string> customerList = new Dictionary<int, string>();
+
+        private string cusName;
+        private string compName;
+
+
 
 
 
@@ -56,10 +62,14 @@ namespace ZEBRA
                 "SELECT * " +
                  "FROM dbo.TM_DAILY_REPORT R INNER JOIN dbo.TM_CUSTOMER C " +
                  "ON R.CUS_ID = C.CUS_ID " +
+                 "WHERE AUTHOR_ID = @userId " +
                  "ORDER BY REPORT_ID ;";
 
             // コネクションオブジェクトを使用して、SQLの発行準備
             SqlCommand command = new SqlCommand(sql, con);
+
+            command.Parameters.Add(
+                new SqlParameter("@userId", MainMenu.loginUser.EmpId));
 
 
             // アダプターを作成
@@ -103,6 +113,8 @@ namespace ZEBRA
                         (dr["AUTHOR_ID"].ToString()), (dr["AUTHOR_BOSS_ID"].ToString()), "田中", "太郎", (dr["BOSS_COMMENT"].ToString()));
 
                 reportList.Add(repo);
+
+                customerList.Add(int.Parse(dr["REPORT_ID"].ToString()), (dr["REPORT_ID"].ToString() + dr["REPORT_ID"].ToString()));
             }
 
 
@@ -164,17 +176,24 @@ namespace ZEBRA
             if (dgv.Columns[e.ColumnIndex].Name == "editButton")
             {
                 int cellIndex = dgv.Columns["reportId"].Index;
-                foreach(Report repo in reportList)
+                for(int i = 0; i < (reportList.Capacity - 1) ; i++)
                 {
-                    if ((int)dgv.Rows[e.RowIndex].Cells[cellIndex].Value == repo.ReportId)
+                    if ((int)dgv.Rows[e.RowIndex].Cells[cellIndex].Value == reportList[i].ReportId)
                     {
-                       　//Report report = new Report(dgv.Columns["reportId"].Index, DateTime.Parse(""  + dgv.Columns["createdate"].Index), DateTime.Parse("" + dgv.Columns["update"].Index),
+                        //Report report = new Report(dgv.Columns["reportId"].Index, DateTime.Parse(""  + dgv.Columns["createdate"].Index), DateTime.Parse("" + dgv.Columns["update"].Index),
                         //        DateTime.Parse("" + dgv.Columns["start"].Index), DateTime.Parse("" + dgv.Columns["start"].Index),
                         //        "" + dgv.Columns["type"].Index, "" + dgv.Columns["detail"].Index, "" + dgv.Columns["cusId"].Index, dgv.Columns["approval"].Index,
                         //            "" + dgv.Columns["authorId"].Index, "" + dgv.Columns["authorBoss"].Index, "田中", "太郎", "" + dgv.Columns["bossComment"].Index);
 
-                        modify.getReport(repo);
+                        // []で値を取得する
+                        if (customerList.ContainsKey((int)dgv.Rows[e.RowIndex].Cells[cellIndex].Value))
+                        {
+                            cusName = customerList[(int)dgv.Rows[e.RowIndex].Cells[cellIndex].Value];
+                        }
+                        modify.getReport(reportList[i], cusName);
                         modify.Show(this);
+
+                        break;
                     }     
                 }
 
