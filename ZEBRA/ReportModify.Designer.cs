@@ -262,7 +262,6 @@
             this.toDate.Name = "toDate";
             this.toDate.Size = new System.Drawing.Size(121, 19);
             this.toDate.TabIndex = 51;
-            
             // 
             // fromDate
             // 
@@ -332,6 +331,7 @@
             this.customer_search.TabIndex = 44;
             this.customer_search.Text = "検索";
             this.customer_search.UseVisualStyleBackColor = false;
+            this.customer_search.Click += new System.EventHandler(this.customer_search_Click);
             // 
             // customer
             // 

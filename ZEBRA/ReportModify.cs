@@ -14,7 +14,7 @@ namespace ZEBRA
 {
     public partial class ReportModify : Form
     {
-        
+        private Report report;
 
         public ReportModify()
         {
@@ -22,9 +22,8 @@ namespace ZEBRA
         }
 
 
-       s
 
-        getReport(Report repo)
+        public void getReport(Report repo)
         {
             report = repo;
           
@@ -32,12 +31,13 @@ namespace ZEBRA
 
         private void registButton_Click(object sender, EventArgs e)
         {
-         
 
+            int reportId = 0;
             string radioButton = "";
             DateTime dt = DateTime.Now;
             DateTime startDate = dt;
             DateTime endDate = dt;
+
 
             //ラジオボックスでチェックされたものを確認
             if (tell.Checked == true)
@@ -130,7 +130,7 @@ namespace ZEBRA
                 command.Parameters.Add(
                        new SqlParameter("@APPROVAL_STATUS", 1));
                 command.Parameters.Add(
-                        new SqlParameter("@REPORT_ID", 1));
+                        new SqlParameter("@REPORT_ID", reportId));
 
 
 
@@ -147,7 +147,9 @@ namespace ZEBRA
                     
                     if(result == DialogResult.Yes)
                     {
-
+                        NGList ngList = new NGList();
+                        ngList.ShowDialog(this);
+                        Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
                     }
             }
             }
@@ -163,7 +165,12 @@ namespace ZEBRA
 
         }
 
-      
+        private void customer_search_Click(object sender, EventArgs e)
+        {
+            CustomerSearch cs = new CustomerSearch();
+            cs.ShowDialog(this);
+            Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
+        }
     }
     
 }
