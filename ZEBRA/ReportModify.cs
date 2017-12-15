@@ -69,27 +69,27 @@ namespace ZEBRA
 
 
 
-    CommonValidater validater = new CommonValidater(DateTime.Parse(reportText.Text), DateTime.Parse(fromDate.Text), fromHour.Text, fromMinute.Text, DateTime.Parse(toDate.Text), toHour.Text, toMinute.Text, customer.Text, radioButton, reportText.Text);
+            // CommonValidater validater = new CommonValidater(DateTime.Parse(reportText.Text), DateTime.Parse(fromDate.Text), fromHour.Text, fromMinute.Text, DateTime.Parse(toDate.Text), toHour.Text, toMinute.Text, customer.Text, radioButton, reportText.Text);
 
-    Boolean commonValidateCheck = validater.InputCheck();
+            // Boolean commonValidateCheck = validater.InputCheck();
 
-            if (commonValidateCheck == true)
-            {
+            //if (commonValidateCheck == true)
+            //{
 
-                //入力されたfrom日付をデータ型に結合
-                string str = fromDate.ToString() + "" + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
-                        startDate = DateTime.Parse(str);
+            //    入力されたfrom日付をデータ型に結合
+            //    string str = fromDate.ToString() + "" + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
+            //    startDate = DateTime.Parse(str);
 
 
-                //入力されたto日付をデータ型に結合
-                string str2 = toDate.ToString() + "" + toHour.Text + ":" + toMinute.Text + ":" + "00";
-                        endDate = DateTime.Parse(str);
+            //    入力されたto日付をデータ型に結合
+            //    string str2 = toDate.ToString() + "" + toHour.Text + ":" + toMinute.Text + ":" + "00";
+            //    endDate = DateTime.Parse(str);
 
-                }
-                else
-                {
-                    MessageBox.Show("入力間違いがあります");
-                }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("入力間違いがあります");
+            //}
 
 
 
