@@ -109,11 +109,13 @@ namespace ZEBRA
             string _createDate = createDate.Text;
 
             //訪問日時を取得
-            DateTime _fromDate = DateTime.Parse(fromDate.Text);
+            //DateTime _fromDate = DateTime.Parse(fromDate.Text);
+            string _fromDate = fromDate.Text;
             string _fromHour = fromHour.Text;
             string _fromMinute = fromMinute.Text;
-            
-            DateTime _toDate = DateTime.Parse(toDate.Text);
+
+            //DateTime _toDate = DateTime.Parse(toDate.Text);
+            string _toDate = toDate.Text;
             string _toHour = toHour.Text;
             string _toMinute = toMinute.Text;
 

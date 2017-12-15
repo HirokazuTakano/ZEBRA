@@ -8,11 +8,12 @@ namespace ZEBRA
 {
     class CommonValidater
     {
-        private DateTime createDate;
-        private DateTime startDate;
+        //private DateTime startDate;
+        private string startDate;
         private string startHour;
         private string startMin;
-        private DateTime endDate;
+        //private DateTime endDate;
+        private string endDate;
         private string endHour;
         private string endMin;
         private string customerName;
@@ -26,9 +27,24 @@ namespace ZEBRA
 
 
 
-        public CommonValidater(DateTime startDate, string startHour,
-            string startMin, DateTime endDate, string endHour, string endMin, string customerName,
-            string visitType, string detail)
+        //public CommonValidater(DateTime startDate, string startHour,
+        //    string startMin, DateTime endDate, string endHour, string endMin, string customerName,
+        //    string visitType, string detail)
+        //{
+        //    this.startDate = startDate;
+        //    this.startHour = startHour;
+        //    this.startMin = startMin;
+        //    this.endDate = endDate;
+        //    this.endHour = endHour;
+        //    this.endMin = endMin;
+        //    this.customerName = customerName;
+        //    this.visitType = visitType;
+        //    this.detail = detail;
+        //}
+
+        public CommonValidater(string startDate, string startHour,
+             string startMin, string endDate, string endHour, string endMin, string customerName,
+             string visitType, string detail)
         {
             this.startDate = startDate;
             this.startHour = startHour;
@@ -79,14 +95,21 @@ namespace ZEBRA
             {
 
                 //日にち、時間、分をつなげてDateTime型をstartDateAllへ
-                string str = startDate.ToString() + "" + startHour + ":" + startMin + ":" + "00";
+                //string str = startDate.ToString() + " " + startHour + ":" + startMin + ":" + "00";
+                int startH = int.Parse(startHour);
+                int startM = int.Parse(startMin);
 
-                startDateAll = DateTime.Parse(str);
+                DateTime visitStart = DateTime.Parse(startDate + " " + startH + ":" + startM);
+
+                startDateAll = visitStart;
 
                 //日にち、時間、分をつなげてDateTime型をendDateAllへ
-                string str2 = endDate.ToString() + "" + endHour + ":" + endMin + ":" + "00";
+                //string str2 = endDate.ToString() + " " + endHour + ":" + endMin + ":" + "00";
 
-                endDateAll = DateTime.Parse(str2);
+                int endH = int.Parse(endHour);
+                int endM = int.Parse(endMin);
+                DateTime visitEnd = DateTime.Parse(endDate + " " + endH + ":" + endM);
+                endDateAll = visitEnd;
 
 
                 //開始日時が未来にならないか
