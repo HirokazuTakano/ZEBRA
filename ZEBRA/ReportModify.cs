@@ -153,10 +153,11 @@ namespace ZEBRA
                     
                     if(result == DialogResult.OK)
                     {
-                        MainMenu main  = new MainMenu();
-                        main.Show(this);
-                        Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
                         this.Close();
+                        NGList ng  = new NGList();
+                        ng.Show();
+                        Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
+                       
 
                     }
                     else
