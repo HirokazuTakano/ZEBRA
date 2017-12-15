@@ -75,7 +75,7 @@ namespace ZEBRA
 
 
 
-            CommonValidater validater = new CommonValidater(fromDate.Text, fromHour.Text, fromMinute.Text, toDate.Text, toHour.Text, toMinute.Text, customerId.Text, radioButton, reportText.Text);
+            CommonValidater validater = new CommonValidater(fromDate.Text, fromHour.Text, fromMinute.Text, toDate.Text, toHour.Text, toMinute.Text, customer.Text, radioButton, reportText.Text);
 
             Boolean commonValidateCheck = validater.InputCheck();
 
@@ -194,7 +194,7 @@ namespace ZEBRA
             toDate.Text = enddt.ToString();
             toHour.Text = (enddt.Hour).ToString();
             toMinute.Text = (enddt.Minute).ToString();
-            customerId.Text = cusName;
+            customer.Text = cusName;
             reportText.Text = report.Detaile;
             bossName.Text = report.BossSei + report.BossMei;
 
@@ -231,6 +231,16 @@ namespace ZEBRA
 
 
 
+
+        }
+
+        private void topPageButton_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+            MainMenu main = new MainMenu();
+            main.Show();
+            Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
 
         }
     }
