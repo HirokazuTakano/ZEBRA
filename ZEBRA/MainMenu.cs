@@ -212,9 +212,7 @@ namespace ZEBRA
         private void list_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            //Hide();
             ReportDatail reportDatail = new ReportDatail();
-
 
             DataGridView dgv = (DataGridView)sender;
             int cellIndex = dgv.Columns["reportId"].Index;
@@ -234,7 +232,7 @@ namespace ZEBRA
 
             // 問い合わせのSQLを生成
             string sql =
-               "SELECT CREATE_DATE,VISIT_STRAT_DATE,VISIT_END_DATE,VISIT_TYPE,DETAILS,STATUS,BOSS_COMMENT,COMPANY_NAME " +
+               "SELECT CREATE_DATE,VISIT_STRAT_DATE,VISIT_END_DATE,VISIT_TYPE,DETAILS,STATUS,BOSS_COMMENT " +
                  "FROM dbo.TM_DAILY_REPORT R LEFT JOIN dbo.TM_CUSTOMER C " +
                  "ON R.CUS_ID = C.CUS_ID " +
                  "LEFT JOIN dbo.TS_STATUS S ON APPROVAL_STATUS = STATUS " +
@@ -254,10 +252,9 @@ namespace ZEBRA
                 // SQL文を実行。
                 SqlDataReader reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-
-                }  
+                reportDatail.SetData(reader.GetDateTime(0).ToString(), reader.GetDateTime(1).ToString(),
+                    reader.GetDateTime(2).ToString(),reader.GetString(3), reader.GetString(4),
+                    reader.GetInt32(5), reader.GetString(6));
             }
             catch (SqlException ex)
             {
@@ -268,6 +265,7 @@ namespace ZEBRA
                 con.Close();
             }
 
+            Hide();
             reportDatail.Show(this);
             Debug.WriteLine("詳細画面表示");
         }
