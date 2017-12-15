@@ -75,7 +75,7 @@ namespace ZEBRA
 
 
 
-            CommonValidater validater = new CommonValidater(DateTime.Parse(fromDate.Text), fromHour.Text, fromMinute.Text, DateTime.Parse(toDate.Text), toHour.Text, toMinute.Text, customerId.Text, radioButton, reportText.Text);
+            CommonValidater validater = new CommonValidater(fromDate.Text, fromHour.Text, fromMinute.Text, toDate.Text, toHour.Text, toMinute.Text, customerId.Text, radioButton, reportText.Text);
 
             Boolean commonValidateCheck = validater.InputCheck();
 
@@ -83,12 +83,12 @@ namespace ZEBRA
             {
 
                 //入力されたfrom日付をデータ型に結合
-                string str = fromDate.ToString() + " " + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
+                string str = fromDate.Text + " " + fromHour.Text + ":" + fromMinute.Text + ":" + "00";
                 startDate = DateTime.Parse(str);
 
 
                 //入力されたto日付をデータ型に結合
-                string str2 = toDate.ToString() + " " + toHour.Text + ":" + toMinute.Text + ":" + "00";
+                string str2 = toDate.Text + " " + toHour.Text + ":" + toMinute.Text + ":" + "00";
                 endDate = DateTime.Parse(str);
 
             }
