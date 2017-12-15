@@ -41,6 +41,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.topPageButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ぁ = new System.Windows.Forms.Label();
+            this.approvalStatus = new System.Windows.Forms.Label();
+            this.あ = new System.Windows.Forms.Label();
+            this.bossComment = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,12 +180,56 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
+            // ぁ
+            // 
+            this.ぁ.AutoSize = true;
+            this.ぁ.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ぁ.Location = new System.Drawing.Point(100, 335);
+            this.ぁ.Name = "ぁ";
+            this.ぁ.Size = new System.Drawing.Size(33, 13);
+            this.ぁ.TabIndex = 34;
+            this.ぁ.Text = "状況";
+            // 
+            // approvalStatus
+            // 
+            this.approvalStatus.AutoSize = true;
+            this.approvalStatus.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.approvalStatus.Location = new System.Drawing.Point(275, 335);
+            this.approvalStatus.Name = "approvalStatus";
+            this.approvalStatus.Size = new System.Drawing.Size(46, 13);
+            this.approvalStatus.TabIndex = 35;
+            this.approvalStatus.Text = "label12";
+            // 
+            // あ
+            // 
+            this.あ.AutoSize = true;
+            this.あ.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.あ.Location = new System.Drawing.Point(100, 372);
+            this.あ.Name = "あ";
+            this.あ.Size = new System.Drawing.Size(70, 13);
+            this.あ.TabIndex = 36;
+            this.あ.Text = "上司コメント";
+            // 
+            // bossComment
+            // 
+            this.bossComment.AutoSize = true;
+            this.bossComment.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.bossComment.Location = new System.Drawing.Point(275, 372);
+            this.bossComment.Name = "bossComment";
+            this.bossComment.Size = new System.Drawing.Size(46, 13);
+            this.bossComment.TabIndex = 37;
+            this.bossComment.Text = "label12";
+            // 
             // ReportDatail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(481, 387);
+            this.ClientSize = new System.Drawing.Size(481, 427);
+            this.Controls.Add(this.bossComment);
+            this.Controls.Add(this.あ);
+            this.Controls.Add(this.approvalStatus);
+            this.Controls.Add(this.ぁ);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.content);
@@ -219,5 +267,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ぁ;
+        private System.Windows.Forms.Label approvalStatus;
+        private System.Windows.Forms.Label あ;
+        private System.Windows.Forms.Label bossComment;
     }
 }

@@ -18,21 +18,10 @@ namespace ZEBRA
     public partial class ReportInput : Form
 
     {
-        // 記入日
-        string _createDate;
-        // 訪問日時
-        string _fromDate;
-        int _fromHour;
-        int _fromMinute;
-        string _toDate;
-        int _toHour;
-        int _toMinute;
+
         // 顧客
-        string _cus;
-        // 訪問種別
-        string visitType = "";
-        // 内容
-        string _reportText;
+        string _customer;
+
         //上司のID
         string bossId;
         //ログインユーザーのID
@@ -71,24 +60,21 @@ namespace ZEBRA
         private void registButton_Click(object sender, EventArgs e)
         {
             //入力された記入日を取得
-            _createDate = createDate.Text;
+            string _createDate = createDate.Text;
 
             //訪問日時を取得
-            _fromDate = fromDate.Text;
-            _fromHour = int.Parse(fromHour.Text);
-            _fromMinute = int.Parse(fromMinute.Text);
+            DateTime _fromDate = DateTime.Parse(fromDate.Text);
+            string _fromHour = fromHour.Text;
+            string _fromMinute = fromMinute.Text;
             
-            DateTime visitStart = DateTime.Parse(_fromDate + " " + _fromHour + ":" + _fromMinute);
-            
-            _toDate = toDate.Text;
-            _toHour = int.Parse(toHour.Text);
-            _toMinute = int.Parse(toMinute.Text);
-            
-            DateTime visitEnd = DateTime.Parse(_toDate + " " + _toHour + ":" + _toMinute);
+            DateTime _toDate = DateTime.Parse(toDate.Text);
+            string _toHour = toHour.Text;
+            string _toMinute = toMinute.Text;
 
             //顧客を取得
-            _cus = customer.Text;
+            _customer = customer.Text;
 
+            string visitType = "";
             //訪問種別を取得
             if(tell.Checked == true)
             {
@@ -111,74 +97,87 @@ namespace ZEBRA
             }
 
             //内容を取得
-            _reportText = reportText.Text;
+            string _reportText = reportText.Text;
 
 
+            //入力情報をチェック
 
+            CommonValidater validate = new CommonValidater(_fromDate, _fromHour,_fromMinute, 
+                _toDate, _toHour, _toMinute, _customer, visitType, _reportText);
 
             //////////////Validateが通った場合、Insert実行
-
-            
-
-            // DBへの接続文字列。
-            con.ConnectionString = "data source=localhost\\SQLEXPRESS;" + // 接続先のDBサーバーを指定
-                                   "initial catalog=zebradb;" +            // 接続先のDBを指定
-                                   "user id=sa;" +                        // ユーザー
-                                   "password=p@ssw0rd;" +                 // パスワード
-                                   "Connect Timeout=60;";
-
-            try
+            if(validate.InputCheck())
             {
-                    con.Open(); // DBに接続
+                //DateTime型の訪問日時を取得する
+                DateTime _visitStart = validate.StartDateAll;
+                DateTime _visitEnd = validate.EndDateAll;
 
-                // 問い合わせのSQLを生成
-                string sql =
-                    "INSERT INTO TM_DAILY_REPORT"+
-                    "(VISIT_STRAT_DATE, VISIT_END_DATE, CUS_ID, VISIT_TYPE, DETAILS, AUTHOR_ID, AUTHOR_BOSS_ID, BOSS_COMMENT, APPROVAL_STATUS)" +
-                    "VALUES"+
-                    "(@VISIT_STRAT_DATE, @VISIT_END_DATE, @CUS_ID, @VISIT_TYPE, @DETAILS, @AUTHOR_ID, @AUTHOR_BOSS_ID, @BOSS_COMMENT, 1); ";
+                // DBへの接続文字列。
+                con.ConnectionString = "data source=localhost\\SQLEXPRESS;" + // 接続先のDBサーバーを指定
+                                       "initial catalog=zebradb;" +            // 接続先のDBを指定
+                                       "user id=sa;" +                        // ユーザー
+                                       "password=p@ssw0rd;" +                 // パスワード
+                                       "Connect Timeout=60;";
 
-                // コネクションオブジェクトを使用して、SQLの発行準備
-                SqlCommand command = new SqlCommand(sql, con);
-
-                //// SQL文を実行。approvalStatus
-                //SqlDataReader reader = command.ExecuteReader();
-
-                // パラメタに値を設定
-                command.Parameters.Add(new SqlParameter("@VISIT_STRAT_DATE", visitStart));
-                command.Parameters.Add(new SqlParameter("@VISIT_END_DATE", visitEnd));
-                command.Parameters.Add(new SqlParameter("@CUS_ID", _cus));
-                command.Parameters.Add(new SqlParameter("@VISIT_TYPE", visitType));
-                command.Parameters.Add(new SqlParameter("@DETAILS", _reportText));
-                command.Parameters.Add(new SqlParameter("@AUTHOR_ID", userId));
-                command.Parameters.Add(new SqlParameter("@AUTHOR_BOSS_ID", bossId)); 
-                command.Parameters.Add(new SqlParameter("@BOSS_COMMENT", ""));
-
-                // 登録を実行する
-                int ret = command.ExecuteNonQuery();
-
-                // 登録が成功したら、完了メールを表示させてメインメニューへ遷移する
-                if (ret == 1)
+                try
                 {
-                    MessageBox.Show("登録が完了しました。");
+                        con.Open(); // DBに接続
 
-                    Hide();
-                    MainMenu mainMenu = new MainMenu();
-                    mainMenu.Show(this);
-                    Debug.WriteLine("トップページに飛びました");
+                    // 問い合わせのSQLを生成
+                    string sql =
+                        "INSERT INTO TM_DAILY_REPORT"+
+                        "(VISIT_STRAT_DATE, VISIT_END_DATE, CUS_ID, VISIT_TYPE, DETAILS, AUTHOR_ID, AUTHOR_BOSS_ID, BOSS_COMMENT, APPROVAL_STATUS)" +
+                        "VALUES"+
+                        "(@VISIT_STRAT_DATE, @VISIT_END_DATE, @CUS_ID, @VISIT_TYPE, @DETAILS, @AUTHOR_ID, @AUTHOR_BOSS_ID, @BOSS_COMMENT, 1); ";
+
+                    // コネクションオブジェクトを使用して、SQLの発行準備
+                    SqlCommand command = new SqlCommand(sql, con);
+
+                    //// SQL文を実行。approvalStatus
+                    //SqlDataReader reader = command.ExecuteReader();
+
+                    // パラメタに値を設定
+                    command.Parameters.Add(new SqlParameter("@VISIT_STRAT_DATE", _visitStart));
+                    command.Parameters.Add(new SqlParameter("@VISIT_END_DATE", _visitEnd));
+                    command.Parameters.Add(new SqlParameter("@CUS_ID", _customer));
+                    command.Parameters.Add(new SqlParameter("@VISIT_TYPE", visitType));
+                    command.Parameters.Add(new SqlParameter("@DETAILS", _reportText));
+                    command.Parameters.Add(new SqlParameter("@AUTHOR_ID", userId));
+                    command.Parameters.Add(new SqlParameter("@AUTHOR_BOSS_ID", bossId)); 
+                    command.Parameters.Add(new SqlParameter("@BOSS_COMMENT", ""));
+
+                    // 登録を実行する
+                    int ret = command.ExecuteNonQuery();
+
+                    // 登録が成功したら、完了メールを表示させてメインメニューへ遷移する
+                    if (ret == 1)
+                    {
+                        MessageBox.Show("登録が完了しました。");
+
+                        Hide();
+                        MainMenu mainMenu = new MainMenu();
+                        mainMenu.Show(this);
+                        Debug.WriteLine("トップページに飛びました");
+                    }
 
                 }
+                catch (SqlException ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+                finally
+                {
 
-            }
-            catch (SqlException ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-            finally
-            {
+                    con.Close();
+                }
 
-                con.Close();
+
+
+            }else
+            {
+                MessageBox.Show("入力ミス！");
             }
+            
         }
 
 
@@ -191,7 +190,7 @@ namespace ZEBRA
         private void searchButton_Click(object sender, EventArgs e)
         {
             //会社名or顧客名を取得
-            _cus = customer.Text;
+            _customer = customer.Text;
 
             CustomerSearch search = new CustomerSearch();
             search.Show(this);  // ここで処理が止まる。
@@ -214,55 +213,6 @@ namespace ZEBRA
             bossId = emp.BossId;
 
             bossName.Text = MainMenu.loginUser.BossName;
-
-            //// DBへの接続文字列。
-            //con.ConnectionString = "data source=localhost\\SQLEXPRESS;" + // 接続先のDBサーバーを指定
-            //                       "initial catalog=zebradb;" +            // 接続先のDBを指定
-            //                       "user id=sa;" +                        // ユーザー
-            //                       "password=p@ssw0rd;" +                 // パスワード
-            //                       "Connect Timeout=60;";
-            //try
-            //{
-            //    con.Open();
-
-            //    //SQL文を生成
-            //    string sql =
-            //        "SELECT NAME_SEI, NAME_MEI FROM dbo.TM_EMPLOYEE WHERE EMP_ID; ";
-
-            //    //コネクションをオブジェクトとして、SQL発行準備
-            //    SqlCommand command = new SqlCommand(sql, con);
-
-            //    //アダプター生成
-            //    SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-            //    //データセットを作成
-            //    DataSet ds = new DataSet();
-
-            //    //CUSTOMER_TABLEという名前のテーブルクラスに結果をセットし、保持させる
-            //    adapter.Fill(ds, "CUSTOMER_TABLE");
-
-
-            //    // データテーブルを生成
-            //    DataTable customerDt = ds.Tables["CUSTOMER_TABLE"];
-
-            //    //データを一行ずつ読みこんで、リストに追加する
-            //    foreach (DataRow dr in customerDt.Rows)
-            //    {
-            //        string cusId = dr["CUS_ID"].ToString();
-            //        string companyName = dr["COMPANY_NAME"].ToString();
-            //        string cusName = dr["CUS_NAME"].ToString();
-            //        string cusTel = dr["CUS_TEL"].ToString();
-
-            //        Customer customer = new Customer(cusId, companyName, cusName, cusTel);
-            //        customerList.Add(customer);
-
-            //    }
-
-            //}
-            //catch (SqlException ex)
-            //{
-            //    Debug.WriteLine(ex.Message);
-            //}
 
         }
     }
