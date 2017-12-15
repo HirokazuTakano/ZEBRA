@@ -240,7 +240,7 @@ namespace ZEBRA
             //会社名or顧客名を取得
             //Customer = customer.Text;
 
-            CustomerSearch search = new CustomerSearch("ReportInput");
+            CustomerSearch search = new CustomerSearch();
             search.Show(this);  // ここで処理が止まる。
         }
 

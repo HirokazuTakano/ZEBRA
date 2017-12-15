@@ -15,51 +15,9 @@ namespace ZEBRA
     public partial class ReportModify : Form
     {
         private Report report;
-        private string cusId;
-        private string compName;
         private string cusName;
 
-        public string CusId
-        {
-            get
-            {
-                return cusId;
-            }
-
-            set
-            {
-                cusId = value;
-                customerId.Text = cusId;
-            }
-        }
-
-        public string CompName
-        {
-            get
-            {
-                return compName;
-            }
-
-            set
-            {
-                compName = value;
-                customerId.Text = compName;
-            }
-        }
-
-        public string CusName
-        {
-            get
-            {
-                return cusName;
-            }
-
-            set
-            {
-                cusName = value;
-                customerId.Text = cusName;
-            }
-        }
+        
 
         public ReportModify()
         {
@@ -68,9 +26,11 @@ namespace ZEBRA
 
 
 
-        public void getReport(Report repo, String cus)
+        public void getReport(Report repo, string cus)
         {
             report = repo;
+            cusName = cus;
+
           
         }
 
@@ -156,7 +116,7 @@ namespace ZEBRA
                 string sql =
       "UPDATE dbo.TM_DAILY_REPORT " +
       "SET UPDATE_DATE= @UPDATE_DATE, VISIT_STRAT_DATE= @VISIT_STRAT_DATE, " +
-      "VISIT_END_DATE= @VISIT_END_DATE, VISIT_TYPE= @VISIT_TYPE, DETAILS = @DETAIL. CUS_ID= @CUS_ID, " +
+      "VISIT_END_DATE= @VISIT_END_DATE, VISIT_TYPE= @VISIT_TYPE, DETAILS = @DETAIL, " +
       "APPROVAL_STATUS = @APPROVAL_STATUS " + 
       "WHERE REPORT_ID = @REPORT_ID" ;
 
@@ -173,8 +133,6 @@ namespace ZEBRA
                         new SqlParameter("@VISIT_TYPE", radioButton));
                 command.Parameters.Add(
                       new SqlParameter("@DETAIL", reportText.Text));
-                command.Parameters.Add(
-                        new SqlParameter("@CUS_ID", customerId.Text));
                 command.Parameters.Add(
                        new SqlParameter("@APPROVAL_STATUS", 1));
                 command.Parameters.Add(
@@ -199,6 +157,10 @@ namespace ZEBRA
                         ngList.ShowDialog(this);
                         Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
                     }
+                    else
+                    {
+                        MessageBox.Show("error");
+                    }
             }
             }
             catch (SqlException ex)
@@ -213,66 +175,61 @@ namespace ZEBRA
 
         }
 
-        private void customer_search_Click(object sender, EventArgs e)
+       
+
+        private void ReportModify_Load(object sender, EventArgs e)
         {
-            CustomerSearch cs = new CustomerSearch("ReportModify");
-            cs.ShowDialog(this);
-            Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
+            DateTime dt = DateTime.Now;
+            DateTime startdt = report.VisitStratDate;
+            DateTime enddt = report.VisitEndDate;
+            string visitType = report.Visittype;
+
+            createDate.Text = dt.ToString();
+            fromDate.Text = startdt.ToString();
+            fromHour.Text = (startdt.Hour).ToString();
+            fromMinute.Text = (startdt.Minute).ToString();
+            toDate.Text = enddt.ToString();
+            toHour.Text = (enddt.Hour).ToString();
+            toMinute.Text = (enddt.Minute).ToString();
+            customerId.Text = report.CusId;
+            reportText.Text = report.Detaile;
+            bossName.Text = report.BossSei + report.BossMei;
+
+            //ラジオボックスでチェックされたものを確認
+            if (visitType == "電話")
+            {
+                tell.Checked = true;
+            }
+            else if (visitType == "メール")
+            {
+                mail.Checked = true;
+            }
+            else if (visitType == "相手宅")
+            {
+
+                opponentHouse.Checked = true;
+            }
+            else if (visitType == "自社")
+            {
+                their.Checked = true;
+
+            }
+            else if (visitType == "その他")
+            {
+                another.Checked = true;
+
+            }
+            else
+
+            {
+                visitType = null;
+            }
+
+
+
+
+
         }
-
-        //private void ReportModify_Load(object sender, EventArgs e)
-        //{
-        //    DateTime dt = DateTime.Now;
-        //    DateTime startdt = report.VisitStratDate;
-        //    DateTime enddt = report.VisitEndDate;
-        //    string visitType = report.Visittype;
-
-        //    createDate.Text = dt.ToString();
-        //    fromDate.Text = startdt.ToString();
-        //    fromHour.Text = (startdt.Hour).ToString();
-        //    fromMinute.Text = (startdt.Minute).ToString();
-        //    toDate.Text = enddt.ToString();
-        //    toHour.Text = (enddt.Hour).ToString();
-        //    toMinute.Text = (enddt.Minute).ToString();
-        //    customerId.Text = report.CusId;
-        //    reportText.Text = report.Detaile;
-        //    bossName.Text = report.BossSei + report.BossMei;
-
-        //    //ラジオボックスでチェックされたものを確認
-        //    if (visitType == "電話")
-        //    {
-        //        tell.Checked = true;
-        //    }
-        //    else if (visitType == "メール")
-        //    {
-        //        mail.Checked = true;
-        //    }
-        //    else if (visitType == "相手宅")
-        //    {
-             
-        //        opponentHouse.Checked = true;
-        //    }
-        //    else if (visitType == "自社")
-        //    {
-        //        their.Checked = true;
-                
-        //    }
-        //    else if (visitType == "その他")
-        //    {
-        //        another.Checked = true;
-                
-        //    }
-        //    else
-
-        //    {
-        //         visitType = null;
-        //    }
-
-
-
-
-
-        //}
     }
     
 }

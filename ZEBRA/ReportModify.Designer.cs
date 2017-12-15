@@ -49,7 +49,6 @@
             this.their = new System.Windows.Forms.RadioButton();
             this.opponentHouse = new System.Windows.Forms.RadioButton();
             this.bossName = new System.Windows.Forms.Label();
-            this.customer_search = new System.Windows.Forms.Button();
             this.customerId = new System.Windows.Forms.TextBox();
             this.reportText = new System.Windows.Forms.TextBox();
             this.createDate = new System.Windows.Forms.DateTimePicker();
@@ -260,6 +259,7 @@
             // 
             // toDate
             // 
+            this.toDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.toDate.Location = new System.Drawing.Point(229, 220);
             this.toDate.Name = "toDate";
             this.toDate.Size = new System.Drawing.Size(121, 19);
@@ -267,6 +267,7 @@
             // 
             // fromDate
             // 
+            this.fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fromDate.Location = new System.Drawing.Point(229, 163);
             this.fromDate.Name = "fromDate";
             this.fromDate.Size = new System.Drawing.Size(121, 19);
@@ -322,18 +323,6 @@
             this.bossName.Size = new System.Drawing.Size(61, 12);
             this.bossName.TabIndex = 45;
             this.bossName.Text = "高野　浩一";
-            // 
-            // customer_search
-            // 
-            this.customer_search.BackColor = System.Drawing.Color.DimGray;
-            this.customer_search.ForeColor = System.Drawing.Color.White;
-            this.customer_search.Location = new System.Drawing.Point(333, 277);
-            this.customer_search.Name = "customer_search";
-            this.customer_search.Size = new System.Drawing.Size(57, 23);
-            this.customer_search.TabIndex = 44;
-            this.customer_search.Text = "検索";
-            this.customer_search.UseVisualStyleBackColor = false;
-            this.customer_search.Click += new System.EventHandler(this.customer_search_Click);
             // 
             // customerId
             // 
@@ -479,7 +468,6 @@
             this.Controls.Add(this.their);
             this.Controls.Add(this.opponentHouse);
             this.Controls.Add(this.bossName);
-            this.Controls.Add(this.customer_search);
             this.Controls.Add(this.customerId);
             this.Controls.Add(this.reportText);
             this.Controls.Add(this.createDate);
@@ -524,7 +512,6 @@
         private System.Windows.Forms.RadioButton their;
         private System.Windows.Forms.RadioButton opponentHouse;
         private System.Windows.Forms.Label bossName;
-        private System.Windows.Forms.Button customer_search;
         private System.Windows.Forms.TextBox customerId;
         private System.Windows.Forms.TextBox reportText;
         private System.Windows.Forms.DateTimePicker createDate;

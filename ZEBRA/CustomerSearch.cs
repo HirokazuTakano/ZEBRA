@@ -14,23 +14,21 @@ namespace ZEBRA
 {
     public partial class CustomerSearch : Form
     {
-        private string _ownerPage;
         private string _cusId;
         private string _compName;
         private string _cusName;
         private List<Customer> searchCusList;
 
+
+        //コンストラクタ
         public CustomerSearch()
         {
             InitializeComponent();
-        }
-
-        //コンストラクタ　　会社名or顧客名を取得
-        public CustomerSearch(string ownerPage)
-        {
-            this._ownerPage = ownerPage;
             this.searchCusList = new List<Customer>();
         }
+
+       
+
 
         //「トップページ」ボタンを押下
         private void topPageButton_Click(object sender, EventArgs e)
@@ -172,30 +170,13 @@ namespace ZEBRA
                 _compName = (string)dgv.Rows[e.RowIndex].Cells[cellIndexCompName].Value;
                 _cusName = (string)dgv.Rows[e.RowIndex].Cells[cellIndexCusName].Value;
 
-
-
-
-                // コンストラクタ生成時の引数で受け取った, 識別子でOwner画面を判断
-                if (_ownerPage.Equals("ReportInput"))
-                {
-                    MessageBox.Show(_cusId + _compName + _cusName);
+                    //MessageBox.Show(_cusId + _compName + _cusName);
                     //Owner.(TextBox)customer.Text = _cusId;
 
                     ReportInput ri = (ReportInput)Owner;
                     ri.CustomerId = _cusId;
                     ri.Company = _compName;
                     ri.CustomerName = _cusName;
-
-                } else if (_ownerPage.Equals(""))
-                {
-                    MessageBox.Show(_cusId + _compName + _cusName);
-                    //Owner.(TextBox)customer.Text = _cusId;
-
-                    ReportModify rm = (ReportModify)Owner;
-                    //rm.CusId = _cusId;
-                    //rm.CompName = _compName;
-                    //rm.CusName = _cusName;
-                }
 
 
 
