@@ -197,9 +197,10 @@ namespace ZEBRA
                     {
                         MessageBox.Show("登録が完了しました。");
 
-                        Hide();
-                        MainMenu mainMenu = new MainMenu();
-                        mainMenu.Show(this);
+                        //Hide();
+                        //MainMenu mainMenu = new MainMenu();
+                        //mainMenu.Show(this);
+                        this.Close();
                         Debug.WriteLine("トップページに飛びました");
                     }
 
@@ -213,6 +214,7 @@ namespace ZEBRA
 
                     con.Close();
                 }
+                
 
 
 
@@ -234,6 +236,8 @@ namespace ZEBRA
                 MessageBox.Show(messageAll);
                 
             }
+
+            
             
         }
 
