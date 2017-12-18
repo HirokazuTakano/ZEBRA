@@ -180,11 +180,20 @@ namespace ZEBRA
 
 
 
+
                 this.Close();
+                
 
 
             }
 
+
+        }
+
+        private void CustomerSearch_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            Owner.Show();
 
         }
     }

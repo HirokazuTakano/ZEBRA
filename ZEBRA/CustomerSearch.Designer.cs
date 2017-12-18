@@ -31,7 +31,6 @@
             this.customerList = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.topPageButton = new System.Windows.Forms.Button();
             this.searchCusText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cusSearchButton = new System.Windows.Forms.Button();
@@ -70,19 +69,6 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // topPageButton
-            // 
-            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
-            this.topPageButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.topPageButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.topPageButton.Location = new System.Drawing.Point(14, 83);
-            this.topPageButton.Name = "topPageButton";
-            this.topPageButton.Size = new System.Drawing.Size(75, 23);
-            this.topPageButton.TabIndex = 37;
-            this.topPageButton.Text = "トップページ";
-            this.topPageButton.UseVisualStyleBackColor = false;
-            this.topPageButton.Click += new System.EventHandler(this.topPageButton_Click);
-            // 
             // searchCusText
             // 
             this.searchCusText.Location = new System.Drawing.Point(113, 128);
@@ -118,12 +104,12 @@
             this.Controls.Add(this.cusSearchButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchCusText);
-            this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.customerList);
             this.Name = "CustomerSearch";
             this.Text = "Customer_search";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomerSearch_FormClosed);
             this.Load += new System.EventHandler(this.CustomerSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -137,7 +123,6 @@
         private System.Windows.Forms.DataGridView customerList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.TextBox searchCusText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button cusSearchButton;

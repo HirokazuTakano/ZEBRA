@@ -90,9 +90,7 @@ namespace ZEBRA
         /// <param name="e"></param>
         private void topPageButton_Click(object sender, EventArgs e)
         {
-            Hide();
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.Show(this);
+            this.Close();
             Debug.WriteLine("トップページに飛びました");
         }
 
@@ -282,6 +280,11 @@ namespace ZEBRA
             fromDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
             toDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
 
+        }
+
+        private void ReportInput_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }
