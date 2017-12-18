@@ -40,24 +40,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 97);
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(141, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 12);
+            this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 129);
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(103, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 12);
+            this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
             // id
             // 
-            this.id.Location = new System.Drawing.Point(143, 94);
+            this.id.Location = new System.Drawing.Point(178, 94);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(100, 19);
             this.id.TabIndex = 2;
@@ -65,7 +67,7 @@
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(143, 126);
+            this.password.Location = new System.Drawing.Point(178, 126);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(100, 19);
@@ -87,7 +89,7 @@
             this.loginButton.BackColor = System.Drawing.Color.DimGray;
             this.loginButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.loginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loginButton.Location = new System.Drawing.Point(168, 167);
+            this.loginButton.Location = new System.Drawing.Point(203, 167);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 37;

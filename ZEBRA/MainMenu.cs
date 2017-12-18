@@ -30,6 +30,10 @@ namespace ZEBRA
         /// <param name="e"></param>
         private void MainMenu_Load(object sender, EventArgs e)
         {
+
+            userName.Text = "" + MainMenu.loginUser.EmpName;
+
+
             // 接続用のクラス
             SqlConnection con = new SqlConnection();
 
@@ -94,6 +98,8 @@ namespace ZEBRA
             button.UseColumnTextForButtonValue = true;  // Textプロパティ値をボタンに表示させる。
             button.Text = "詳細画面へ";
             list.Columns.Add(button);
+
+          
 
         }
         /// <summary>

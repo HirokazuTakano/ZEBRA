@@ -39,6 +39,8 @@
             this.logoutButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.userName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +137,7 @@
             this.logoutButton.BackColor = System.Drawing.Color.DimGray;
             this.logoutButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutButton.Location = new System.Drawing.Point(627, 12);
+            this.logoutButton.Location = new System.Drawing.Point(627, 57);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 23);
             this.logoutButton.TabIndex = 11;
@@ -147,7 +149,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("HG創英角ｺﾞｼｯｸUB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(296, 44);
+            this.label3.Location = new System.Drawing.Point(292, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 27);
             this.label3.TabIndex = 13;
@@ -166,12 +168,32 @@
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(642, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 12);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "さん　 ようこそ";
+            // 
+            // userName
+            // 
+            this.userName.AutoSize = true;
+            this.userName.Location = new System.Drawing.Point(572, 12);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(35, 12);
+            this.userName.TabIndex = 16;
+            this.userName.Text = "label5";
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(730, 556);
+            this.Controls.Add(this.userName);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.logoutButton);
@@ -207,6 +229,8 @@
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label userName;
     }
 }
 
