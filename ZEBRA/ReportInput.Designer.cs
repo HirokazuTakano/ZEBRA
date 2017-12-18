@@ -65,7 +65,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.createDate = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.fromDate = new System.Windows.Forms.Label();
             this.toDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -492,15 +491,6 @@
             this.createDate.TabIndex = 46;
             this.createDate.Text = "label19";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(0, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 12);
-            this.label19.TabIndex = 47;
-            this.label19.Text = "label19";
-            // 
             // fromDate
             // 
             this.fromDate.AutoSize = true;
@@ -527,7 +517,6 @@
             this.ClientSize = new System.Drawing.Size(570, 611);
             this.Controls.Add(this.toDate);
             this.Controls.Add(this.fromDate);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.createDate);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -614,7 +603,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label createDate;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label fromDate;
         private System.Windows.Forms.Label toDate;
     }
