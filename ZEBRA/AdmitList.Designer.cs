@@ -72,10 +72,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Font = new System.Drawing.Font("UD デジタル 教科書体 NP-B", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(391, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 19);
+            this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 33;
             this.label1.Text = "承認待ち";
             // 
@@ -89,6 +90,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.admitViewList);
+            this.ForeColor = System.Drawing.Color.DimGray;
             this.Name = "AdmitList";
             this.Text = "AdmitWait";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdmitList_FormClosed);
