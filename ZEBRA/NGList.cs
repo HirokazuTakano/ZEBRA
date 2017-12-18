@@ -111,7 +111,6 @@ namespace ZEBRA
                 //,[AUTHOR_BOSS_ID]
                 //,[BOSS_COMMENT]
 
-                //なぜか型変換がうまくいかない
                 repo = new Report(int.Parse(dr["REPORT_ID"].ToString()), DateTime.Parse(dr["CREATE_DATE"].ToString()), DateTime.Parse(dr["UPDATE_DATE"].ToString()),
                     DateTime.Parse(dr["VISIT_STRAT_DATE"].ToString()), DateTime.Parse(dr["VISIT_END_DATE"].ToString()),
                     (dr["VISIT_TYPE"].ToString()), (dr["DETAILS"].ToString()), (dr["CUS_ID"].ToString()), int.Parse(dr["APPROVAL_STATUS"].ToString()),
