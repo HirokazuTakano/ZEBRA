@@ -194,10 +194,13 @@ namespace ZEBRA
                         }
                         modify.getReport(reportList[i], cusName);
 
-                        this.Close();
+
                         modify.ShowDialog();
-                        
-                        break;
+
+                        modify.Dispose();
+                        this.Close();
+
+                        return;
                     }     
                 }
 

@@ -165,10 +165,12 @@ namespace ZEBRA
 
                             if (result == DialogResult.OK)
                             {
-                                this.Close();
-                                NGList ng = new NGList();
-                                ng.Show();
+                                //this.Close();
+                                //NGList ng = new NGList();
+                                //ng.Show();
                                 Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
+
+                                this.Close();
 
 
                             }
@@ -271,10 +273,10 @@ namespace ZEBRA
         private void topPageButton_Click(object sender, EventArgs e)
         {
 
-            this.Close();
-            MainMenu main = new MainMenu();
-            main.Show();
-            Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
+            //this.Close();
+            //MainMenu main = new MainMenu();
+            //main.Show();
+            //Debug.WriteLine("画面を表示後。"); // 子画面が閉じてから、実行される。
 
         }
     }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.topPageButton = new System.Windows.Forms.Button();
             this.registButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -64,18 +63,6 @@
             this.label1.Size = new System.Drawing.Size(89, 19);
             this.label1.TabIndex = 14;
             this.label1.Text = "日報修正";
-            // 
-            // topPageButton
-            // 
-            this.topPageButton.BackColor = System.Drawing.Color.DimGray;
-            this.topPageButton.ForeColor = System.Drawing.Color.White;
-            this.topPageButton.Location = new System.Drawing.Point(10, 81);
-            this.topPageButton.Name = "topPageButton";
-            this.topPageButton.Size = new System.Drawing.Size(75, 23);
-            this.topPageButton.TabIndex = 30;
-            this.topPageButton.Text = "トップページ";
-            this.topPageButton.UseVisualStyleBackColor = false;
-            this.topPageButton.Click += new System.EventHandler(this.topPageButton_Click);
             // 
             // registButton
             // 
@@ -315,7 +302,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.topPageButton);
             this.Controls.Add(this.registButton);
             this.Controls.Add(this.label1);
             this.Name = "ReportModify";
@@ -330,7 +316,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button topPageButton;
         private System.Windows.Forms.Button registButton;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
