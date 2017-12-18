@@ -161,9 +161,9 @@ namespace ZEBRA
         private void topPageButton_Click(object sender, EventArgs e)
         {
             Hide();
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.Show(this);
-            Debug.WriteLine("トップページに飛びました");
+            
+            Owner.Show();
+            this.Close();
         }
 
         /// <summary>
