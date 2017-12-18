@@ -39,7 +39,6 @@
             this.logoutButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.userName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,12 +46,12 @@
             // 
             // newReportButton
             // 
-            this.newReportButton.BackColor = System.Drawing.Color.DimGray;
-            this.newReportButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.newReportButton.BackColor = System.Drawing.Color.LightGray;
+            this.newReportButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.newReportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.newReportButton.Location = new System.Drawing.Point(12, 86);
+            this.newReportButton.Location = new System.Drawing.Point(100, 12);
             this.newReportButton.Name = "newReportButton";
-            this.newReportButton.Size = new System.Drawing.Size(75, 23);
+            this.newReportButton.Size = new System.Drawing.Size(105, 36);
             this.newReportButton.TabIndex = 0;
             this.newReportButton.Text = "新規作成";
             this.newReportButton.UseVisualStyleBackColor = false;
@@ -60,7 +59,7 @@
             // 
             // searchWord
             // 
-            this.searchWord.Location = new System.Drawing.Point(183, 195);
+            this.searchWord.Location = new System.Drawing.Point(207, 221);
             this.searchWord.Name = "searchWord";
             this.searchWord.Size = new System.Drawing.Size(170, 19);
             this.searchWord.TabIndex = 1;
@@ -69,11 +68,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(122, 196);
+            this.label1.Location = new System.Drawing.Point(107, 222);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 20);
+            this.label1.Size = new System.Drawing.Size(74, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "検索";
+            this.label1.Text = "作成者検索";
             // 
             // list
             // 
@@ -91,7 +90,7 @@
             this.admitLinkLabel.AutoSize = true;
             this.admitLinkLabel.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.admitLinkLabel.LinkColor = System.Drawing.Color.Navy;
-            this.admitLinkLabel.Location = new System.Drawing.Point(181, 138);
+            this.admitLinkLabel.Location = new System.Drawing.Point(205, 164);
             this.admitLinkLabel.Name = "admitLinkLabel";
             this.admitLinkLabel.Size = new System.Drawing.Size(56, 13);
             this.admitLinkLabel.TabIndex = 4;
@@ -103,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(96, 138);
+            this.label2.Location = new System.Drawing.Point(120, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 5;
@@ -114,7 +113,7 @@
             this.NGLinkLabel.AutoSize = true;
             this.NGLinkLabel.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.NGLinkLabel.LinkColor = System.Drawing.Color.Navy;
-            this.NGLinkLabel.Location = new System.Drawing.Point(181, 163);
+            this.NGLinkLabel.Location = new System.Drawing.Point(205, 189);
             this.NGLinkLabel.Name = "NGLinkLabel";
             this.NGLinkLabel.Size = new System.Drawing.Size(50, 13);
             this.NGLinkLabel.TabIndex = 7;
@@ -137,7 +136,7 @@
             this.logoutButton.BackColor = System.Drawing.Color.DimGray;
             this.logoutButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutButton.Location = new System.Drawing.Point(627, 57);
+            this.logoutButton.Location = new System.Drawing.Point(643, 8);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 23);
             this.logoutButton.TabIndex = 11;
@@ -149,6 +148,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("HG創英角ｺﾞｼｯｸUB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(292, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 27);
@@ -160,7 +160,7 @@
             this.searchButton.BackColor = System.Drawing.Color.DimGray;
             this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchButton.Location = new System.Drawing.Point(379, 193);
+            this.searchButton.Location = new System.Drawing.Point(403, 219);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 14;
@@ -168,21 +168,14 @@
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(642, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 12);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "さん　 ようこそ";
-            // 
             // userName
             // 
             this.userName.AutoSize = true;
-            this.userName.Location = new System.Drawing.Point(572, 12);
+            this.userName.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.userName.Location = new System.Drawing.Point(459, 12);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(35, 12);
+            this.userName.Size = new System.Drawing.Size(45, 13);
             this.userName.TabIndex = 16;
             this.userName.Text = "label5";
             // 
@@ -193,7 +186,6 @@
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(730, 556);
             this.Controls.Add(this.userName);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.logoutButton);
@@ -229,7 +221,6 @@
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label userName;
     }
 }

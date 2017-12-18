@@ -277,10 +277,12 @@ namespace ZEBRA
             //上司名を表示させる
             bossName.Text = MainMenu.loginUser.BossName;
 
+            //現在日時を取得
+            DateTime dt = DateTime.Now;
             //現在日を取得
             DateTime today = DateTime.Today;
             //日付の部分だけを取得し表示
-            createDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
+            createDate.Text = dt.ToString();
             fromDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
             toDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
 
