@@ -21,6 +21,7 @@ namespace ZEBRA
         private DateTime startDateAll;
         private DateTime endDateAll;
 
+        //どこでエラーが引っ掛かったのかわかるようにエラーメッセージ用リストを作成
         private List<string> errorList = new List<string>();
 
         int resultDate;
@@ -42,7 +43,11 @@ namespace ZEBRA
             this.detail = detail;
         }
 
-
+        /// <summary>
+        /// 日報作成・修正時の入力が正しいかチェックをする
+        /// </summary>
+        /// <returns>result 正常ならtrueを返却</returns>
+        /// 
         public Boolean InputCheck()
         {
             Boolean result = true;
@@ -50,40 +55,38 @@ namespace ZEBRA
             if (startHour == null || startHour.Equals(""))
             {
                 result = false;
-                ErrorList.Add("startHour");
+                errorList.Add("・日時のFrom（時間）が未入力です");
             }
 
-            else if (startMin == null || startMin.Equals(""))
+            if (startMin == null || startMin.Equals(""))
             {
                 result = false;
-                ErrorList.Add("startMin");
+                errorList.Add("・日時のFrom（分）が未入力です");
             }
 
-            else if (endHour == null || endHour.Equals(""))
+            if (endHour == null || endHour.Equals(""))
             {
                 result = false;
-                ErrorList.Add("endHour");
+                errorList.Add("・日時のTo（時間）が未入力です");
             }
 
-            else if (endMin == null || endMin.Equals(""))
+            if (endMin == null || endMin.Equals(""))
             {
                 result = false;
-                ErrorList.Add("endMin");
+                errorList.Add("・日時のTo（分）が未入力です");
             }
-            else
+            
+            if(result)
             {
-
                 //日にち、時間、分をつなげてDateTime型をstartDateAllへ
                 int startH = int.Parse(startHour);
                 int startM = int.Parse(startMin);
-                DateTime visitStart = DateTime.Parse(startDate + " " + startH + ":" + startM);
-                startDateAll = visitStart;
+                startDateAll = DateTime.Parse(startDate + " " + startH + ":" + startM);
 
                 //日にち、時間、分をつなげてDateTime型をendDateAllへ
                 int endH = int.Parse(endHour);
                 int endM = int.Parse(endMin);
-                DateTime visitEnd = DateTime.Parse(endDate + " " + endH + ":" + endM);
-                endDateAll = visitEnd;
+                endDateAll = DateTime.Parse(endDate + " " + endH + ":" + endM);
 
 
                 //開始日時が未来にならないか
@@ -92,33 +95,32 @@ namespace ZEBRA
                 if (resultDate == 1)
                 {
                     result = false;
-                    ErrorList.Add("fromFuture");
+                    errorList.Add("・開始日時は現在日以前を指定してください");
                 }
                 else
                 {
                     //終了が開始より前にならないか
-                    if(endDateAll < StartDateAll)
+                    if (endDateAll <= startDateAll)
                     {
                         result = false;
-                        ErrorList.Add("endFuture");
+                        errorList.Add("・ToはFromより後の時間にしてください");
                     }
 
                 }
 
 
-            }
-
+            }             
 
             if (customerName == null || customerName.Equals(""))
             {
                 result = false;
-                ErrorList.Add("customerName");
+                ErrorList.Add("・訪問先の顧客を選択してください");
             }
 
             if (visitType == null || visitType.Equals(""))
             {
                 result = false;
-                ErrorList.Add("visitType");
+                ErrorList.Add("・訪問種別を選択してください");
             }
 
 
@@ -126,17 +128,15 @@ namespace ZEBRA
             if (detail == null || detail.Equals(""))
             {
                 result = false;
-                ErrorList.Add("detail");
+                ErrorList.Add("・内容を入力してください");
             }
-
-
 
 
             return result;
 
-
-
+           
         }
+
 
         public DateTime StartDateAll
         {
@@ -161,10 +161,6 @@ namespace ZEBRA
                 return errorList;
             }
 
-            set
-            {
-                errorList = value;
-            }
         }
     }
 }

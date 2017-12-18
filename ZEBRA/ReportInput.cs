@@ -99,7 +99,7 @@ namespace ZEBRA
 
 
     　/// <summary>
-      /// 「登録」ボタンを押下された時のイベント
+      /// 「登録」ボタンを押下されたら入力値のValidateを行い、正常ならば日報DBに追加をする
       /// </summary>
       /// <param name="sender"></param>
       /// <param name="e"></param>
@@ -109,12 +109,10 @@ namespace ZEBRA
             string _createDate = createDate.Text;
 
             //訪問日時を取得
-            //DateTime _fromDate = DateTime.Parse(fromDate.Text);
             string _fromDate = fromDate.Text;
             string _fromHour = fromHour.Text;
             string _fromMinute = fromMinute.Text;
 
-            //DateTime _toDate = DateTime.Parse(toDate.Text);
             string _toDate = toDate.Text;
             string _toHour = toHour.Text;
             string _toMinute = toMinute.Text;
@@ -153,7 +151,8 @@ namespace ZEBRA
             CommonValidater validate = new CommonValidater(_fromDate, _fromHour,_fromMinute, 
                 _toDate, _toHour, _toMinute, _customerId, visitType, _reportText);
 
-            //////////////Validateが通った場合、Insert実行
+
+            //Validateが通った場合、Insert実行
             if(validate.InputCheck())
             {
                 //DateTime型の訪問日時を取得する
@@ -181,8 +180,6 @@ namespace ZEBRA
                     // コネクションオブジェクトを使用して、SQLの発行準備
                     SqlCommand command = new SqlCommand(sql, con);
 
-                    //// SQL文を実行。approvalStatus
-                    //SqlDataReader reader = command.ExecuteReader();
 
                     // パラメタに値を設定
                     command.Parameters.Add(new SqlParameter("@VISIT_STRAT_DATE", _visitStart));
@@ -221,60 +218,19 @@ namespace ZEBRA
 
 
 
-            }else
+            }
+            //入力値が正常でなければ、エラーメッセージを表示させる
+            else
             {
-                List<string> msgList = new List<string>();
+                //CommonValidateクラスからエラーメッセージ用のリストを取得
                 List<string> errorList = validate.ErrorList;
-                
-                foreach(string errorMessage in errorList)
-                {
-                    if (errorMessage.Equals("startHour"))
-                    {
-                        msgList.Add("日時のFrom（時間）が未入力です");
-                    }
-
-                    if (errorMessage.Equals("startMin"))
-                    {
-                        msgList.Add("日時のFrom（分）が未入力です");
-                    }
-
-                    if (errorMessage.Equals("endHour"))
-                    {
-                        msgList.Add("日時のTo（時間）が未入力です");
-                    }
-                    if (errorMessage.Equals("endMin"))
-                    {
-                        msgList.Add("日時のto（分）が未入力です");
-                    }
-
-                    if (errorMessage.Equals("endFuture"))
-                    {
-                        msgList.Add("ToはFromより後の時間にしてください");
-                    }
-
-                    if (errorMessage.Equals("customerName"))
-                    {
-                        msgList.Add("訪問先の顧客を選択してください");
-                    }
-
-                    if (errorMessage.Equals("visitType"))
-                    {
-                        msgList.Add("訪問種別を選択してください");
-                    }
-
-                    if (errorMessage.Equals("detail"))
-                    {
-                        msgList.Add("内容を入力してください");
-                    }
-
-                }
-
 
                 string messageAll = "";
 
-                foreach(string msg in msgList)
+                foreach(string errorMessage in errorList)
                 {
-                    messageAll += msg + Environment.NewLine;
+                    messageAll += errorMessage + Environment.NewLine;
+
                 }
 
                 MessageBox.Show(messageAll);
@@ -304,7 +260,7 @@ namespace ZEBRA
 
 
         /// <summary>
-        /// 新規登録をロードするときに上司の名前を取得し、表示させる
+        /// 新規登録画面をロードするときに、上司の名前と現在日を取得して表示させる
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -316,12 +272,12 @@ namespace ZEBRA
 
             userId = emp.EmpId;
             bossId = emp.BossId;
-
+            //上司名を表示させる
             bossName.Text = MainMenu.loginUser.BossName;
 
             //現在日を取得
             DateTime today = DateTime.Today;
-            //日付の部分だけを取得    0:00:00
+            //日付の部分だけを取得し表示
             createDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
             fromDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
             toDate.Text = today.Date.ToString().Replace(" 0:00:00", "");
