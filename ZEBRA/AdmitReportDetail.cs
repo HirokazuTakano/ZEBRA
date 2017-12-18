@@ -186,9 +186,7 @@ namespace ZEBRA
 
 
 
-            Hide();
-            AdmitList admitList = new AdmitList();
-            admitList.Show(this);
+            this.Close();
     
 
 
@@ -244,9 +242,13 @@ namespace ZEBRA
                 con.Close();
             }
 
-            Hide();
-            AdmitList admitList = new AdmitList();
-            admitList.Show(this);
+            this.Close();
+           
+        }
+
+        private void AdmitReportDetail_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Owner.Show(this);
         }
     }
 }

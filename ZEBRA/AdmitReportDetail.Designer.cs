@@ -258,6 +258,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AdmitReportDetail";
             this.Text = "AdmitDetail";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdmitReportDetail_FormClosed);
             this.Load += new System.EventHandler(this.AdmitReportDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
