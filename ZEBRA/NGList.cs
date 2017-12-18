@@ -58,14 +58,15 @@ namespace ZEBRA
 
             // 問い合わせのSQLを生成
             string sql =
-                "SELECT AUTHOR_ID REPORT_ID, CREATE_DATE, UPDATE_DATE, VISIT_STRAT_DATE, VISIT_END_DATE, " +
-                "VISIT_TYPE, DETAILS, R.CUS_ID AS CUS_ID, APPROVAL_STATUS, R.AUTHOR_BOSS_ID, E.NAME_SEI AS BOSS_SEI," + 
-                " E.NAME_MEI AS BOSS_MEI, R.BOSS_COMMENT AS BOSS_COMMENT " +
-                 "FROM dbo.TM_DAILY_REPORT R INNER JOIN dbo.TM_CUSTOMER C " +
-                 "ON R.CUS_ID = C.CUS_ID " +
-                 "INNER JOIN dbo.TM_EMPLOYEE E ON R.AUTHOR_BOSS_ID = E.BOSS_ID " +
-                 "WHERE (AUTHOR_ID = @userId) AND (APPROVAL_STATUS = 2 ) " +
-                 "ORDER BY REPORT_ID ;";
+                "SELECT REPORT_ID, CREATE_DATE, UPDATE_DATE, VISIT_STRAT_DATE, VISIT_END_DATE, " +
+                "VISIT_TYPE, DETAILS, R.CUS_ID AS CUS_ID, APPROVAL_STATUS, " +
+                "AUTHOR_ID,  R.AUTHOR_BOSS_ID, E.NAME_SEI AS BOSS_SEI, " +
+                "E.NAME_MEI AS BOSS_MEI, R.BOSS_COMMENT, C.COMPANY_NAME, C.CUS_NAME " +
+                "FROM dbo.TM_DAILY_REPORT R INNER JOIN dbo.TM_CUSTOMER C " +
+                "ON R.CUS_ID = C.CUS_ID " +
+                "INNER JOIN dbo.TM_EMPLOYEE E ON R.AUTHOR_BOSS_ID = E.EMP_ID  " +
+                "WHERE (AUTHOR_ID = @userId) AND (APPROVAL_STATUS = 2 ) " +
+                "ORDER BY REPORT_ID ;";
 
             // コネクションオブジェクトを使用して、SQLの発行準備
             SqlCommand command = new SqlCommand(sql, con);
@@ -114,12 +115,12 @@ namespace ZEBRA
                 repo = new Report(int.Parse(dr["REPORT_ID"].ToString()), DateTime.Parse(dr["CREATE_DATE"].ToString()), DateTime.Parse(dr["UPDATE_DATE"].ToString()),
                     DateTime.Parse(dr["VISIT_STRAT_DATE"].ToString()), DateTime.Parse(dr["VISIT_END_DATE"].ToString()),
                     (dr["VISIT_TYPE"].ToString()), (dr["DETAILS"].ToString()), (dr["CUS_ID"].ToString()), int.Parse(dr["APPROVAL_STATUS"].ToString()),
-                        (dr["AUTHOR_ID"].ToString()), (dr["AUTHOR_BOSS_ID"].ToString()), (dr["AUTHOR_BOSS_SEI"].ToString()),
-                        (dr["AUTHOR_BOSS_MEI"].ToString()), (dr["BOSS_COMMENT"].ToString()));
+                        (dr["AUTHOR_ID"].ToString()), (dr["AUTHOR_BOSS_ID"].ToString()), (dr["BOSS_SEI"].ToString()),
+                        (dr["BOSS_MEI"].ToString()), (dr["BOSS_COMMENT"].ToString()));
 
                 reportList.Add(repo);
 
-                customerList.Add(int.Parse(dr["REPORT_ID"].ToString()), (dr["COMPANY_NAME"].ToString() + dr["CUS_NAME"].ToString()));
+                customerList.Add(repo.ReportId, (dr["COMPANY_NAME"].ToString() + dr["CUS_NAME"].ToString()));
             }
 
 
