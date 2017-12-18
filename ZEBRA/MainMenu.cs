@@ -14,6 +14,10 @@ using System.Windows.Forms;
 
 namespace ZEBRA
 {
+
+
+
+
     public partial class MainMenu : Form
     {
         public static Employee loginUser;
@@ -31,7 +35,8 @@ namespace ZEBRA
         private void MainMenu_Load(object sender, EventArgs e)
         {
 
-            userName.Text = "" + MainMenu.loginUser.EmpName;
+            //ユーザー名表示
+            userName.Text =  MainMenu.loginUser.EmpName +"さん　　ようこそ";
 
 
             // 接続用のクラス
@@ -306,6 +311,8 @@ namespace ZEBRA
             Debug.WriteLine("ログアウトしました");
             Owner.Show();
         }
+
+    
     }
 }
 
