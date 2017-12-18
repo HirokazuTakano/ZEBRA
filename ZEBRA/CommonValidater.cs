@@ -95,7 +95,7 @@ namespace ZEBRA
                 if (resultDate == 1)
                 {
                     result = false;
-                    errorList.Add("・開始日時は現在日以前を指定してください");
+                    errorList.Add("・訪問日時は現在日時以前の時間を指定してください");
                 }
                 else
                 {
