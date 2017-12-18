@@ -34,16 +34,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.toMinute = new System.Windows.Forms.ComboBox();
-            this.toHour = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.fromMinute = new System.Windows.Forms.ComboBox();
-            this.fromHour = new System.Windows.Forms.ComboBox();
-            this.toDate = new System.Windows.Forms.DateTimePicker();
-            this.fromDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.another = new System.Windows.Forms.RadioButton();
             this.their = new System.Windows.Forms.RadioButton();
@@ -60,6 +50,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customer = new System.Windows.Forms.Label();
             this.createDate = new System.Windows.Forms.Label();
+            this.fromDate = new System.Windows.Forms.Label();
+            this.toDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +85,7 @@
             this.registButton.Name = "registButton";
             this.registButton.Size = new System.Drawing.Size(75, 23);
             this.registButton.TabIndex = 29;
-            this.registButton.Text = "修正";
+            this.registButton.Text = "登録";
             this.registButton.UseVisualStyleBackColor = false;
             this.registButton.Click += new System.EventHandler(this.registButton_Click);
             // 
@@ -123,154 +115,6 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(0, 20);
             this.label13.TabIndex = 60;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(508, 225);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 12);
-            this.label10.TabIndex = 59;
-            this.label10.Text = "分";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(425, 225);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(17, 12);
-            this.label11.TabIndex = 58;
-            this.label11.Text = "時";
-            // 
-            // toMinute
-            // 
-            this.toMinute.FormattingEnabled = true;
-            this.toMinute.Items.AddRange(new object[] {
-            "0",
-            "10",
-            "20",
-            "30",
-            "40",
-            "50"});
-            this.toMinute.Location = new System.Drawing.Point(448, 219);
-            this.toMinute.Name = "toMinute";
-            this.toMinute.Size = new System.Drawing.Size(44, 20);
-            this.toMinute.TabIndex = 57;
-            // 
-            // toHour
-            // 
-            this.toHour.FormattingEnabled = true;
-            this.toHour.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"});
-            this.toHour.Location = new System.Drawing.Point(371, 219);
-            this.toHour.Name = "toHour";
-            this.toHour.Size = new System.Drawing.Size(48, 20);
-            this.toHour.TabIndex = 56;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(508, 168);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(17, 12);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "分";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(425, 168);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 12);
-            this.label8.TabIndex = 54;
-            this.label8.Text = "時";
-            // 
-            // fromMinute
-            // 
-            this.fromMinute.FormattingEnabled = true;
-            this.fromMinute.Items.AddRange(new object[] {
-            "0",
-            "10",
-            "20",
-            "30",
-            "40",
-            "50"});
-            this.fromMinute.Location = new System.Drawing.Point(448, 163);
-            this.fromMinute.Name = "fromMinute";
-            this.fromMinute.Size = new System.Drawing.Size(44, 20);
-            this.fromMinute.TabIndex = 53;
-            // 
-            // fromHour
-            // 
-            this.fromHour.FormattingEnabled = true;
-            this.fromHour.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"});
-            this.fromHour.Location = new System.Drawing.Point(371, 162);
-            this.fromHour.Name = "fromHour";
-            this.fromHour.Size = new System.Drawing.Size(48, 20);
-            this.fromHour.TabIndex = 52;
-            // 
-            // toDate
-            // 
-            this.toDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.toDate.Location = new System.Drawing.Point(229, 220);
-            this.toDate.Name = "toDate";
-            this.toDate.Size = new System.Drawing.Size(121, 19);
-            this.toDate.TabIndex = 51;
-            // 
-            // fromDate
-            // 
-            this.fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fromDate.Location = new System.Drawing.Point(229, 163);
-            this.fromDate.Name = "fromDate";
-            this.fromDate.Size = new System.Drawing.Size(121, 19);
-            this.fromDate.TabIndex = 50;
             // 
             // label7
             // 
@@ -426,28 +270,38 @@
             this.createDate.TabIndex = 65;
             this.createDate.Text = "label6";
             // 
+            // fromDate
+            // 
+            this.fromDate.AutoSize = true;
+            this.fromDate.Location = new System.Drawing.Point(302, 168);
+            this.fromDate.Name = "fromDate";
+            this.fromDate.Size = new System.Drawing.Size(35, 12);
+            this.fromDate.TabIndex = 66;
+            this.fromDate.Text = "label6";
+            // 
+            // toDate
+            // 
+            this.toDate.AutoSize = true;
+            this.toDate.Location = new System.Drawing.Point(296, 225);
+            this.toDate.Name = "toDate";
+            this.toDate.Size = new System.Drawing.Size(41, 12);
+            this.toDate.TabIndex = 67;
+            this.toDate.Text = "label16";
+            // 
             // ReportModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(570, 554);
+            this.Controls.Add(this.toDate);
+            this.Controls.Add(this.fromDate);
             this.Controls.Add(this.createDate);
             this.Controls.Add(this.customer);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.toMinute);
-            this.Controls.Add(this.toHour);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.fromMinute);
-            this.Controls.Add(this.fromHour);
-            this.Controls.Add(this.toDate);
-            this.Controls.Add(this.fromDate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.another);
             this.Controls.Add(this.their);
@@ -481,16 +335,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox toMinute;
-        private System.Windows.Forms.ComboBox toHour;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox fromMinute;
-        private System.Windows.Forms.ComboBox fromHour;
-        private System.Windows.Forms.DateTimePicker toDate;
-        private System.Windows.Forms.DateTimePicker fromDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton another;
         private System.Windows.Forms.RadioButton their;
@@ -507,5 +351,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label customer;
         private System.Windows.Forms.Label createDate;
+        private System.Windows.Forms.Label fromDate;
+        private System.Windows.Forms.Label toDate;
     }
 }
