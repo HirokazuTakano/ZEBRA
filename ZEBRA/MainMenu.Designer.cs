@@ -58,18 +58,18 @@
             // 
             // searchWord
             // 
-            this.searchWord.Location = new System.Drawing.Point(99, 197);
+            this.searchWord.Location = new System.Drawing.Point(183, 195);
             this.searchWord.Name = "searchWord";
-            this.searchWord.Size = new System.Drawing.Size(123, 19);
+            this.searchWord.Size = new System.Drawing.Size(170, 19);
             this.searchWord.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(51, 197);
+            this.label1.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(122, 196);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 18);
+            this.label1.Size = new System.Drawing.Size(35, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "検索";
             // 
@@ -87,10 +87,11 @@
             // admitLinkLabel
             // 
             this.admitLinkLabel.AutoSize = true;
+            this.admitLinkLabel.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.admitLinkLabel.LinkColor = System.Drawing.Color.Navy;
-            this.admitLinkLabel.Location = new System.Drawing.Point(127, 138);
+            this.admitLinkLabel.Location = new System.Drawing.Point(181, 138);
             this.admitLinkLabel.Name = "admitLinkLabel";
-            this.admitLinkLabel.Size = new System.Drawing.Size(50, 12);
+            this.admitLinkLabel.Size = new System.Drawing.Size(56, 13);
             this.admitLinkLabel.TabIndex = 4;
             this.admitLinkLabel.TabStop = true;
             this.admitLinkLabel.Text = "承認待ち";
@@ -99,20 +100,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(42, 138);
+            this.label2.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(96, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 18);
+            this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "お知らせ";
             // 
             // NGLinkLabel
             // 
             this.NGLinkLabel.AutoSize = true;
+            this.NGLinkLabel.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.NGLinkLabel.LinkColor = System.Drawing.Color.Navy;
-            this.NGLinkLabel.Location = new System.Drawing.Point(127, 161);
+            this.NGLinkLabel.Location = new System.Drawing.Point(181, 163);
             this.NGLinkLabel.Name = "NGLinkLabel";
-            this.NGLinkLabel.Size = new System.Drawing.Size(45, 12);
+            this.NGLinkLabel.Size = new System.Drawing.Size(50, 13);
             this.NGLinkLabel.TabIndex = 7;
             this.NGLinkLabel.TabStop = true;
             this.NGLinkLabel.Text = "承認NG";
@@ -133,7 +135,7 @@
             this.logoutButton.BackColor = System.Drawing.Color.DimGray;
             this.logoutButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutButton.Location = new System.Drawing.Point(298, 12);
+            this.logoutButton.Location = new System.Drawing.Point(627, 12);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 23);
             this.logoutButton.TabIndex = 11;
@@ -144,10 +146,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(123, 44);
+            this.label3.Font = new System.Drawing.Font("HG創英角ｺﾞｼｯｸUB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(296, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 36);
+            this.label3.Size = new System.Drawing.Size(132, 27);
             this.label3.TabIndex = 13;
             this.label3.Text = "TOP MENU";
             // 
@@ -156,7 +158,7 @@
             this.searchButton.BackColor = System.Drawing.Color.DimGray;
             this.searchButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchButton.Location = new System.Drawing.Point(253, 192);
+            this.searchButton.Location = new System.Drawing.Point(379, 193);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 14;
