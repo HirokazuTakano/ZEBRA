@@ -160,9 +160,6 @@ namespace ZEBRA
         /// <param name="e"></param>
         private void topPageButton_Click(object sender, EventArgs e)
         {
-            Hide();
-            
-            Owner.Show();
             this.Close();
         }
 
@@ -205,6 +202,11 @@ namespace ZEBRA
                 }
 
             }
+        }
+
+        private void NGList_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }

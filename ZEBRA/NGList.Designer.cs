@@ -93,6 +93,7 @@
             this.Controls.Add(this.NGViewList);
             this.Name = "NGList";
             this.Text = "NG_List";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NGList_FormClosed);
             this.Load += new System.EventHandler(this.NGList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NGViewList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
