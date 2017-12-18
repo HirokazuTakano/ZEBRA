@@ -81,6 +81,12 @@ namespace ZEBRA
 
             reportlist = new List<string>();
 
+            //if (admitViewList.RowCount == 0)
+            //{
+            //    MessageBox.Show("あなた宛ての認証待ち日報はありません");
+            //    this.Close();
+            //}
+
 
             // DataGridViewが持つ、列の自動生成機能をオフ
             admitViewList.AutoGenerateColumns = false;
@@ -170,6 +176,14 @@ namespace ZEBRA
 
 
                 reportlist = new List<string>();
+
+
+
+                //if (reportlist.Count == 0)
+                //{
+                //    MessageBox.Show("あなた宛ての認証待ち日報はありません");
+                //    this.Close();
+                //}
 
 
                 // DataGridViewが持つ、列の自動生成機能をオフ
